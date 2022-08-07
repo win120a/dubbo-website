@@ -1,4 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 注册中心参考手册</title><link>https://dubbo.apache.org/zh/docs/references/registry/</link><description>Recent content in 注册中心参考手册 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/docs/references/registry/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Nacos 注册中心</title><link>https://dubbo.apache.org/zh/docs/references/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/registry/nacos/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/nacos/">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>Nacos 是 Dubbo 生态系统中重要的注册中心实现，其中 &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">&lt;code>dubbo-registry-nacos&lt;/code>&lt;/a> 则是 Dubbo 融合 Nacos 注册中心的实现。&lt;/p>
 &lt;h2 id="预备工作">预备工作&lt;/h2>
 &lt;p>当您将 &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">dubbo-registry-nacos&lt;/a> 整合到您的 Dubbo 工程之前，请确保后台已经启动 Nacos 服务。如果您尚且不熟悉 Nacos 的基本使用的话，可先行参考 &lt;a href="https://nacos.io/en-us/docs/quick-start.html">Nacos 快速入门&lt;/a>。建议使用 Nacos &lt;code>1.0.0&lt;/code> 及以上的版本。&lt;/p>
@@ -86,6 +89,9 @@
 &lt;code>preserved.register.source&lt;/code> : 保留键，目前未使用。&lt;/p>
 &lt;p>该功能将在Dubbo@&lt;code>2.7.10&lt;/code>开始支持，通过在address中增加参数来进行配置.
 例如: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&amp;amp;preserved.ip.delete.timeout=30000&amp;amp;preserved.heart.beat.interval=10000&lt;/code>&lt;/p></description></item><item><title>Docs: Zookeeper 注册中心</title><link>https://dubbo.apache.org/zh/docs/references/registry/zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/registry/zookeeper/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/zookeeper/">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>&lt;a href="http://zookeeper.apache.org">Zookeeper&lt;/a> 是 Apache Hadoop 的子项目，是一个树型的目录服务，支持变更推送，适合作为 Dubbo 服务的注册中心，工业强度较高，可用于生产环境，并推荐使用 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/zookeeper.jpg" alt="/user-guide/images/zookeeper.jpg">&lt;/p>
 &lt;p>流程说明：&lt;/p>
@@ -111,7 +117,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>zookeeper&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>3.8.0&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>或直接&lt;a href="http://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper">下载&lt;/a>。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>或直接&lt;a href="https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper">下载&lt;/a>。&lt;/p>
 &lt;p>Dubbo 支持 zkclient 和 curator 两种 Zookeeper 客户端实现：&lt;/p>
 &lt;p>&lt;strong>注意:在2.7.x的版本中已经移除了zkclient的实现,如果要使用zkclient客户端,需要自行拓展&lt;/strong>&lt;/p>
 &lt;h3 id="使用-zkclient-客户端">使用 zkclient 客户端&lt;/h3>
@@ -122,7 +128,7 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>dubbo.registry.client&lt;span style="color:#719e07">=&lt;/span>zkclient
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>或：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>zookeeper://10.20.153.10:2181?client&lt;span style="color:#719e07">=&lt;/span>zkclient
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>需依赖或直接&lt;a href="http://repo1.maven.org/maven2/com/github/sgroschupf/zkclient">下载&lt;/a>：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>需依赖或直接&lt;a href="https://repo1.maven.org/maven2/com/github/sgroschupf/zkclient">下载&lt;/a>：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>com.github.sgroschupf&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>zkclient&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
@@ -182,6 +188,9 @@
 &lt;/li>
 &lt;/ol>
 &lt;/div></description></item><item><title>Docs: Multicast 注册中心</title><link>https://dubbo.apache.org/zh/docs/references/registry/multicast/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/registry/multicast/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/multicast/">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>Multicast 注册中心不需要启动任何中心节点，只要广播地址一样，就可以互相发现。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/multicast.jpg" alt="/user-guide/images/multicast.jpg">&lt;/p>
 &lt;ol start="0">
@@ -204,7 +213,10 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:parameter&lt;/span> key=&lt;span style="color:#2aa198">&amp;#34;unicast&amp;#34;&lt;/span> value=&lt;span style="color:#2aa198">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dubbo:consumer&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Redis 注册中心</title><link>https://dubbo.apache.org/zh/docs/references/registry/redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/registry/redis/</guid><description>
-&lt;p>基于 Redis &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> 实现的注册中心。&lt;/p>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/redis/">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;p>基于 Redis [^1] 实现的注册中心。&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">提示&lt;/h4>
 &lt;p>从 &lt;code>2.1.0&lt;/code> 版本开始支持。&lt;/p>
@@ -253,17 +265,10 @@
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="可靠性声明">可靠性声明&lt;/h2>
-&lt;p>阿里内部并没有采用 Redis 做为注册中心，而是使用自己实现的基于数据库的注册中心，即：Redis 注册中心并没有在阿里内部长时间运行的可靠性保障，此 Redis 桥接实现只为开源版本提供，其可靠性依赖于 Redis 本身的可靠性。&lt;/p>
-&lt;h2 id="安装">安装&lt;/h2>
-&lt;p>安装方式参见: &lt;a href="../../../admin/install/redis.md">Redis安装手册&lt;/a>，只需搭一个原生的 Redis 服务器，并将 &lt;a href="../../preface/usage.md">Quick Start&lt;/a> 中 Provider 和 Consumer 里的 &lt;code>conf/dubbo.properties&lt;/code> 中的 &lt;code>dubbo.registry.address&lt;/code> 的值改为 &lt;code>redis://127.0.0.1:6379&lt;/code> 即可使用。&lt;/p>
-&lt;div class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1">
-&lt;p>&lt;a href="http://redis.io">Redis&lt;/a> 是一个高效的 KV 存储服务器&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description></item><item><title>Docs: Simple 注册中心</title><link>https://dubbo.apache.org/zh/docs/references/registry/simple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/registry/simple/</guid><description>
+&lt;p>阿里内部并没有采用 Redis 做为注册中心，而是使用自己实现的基于数据库的注册中心，即：Redis 注册中心并没有在阿里内部长时间运行的可靠性保障，此 Redis 桥接实现只为开源版本提供，其可靠性依赖于 Redis 本身的可靠性。&lt;/p></description></item><item><title>Docs: Simple 注册中心</title><link>https://dubbo.apache.org/zh/docs/references/registry/simple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/registry/simple/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/simple/">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>Simple 注册中心本身就是一个普通的 Dubbo 服务，可以减少第三方依赖，使整体通讯方式一致。&lt;/p>
 &lt;h2 id="配置">配置&lt;/h2>
 &lt;p>将 Simple 注册中心暴露成 Dubbo 服务：&lt;/p>
