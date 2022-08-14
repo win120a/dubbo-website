@@ -185,7 +185,9 @@
 &lt;li>采用 URL 作为配置信息的统一格式，所有扩展点都通过传递 URL 携带配置信息。&lt;/li>
 &lt;/ul></description></item><item><title>Docs3-V2: 服务发现</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/</guid><description>
 &lt;p>服务发现，即消费端自动发现服务地址列表的能力，是微服务框架需要具备的关键能力，借助于自动化的服务发现，微服务之间可以在无需感知对端部署位置与 IP 地址的情况下实现通信。&lt;/p>
+&lt;h3 id="实现方式">实现方式&lt;/h3>
 &lt;p>实现服务发现的方式有很多种，Dubbo 提供的是一种 Client-Based 的服务发现机制，通常还需要部署额外的第三方注册中心组件来协调服务发现过程，如常用的 Nacos、Consul、Zookeeper 等，Dubbo 自身也提供了对多种注册中心组件的对接，用户可以灵活选择。&lt;/p>
+&lt;h3 id="工作原理">工作原理&lt;/h3>
 &lt;p>Dubbo 基于消费端的自动服务发现能力，其基本工作原理如下图：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/architecture.png" alt="//imgs/architecture.png">&lt;/p>
 &lt;p>服务发现的一个核心组件是注册中心，Provider 注册地址到注册中心，Consumer 从注册中心读取和订阅 Provider 地址列表。
@@ -195,7 +197,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> registry
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> address: zookeeper://127.0.0.1:2181
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="应用级服务发现简介">应用级服务发现简介&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="应用级服务发现简介">应用级服务发现简介&lt;/h3>
 &lt;p>概括来说，Dubbo3 引入的应用级服务发现主要有以下优势&lt;/p>
 &lt;ul>
 &lt;li>适配云原生微服务变革。云原生时代的基础设施能力不断向上释放，像 Kubernetes 等平台都集成了微服务概念抽象，Dubbo3 的应用级服务发现是适配各种微服务体系的通用模型。&lt;/li>
@@ -325,4 +327,81 @@ Dubbo 的路由主要需要实现 3 个接口，分别是负责每次调用筛�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>T&lt;span style="color:#719e07">&amp;gt;&lt;/span> Invoker&lt;span style="color:#719e07">&amp;lt;&lt;/span>T&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">select&lt;/span>&lt;span style="color:#719e07">(&lt;/span>List&lt;span style="color:#719e07">&amp;lt;&lt;/span>Invoker&lt;span style="color:#719e07">&amp;lt;&lt;/span>T&lt;span style="color:#719e07">&amp;gt;&amp;gt;&lt;/span> invokers&lt;span style="color:#719e07">,&lt;/span> URL url&lt;span style="color:#719e07">,&lt;/span> Invocation invocation&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#268bd2">throws&lt;/span> RpcException&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>具体调用拦截扩展方式请&lt;a href="../../reference-manual/spi/description/load-balance/">参考&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>具体调用拦截扩展方式请&lt;a href="../../reference-manual/spi/description/load-balance/">参考&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: Dubbo Mesh</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/mesh/</guid><description>
+&lt;p>Dubbo Mesh 从设计理念上更强调控制面的统一管控、标准化与治理能力，而在数据面给出了更多的选择，包括 Sidecar Mesh 与 Proxyless Mesh 等部署模式。多种部署模型给企业提供了更多选择，通过混合部署的模型，在实现服务治理控制面的共享的同时，可以更好的应对不同场景的部署要求（性能、部署复杂性等），适应复杂的基础设施环境并从总体上提升架构的可用性。&lt;/p>
+&lt;h2 id="背景">背景&lt;/h2>
+&lt;p>在云原生背景下，如果我们将 Service Mesh 理解为底层基础设施，则在 Mesh 架构中，以往耦合在业务进程中的微服务治理部分能力正被 Mesh 接管，传统微服务框架更注重 RPC 协议与编程模型。以下是时下流行的 Mesh 产品 Istio 的架构图：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/mesh/istio.jpg" alt="istio">&lt;/p>
+&lt;p>在 Mesh 架构下&lt;/p>
+&lt;ul>
+&lt;li>统一的控制面提供证书管理、可观测性、流量治理等能力&lt;/li>
+&lt;li>Sidecar 让 SDK 更轻量、侵入性更小，更好的实现透明升级、流量拦截等&lt;/li>
+&lt;/ul>
+&lt;h2 id="dubbo-mesh-总体架构">Dubbo Mesh 总体架构&lt;/h2>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/mesh/dubbo-mesh-arc.png" alt="istio">&lt;/p>
+&lt;ul>
+&lt;li>数据面基于 Triple 协议进行 RPC 通信；&lt;/li>
+&lt;li>地址发现模型采用应用级服务发现，支持超大规模实例集群的同时，提供更丰富的服务治理能力；&lt;/li>
+&lt;li>Dubbo Mesh 控制面基于业界主流 Istio 扩展，支持 Dubbo 服务发现定制方案，同时提供更丰富的流量管控能力，；&lt;/li>
+&lt;li>数据面支持两种模式：ThinSDK + Sidecar(如 Envoy) 和 Proxyless；&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>对于 Dubbo2 老用户或已升级 Dubbo3 但尚未迁移新特性的用户，可以考虑参考其他 Mesh 开源社区（如 Aeraki）提供的 Dubbo 方案。
+但部分功能可能受限，同时会有一定的性能和容量瓶颈。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="dubbo-sidecar-mesh">Dubbo Sidecar Mesh&lt;/h3>
+&lt;p>Dubbo 提供了 ThinSDK 的部署模式，在此模式下，Dubbo ThinSDK 将只提供面向业务应用的编程 API、RPC 传输通信能力，其余服务治理
+包括地址发现、负载均衡、路由寻址等都统一下沉到 Sidecar，Sidecar 负责与控制面直接通信并接收各种流量管控规则。以下是基本部署架构图，Dubbo ThinSDK 与 Sidecar 部署在同一个 Pod 或容器中，通过在外围部署一个独立的控制平面，实现对流量和治理的统一管控。控制面与 Sicecar 之间通过图中虚线所示的 xDS 协议进行配置分发，而 Dubbo 进程间的通信不再是直连模式，转而通过 Sidecar 代理，Sidecar 拦截所有进出流量，并完成路由寻址等服务治理任务。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/mesh/dubbo-sidecar.png" alt="dubbo-sidecar">&lt;/p>
+&lt;p>社区推荐选型 Envoy 作为 Sidecar，通信协议使用 Triple 以获得更好的网关穿透性与性能体验。对于暂时无法升级 Triple 的仍在使用 Dubbo2 协议用户来说，可参考 Envoy、Aeraki Mesh 提供的 Dubbo2 协议支持方案。&lt;/p>
+&lt;p>ThinSDK + Sidecar 模式的 Mesh 架构有很多优势，如平滑升级、多语言、业务侵入小等，但也带来了一些额外的问题，比如：&lt;/p>
+&lt;ul>
+&lt;li>Sidecar 通信带来了额外的性能损耗，这在复杂拓扑的网络调用中将变得尤其明显。&lt;/li>
+&lt;li>Sidecar 的存在让应用的声明周期管理变得更加复杂。&lt;/li>
+&lt;li>部署环境受限，并不是所有的环境都能满足 Sidecar 部署与请求拦截要求。&lt;/li>
+&lt;/ul>
+&lt;p>详细方案设计与示例请参考&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://dubbo.apache.org/zh/overview/tasks/mesh/dubbo-mesh">Dubbo ThinSDK Proposal&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dubbo.apache.org/zh/overview/tasks/mesh/dubbo-mesh">使用示例&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="dubbo-proxyless-mesh">Dubbo Proxyless Mesh&lt;/h3>
+&lt;p>作为 ThinSDK + Sidecar 模式的补充，Dubbo 社区自很早之前就做了 Dubbo 直接对接到控制面的设想与思考，也就是当前所说的 Proxyless Mesh 模式。Proxyless 模式使得微服务又回到了 2.x 时代的部署架构。如下图所示，和我们上面看的 Dubbo 经典服务治理模式非常相似，所以说这个模式并不新鲜， Dubbo 从最开始就是这么样的设计模式。但相比于 Mesh 架构，Dubbo2 并没有强调控制面的统一管控，而这点恰好是 Service Mesh 所强调的，强调对流量、可观测性、证书等的标准化管控与治理，也是 Mesh 理念先进的地方。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/mesh/dubbo-proxyless.png" alt="dubbo-proxyless">&lt;/p>
+&lt;p>通过不同语言版本的 Dubbo3 SDK 直接实现 xDS 协议解析，Dubbo 进程可以与控制面（Control Plane）直接通信，进而实现控制面对流量管控、服务治理、可观测性、安全等的统一管控，规避 Sidecar 模式带来的性能损耗与部署架构复杂性。&lt;/p>
+&lt;blockquote>
+&lt;p>Proxyless 模式同时支持 Dubbo2、Triple 协议，但只支持应用级服务发现的地址模型。&lt;/p>
+&lt;/blockquote>
+&lt;p>在 Dubbo3 Proxyless 架构模式下，Dubbo 进程将直接与控制面通信，Dubbo 进程之间也继续保持直连通信模式，我们可以看出 Proxyless 架构的优势：&lt;/p>
+&lt;ul>
+&lt;li>没有额外的 Proxy 中转损耗，因此更适用于性能敏感应用&lt;/li>
+&lt;li>更有利于遗留系统的平滑迁移&lt;/li>
+&lt;li>架构简单，容易运维部署&lt;/li>
+&lt;li>适用于几乎所有的部署环境&lt;/li>
+&lt;/ul>
+&lt;p>详细方案设计与示例请参考&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://dubbo.apache.org/zh/overview/tasks/mesh/dubbo-mesh">Dubbo Proxyless Mesh&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dubbo.apache.org/zh/overview/tasks/mesh/dubbo-mesh">使用示例&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="dubbo-控制面治理规则">Dubbo 控制面治理规则&lt;/h3>
+&lt;p>TBD&lt;/p>
+&lt;p>Dubbo SDK 提供了非常灵活的配置来控制服务治理行为，如接口粒度的服务地址发现能力、接口粒度的配置同步等，这些能力让应用的开发和部署更加灵活。而在通用的 Mesh 部署方案或产品下一些高级功能可能受限，从总体上影响了易用性与灵活性。为此 Dubbo 计划提供自研控制面产品，以最大化的在 Mesh 体系发挥 Dubbo3 能力。&lt;/p></description></item><item><title>Docs3-V2: Triple 协议</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/triple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/triple/</guid><description>
+&lt;h3 id="协议说明">协议说明&lt;/h3>
+&lt;p>Triple 是 Dubbo3 提出的基于 HTTP2 的开放协议，旨在解决 Dubbo2 私有协议带来的互通性问题。相比于原有 Dubbo2 协议，Triple 有以下优势:&lt;/p>
+&lt;ol>
+&lt;li>原生和 gRPC 协议互通。打通 gRPC 生态，降低从 gRPC 至 Dubbo 的迁移成本。&lt;/li>
+&lt;li>增强多语言生态。避免因 CPP/C#/RUST 等语言的 Dubbo SDK 能力不足导致业务难以选型适配的问题。&lt;/li>
+&lt;li>网关友好。网关无需参与序列化，方便用户从传统的 HTTP 转泛化 Dubbo 调用网关升级至开源或云厂商的 Ingress 方案。&lt;/li>
+&lt;li>完善的异步和流式支持。带来从底层协议到上层业务的性能提升，易于构建全链路异步以及严格保证消息顺序的流式服务。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>目前 Java 和 Go 的 Dubbo SDK 已全面支持 Triple 协议。&lt;/strong> 在阿里巴巴，Triple 协议广泛用于跨环境、跨语言、跨生态互通，已有数十万容器生产级使用。&lt;/p>
+&lt;h3 id="支持方式">支持方式&lt;/h3>
+&lt;p>Java SDK 支持 &lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/quick-start/idl">IDL 生成 Stub&lt;/a>
+和 &lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/quick-start/idl">Java Interface&lt;/a> 两种方式，多语言、生态互通、流式需求推荐使用 IDL 方式，现有服务平滑升级推荐使用
+Interface 方式。&lt;/p>
+&lt;ul>
+&lt;li>Dubbo2 老用户如何从现有协议升级至 Triple(TBD)&lt;/li>
+&lt;li>新用户或业务参考 &lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/quick-start/idl/">Dubbo3 Triple Quick Start&lt;/a>&lt;/li>
+&lt;li>深入了解 Triple 协议: &lt;a href="https://github.com/apache/dubbo-awesome/blob/master/proposals/D0-triple.md">Dubbo3 Triple 协议设计与原理&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
