@@ -33,7 +33,7 @@
 &lt;/li>
 &lt;li>企业级微服务治理能力
 &lt;ul>
-&lt;li>国内共有云厂商支持的事实标准服务框架&lt;/li>
+&lt;li>国内公有云厂商支持的事实标准服务框架&lt;/li>
 &lt;li>多年企业实践经验考验，参考&lt;a href="../../../users">用户实践案例&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -46,7 +46,7 @@
 &lt;blockquote>
 &lt;p>需要注意的是，在 Dubbo 中，我们提到服务时，通常是指 RPC 粒度的、提供某个具体业务增删改功能的接口或方法，与一些微服务概念书籍中泛指的服务并不是一个概念。&lt;/p>
 &lt;/blockquote>
-&lt;p>在分布式系统中，尤其是随着微服务架构的发展，应用的部署、发布、扩缩容变得极为频繁，作为 RPC 消费方，如何定动态的发现服务提供方地址成为 RPC 通信的前置条件。Dubbo 提供了自动的地址发现机制，用于应对分布式场景下机器实例动态迁移的问题。如下图所示，通过引入注册中心来协调提供方与消费方的地址，提供者启动之后向注册中心注册自身地址，消费方通过拉取或订阅注册中心特定节点，动态的感知提供方地址列表的变化。&lt;/p>
+&lt;p>在分布式系统中，尤其是随着微服务架构的发展，应用的部署、发布、扩缩容变得极为频繁，作为 RPC 消费方，如何动态的发现服务提供方地址成为 RPC 通信的前置条件。Dubbo 提供了自动的地址发现机制，用于应对分布式场景下机器实例动态迁移的问题。如下图所示，通过引入注册中心来协调提供方与消费方的地址，提供者启动之后向注册中心注册自身地址，消费方通过拉取或订阅注册中心特定节点，动态的感知提供方地址列表的变化。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/architecture.png" alt="arch-service-discovery">&lt;/p>
 &lt;h3 id="dubbo-核心特性">Dubbo 核心特性&lt;/h3>
 &lt;h4 id="高性能-rpc-通信协议">高性能 RPC 通信协议&lt;/h4>
@@ -58,7 +58,7 @@
 &lt;li>提供端响应流（Response Streaming）&lt;/li>
 &lt;li>双向流式通信（Bidirectional Streaming）&lt;/li>
 &lt;/ul>
-&lt;p>具体可参见各语言 SKDK 实现的可选协议列表 或 &lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/triple/">Triple协议&lt;/a>&lt;/p>
+&lt;p>具体可参见各语言 SDK 实现的可选协议列表 或 &lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/triple/">Triple协议&lt;/a>&lt;/p>
 &lt;h4 id="自动服务地址发现">自动服务（地址）发现&lt;/h4>
 &lt;p>Dubbo 的服务发现机制，让微服务组件之间可以独立演进并任意部署，消费端可以在无需感知对端部署位置与 IP 地址的情况下完成通信。Dubbo 提供的是 Client-Based 的服务发现机制，使用者可以有多种方式启用服务发现：&lt;/p>
 &lt;ul>
@@ -98,7 +98,7 @@
 &lt;/ol>
 &lt;p>为了解决 Sidecar 引入的相关成本问题，Dubbo 引入并实现了全新的 Proxyless Mesh 架构，顾名思义，Proxyless Mesh 就是指没有 Sidecar 的部署，转而由 Dubbo SDK 直接与控制面交互，其架构图如下&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/mesh/dubbo-proxyless.png" alt="dubbo-proxyless">&lt;/p>
-&lt;p>可以设想，在不同的组织、不同的发展阶段，未来以 Dubbo 构建的微服务将会允许有三种部署架构：传统 SDK、基于 Sidecar 的 Service Mesh、脱离 Sidecar 的 Proxyless Mesh。基于 Sidecar 的 Service Mesh，即经典的 Mesh 架构，独立的 sidecar 运行时接管所有的流量，脱离 Sidecar 的 Proxyless Mesh，富 SDK 直接通过 xDS 与控制面通信。Dubbo 微服务允许部署在物理机、容器、Kubernetes 平台之上，能做到以 Admin 为控制面，以统一的流量治理规则进行治理。&lt;/p></description></item><item><title>Overview: 3.0 速览</title><link>https://dubbo.apache.org/zh/overview/what/dubbo3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/what/dubbo3/</guid><description>
+&lt;p>可以设想，在不同的组织、不同的发展阶段，未来以 Dubbo 构建的微服务将会允许有三种部署架构：传统 SDK、基于 Sidecar 的 Service Mesh、脱离 Sidecar 的 Proxyless Mesh。基于 Sidecar 的 Service Mesh，即经典的 Mesh 架构，独立的 sidecar 运行时接管所有的流量，脱离 Sidecar 的 Proxyless Mesh，副 SDK 直接通过 xDS 与控制面通信。Dubbo 微服务允许部署在物理机、容器、Kubernetes 平台之上，能做到以 Admin 为控制面，以统一的流量治理规则进行治理。&lt;/p></description></item><item><title>Overview: 3.0 速览</title><link>https://dubbo.apache.org/zh/overview/what/dubbo3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/what/dubbo3/</guid><description>
 &lt;p>本文将带你快速了解 Dubbo3 的设计背景、总体架构与核心特性、与典型用户如阿里巴巴 HSF2 的关系等。也可以通过如下部分了解更多：&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>小白用户，快速浏览 Dubbo3 核心特性：&lt;/strong>
@@ -129,7 +129,7 @@
 &lt;li>&lt;strong>可伸缩性&lt;/strong>，Dubbo2 在可伸缩性上依旧远超很多其他框架，但随着微服务带来更多应用与实例我们不得不思考如何应对更大规模集群的实战；&lt;/li>
 &lt;li>&lt;strong>服务治理易用性&lt;/strong>，如更丰富的流量治理、可观测性、智能负载均衡等。&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>其次，适配云原生技术栈的发展。&lt;/strong> 微服务让业务开发演进更灵活、快捷的同时，也带来了一些它独有的特征和需求：如微服务之后组件数量越来越多，如何解决各个组件的稳定性，如何快速的水平扩容等，以 Docker、Kubernetes、Service Mesh 为代表的云原生基础设施为解决这些问题带来了一些新的选择。随着更多的微服务组件及能力正下沉到以 Kubernetes 为代表的基础设施层，传统微服务开发框架应剔除一些冗余机制，积极的适配到基础设施层以做到能力复用，微服务框架生命周期、服务治理等能力应更好地与 Kubernetes 服务编排机制融合； 以 Service Mesh 为代表微服务架构给微服务开发带来的新的选择，Sidecar 给多语言、透明升级、流量管控等带来的优势，但同时也带来运维复杂性、性能损耗等弊端，因此基于服务框架的传统微服务体系还将是主流，长期仍将占据半壁江山，在长时间内将会维持混合部署将会维持混合部署状态。&lt;/p>
+&lt;p>&lt;strong>其次，适配云原生技术栈的发展。&lt;/strong> 微服务让业务开发演进更灵活、快捷的同时，也带来了一些它独有的特征和需求：如微服务之后组件数量越来越多，如何解决各个组件的稳定性，如何快速的水平扩容等，以 Docker、Kubernetes、Service Mesh 为代表的云原生基础设施为解决这些问题带来了一些新的选择。随着更多的微服务组件及能力正下沉到以 Kubernetes 为代表的基础设施层，传统微服务开发框架应剔除一些冗余机制，积极的适配到基础设施层以做到能力复用，微服务框架生命周期、服务治理等能力应更好地与 Kubernetes 服务编排机制融合； 以 Service Mesh 为代表微服务架构给微服务开发带来的新的选择，Sidecar 给多语言、透明升级、流量管控等带来的优势，但同时也带来运维复杂性、性能损耗等弊端，因此基于服务框架的传统微服务体系还将是主流，长期仍将占据半壁江山，在长时间内将会维持混合部署状态。&lt;/p>
 &lt;h3 id="总体目标">总体目标&lt;/h3>
 &lt;p>Dubbo3 依旧保持了 2.x 的经典架构，以解决微服务进程间通信为主要职责，通过丰富的服务治理（如地址发现、流量管理等）能力来更好的管控微服务集群；Dubbo3 对原有框架的升级是全面的，体现在核心 Dubbo 特性的几乎每个环节，通过升级实现了稳定性、性能、伸缩性、易用性的全面提升。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/architecture-1.png" alt="architecture-1">&lt;/p>
@@ -163,7 +163,7 @@
 &lt;p>Dubbo3 在设计上很好的解决了这些问题，通过全新设计实现的服务治理（服务发现）模型，可以实现服务发现链路上的数据传输、数据存储量平均下降 90% 左右；同时 Dubbo3 自身在业务进程中变得更轻量、更稳定，实现提升资源利用率 50%。&lt;/p>
 &lt;p>Dubbo3 一个更大的优势在于其对整体架构稳定性的提升，新的服务发现架构使得对于整个集群容量、可伸缩性评估变得更容易、更准确。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/capacity.png" alt="capacity">&lt;/p>
-&lt;p>如果将应用开发粗略划分为业务开发、运维部署两个层次，其中变化比较频繁的因素包括服务（接口）、应用、机器实例。在 2.x 时代，所有这三个因素的增长都会影响微服务集群的总体容量，尤其是接口增减带来的波动，对整体容量评估是非常不透明的。而在 3.0 中集群容量变化仅与应用名、机器实例两个因素相关，而我们容量评估的对象往往都是应用与实例，因此整个集群集群变的更稳定透明。&lt;/p>
+&lt;p>如果将应用开发粗略划分为业务开发、运维部署两个层次，其中变化比较频繁的因素包括服务（接口）、应用、机器实例。在 2.x 时代，所有这三个因素的增长都会影响微服务集群的总体容量，尤其是接口增减带来的波动，对整体容量评估是非常不透明的。而在 3.0 中集群容量变化仅与应用名、机器实例两个因素相关，而容量评估的对象往往都是应用与实例，因此整个集群变的更稳定透明。&lt;/p>
 &lt;h3 id="云原生">云原生&lt;/h3>
 &lt;p>在云原生时代，底层基础设施的变革正深刻影响应用的部署、运维甚至开发过程，往上也影响了 Dubbo3 微服务技术方案的选型与部署模式。&lt;/p>
 &lt;h4 id="下一代-rpc-协议">下一代 RPC 协议&lt;/h4>
