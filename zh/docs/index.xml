@@ -6158,12 +6158,68 @@
 &lt;p>GitHub: &lt;a href="https://github.com/apache/dubbo">https://github.com/apache/dubbo&lt;/a> &lt;br>
 发布说明: &lt;a href="https://github.com/apache/dubbo/releases">https://github.com/apache/dubbo/releases&lt;/a>&lt;/p>
 &lt;/blockquote>
+&lt;h3 id="311-2022-09-29">3.1.1 (2022-09-29)&lt;/h3>
+&lt;h4 id="source-release">Source Release&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.1.1/apache-dubbo-3.1.1-src.zip">source&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.1.1/apache-dubbo-3.1.1-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.1.1/apache-dubbo-3.1.1-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="maven-release">Maven Release&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://search.maven.org/artifact/org.apache.dubbo/dubbo/3.1.1/jar">org.apache.dubbo:dubbo:3.1.1&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>3.1.1&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3012-2022-09-29">3.0.12 (2022-09-29)&lt;/h3>
+&lt;h4 id="source-release-1">Source Release&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.0.12/apache-dubbo-3.0.12-src.zip">source&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.0.12/apache-dubbo-3.0.12-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.0.12/apache-dubbo-3.0.12-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="maven-release-1">Maven Release&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://search.maven.org/artifact/org.apache.dubbo/dubbo/3.0.12/jar">org.apache.dubbo:dubbo:3.0.12&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>3.0.12&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2718-2022-09-29">2.7.18 (2022-09-29)&lt;/h3>
+&lt;h4 id="source-release-2">Source Release&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.18/apache-dubbo-2.7.18-src.zip">source&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.18/apache-dubbo-2.7.18-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.18/apache-dubbo-2.7.18-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="maven-release-2">Maven Release&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://search.maven.org/artifact/org.apache.dubbo/dubbo/2.7.18/jar">org.apache.dubbo:dubbo:2.7.18&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>2.7.18&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Release: Java SDK</title><link>https://dubbo.apache.org/zh/release/past-releases/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/release/past-releases/java/</guid><description>
+&lt;h2 id="验证">验证&lt;/h2>
+&lt;p>可以按照这里的&lt;a href="https://www.apache.org/info/verification">步骤&lt;/a>, 利用&lt;a href="https://downloads.apache.org/dubbo/KEYS">KEYS&lt;/a>文件来验证下载。&lt;/p>
+&lt;p>请点击了解各&lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/versions/">版本详情和升级注意事项&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>GitHub: &lt;a href="https://github.com/apache/dubbo">https://github.com/apache/dubbo&lt;/a> &lt;br>
+发布说明: &lt;a href="https://github.com/apache/dubbo/releases">https://github.com/apache/dubbo/releases&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;h3 id="310-2022-08-22">3.1.0 (2022-08-22)&lt;/h3>
 &lt;h4 id="source-release">Source Release&lt;/h4>
 &lt;ul>
-&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.1.0/apache-dubbo-3.1.0-src.zip">source&lt;/a> |
-&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.1.0/apache-dubbo-3.1.0-src.zip.asc">asc&lt;/a> |
-&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.1.0/apache-dubbo-3.1.0-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.1.0/apache-dubbo-3.1.0-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.1.0/apache-dubbo-3.1.0-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.1.0/apache-dubbo-3.1.0-src.zip.sha512">sha512&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="maven-release">Maven Release&lt;/h4>
 &lt;ul>
@@ -6177,9 +6233,9 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3011-2022-08-23">3.0.11 (2022-08-23)&lt;/h3>
 &lt;h4 id="source-release-1">Source Release&lt;/h4>
 &lt;ul>
-&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.0.11/apache-dubbo-3.0.11-src.zip">source&lt;/a> |
-&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.0.11/apache-dubbo-3.0.11-src.zip.asc">asc&lt;/a> |
-&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.0.11/apache-dubbo-3.0.11-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.11/apache-dubbo-3.0.11-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.11/apache-dubbo-3.0.11-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.11/apache-dubbo-3.0.11-src.zip.sha512">sha512&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="maven-release-1">Maven Release&lt;/h4>
 &lt;ul>
@@ -6193,9 +6249,9 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2717-2022-08-23">2.7.17 (2022-08-23)&lt;/h3>
 &lt;h4 id="source-release-2">Source Release&lt;/h4>
 &lt;ul>
-&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.17/apache-dubbo-2.7.17-src.zip">source&lt;/a> |
-&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.17/apache-dubbo-2.7.17-src.zip.asc">asc&lt;/a> |
-&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.17/apache-dubbo-2.7.17-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.17/apache-dubbo-2.7.17-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.17/apache-dubbo-2.7.17-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.17/apache-dubbo-2.7.17-src.zip.sha512">sha512&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="maven-release-2">Maven Release&lt;/h4>
 &lt;ul>
@@ -6206,22 +6262,14 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>2.7.17&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Release: Java SDK</title><link>https://dubbo.apache.org/zh/release/past-releases/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/release/past-releases/java/</guid><description>
-&lt;h2 id="验证">验证&lt;/h2>
-&lt;p>可以按照这里的&lt;a href="https://www.apache.org/info/verification">步骤&lt;/a>, 利用&lt;a href="https://downloads.apache.org/dubbo/KEYS">KEYS&lt;/a>文件来验证下载。&lt;/p>
-&lt;p>请点击了解各&lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/versions/">版本详情和升级注意事项&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>GitHub: &lt;a href="https://github.com/apache/dubbo">https://github.com/apache/dubbo&lt;/a> &lt;br>
-发布说明: &lt;a href="https://github.com/apache/dubbo/releases">https://github.com/apache/dubbo/releases&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="2716-2022-07-06">2.7.16 (2022-07-06)&lt;/h3>
-&lt;h4 id="source-release">Source Release&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2716-2022-07-06">2.7.16 (2022-07-06)&lt;/h3>
+&lt;h4 id="source-release-3">Source Release&lt;/h4>
 &lt;ul>
-&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.16/apache-dubbo-2.7.16-src.zip">source&lt;/a> |
-&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.16/apache-dubbo-2.7.16-src.zip.asc">asc&lt;/a> |
-&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.16/apache-dubbo-2.7.16-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.16/apache-dubbo-2.7.16-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.16/apache-dubbo-2.7.16-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.16/apache-dubbo-2.7.16-src.zip.sha512">sha512&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h4 id="maven-release">Maven Release&lt;/h4>
+&lt;h4 id="maven-release-3">Maven Release&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://search.maven.org/artifact/org.apache.dubbo/dubbo/2.7.16/jar">org.apache.dubbo:dubbo:2.7.16&lt;/a>&lt;/li>
 &lt;/ul>
@@ -6231,13 +6279,13 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>2.7.16&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3010-2022-07-21">3.0.10 (2022-07-21)&lt;/h3>
-&lt;h4 id="source-release-1">Source Release&lt;/h4>
+&lt;h4 id="source-release-4">Source Release&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.10/apache-dubbo-3.0.10-src.zip">source&lt;/a> |
 &lt;a href="https://archive.apache.org/dist/dubbo/3.0.10/apache-dubbo-3.0.10-src.zip.asc">asc&lt;/a> |
 &lt;a href="https://archive.apache.org/dist/dubbo/3.0.10/apache-dubbo-3.0.10-src.zip.sha512">sha512&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h4 id="maven-release-1">Maven Release&lt;/h4>
+&lt;h4 id="maven-release-4">Maven Release&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://search.maven.org/artifact/org.apache.dubbo/dubbo/3.0.10/jar">org.apache.dubbo:dubbo:3.0.10&lt;/a>&lt;/li>
 &lt;/ul>
@@ -6247,13 +6295,13 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>3.0.10&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="309-2022-06-23">3.0.9 (2022-06-23)&lt;/h3>
-&lt;h4 id="source-release-2">Source Release&lt;/h4>
+&lt;h4 id="source-release-5">Source Release&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.9/apache-dubbo-3.0.9-src.zip">source&lt;/a> |
 &lt;a href="https://archive.apache.org/dist/dubbo/3.0.9/apache-dubbo-3.0.9-src.zip.asc">asc&lt;/a> |
 &lt;a href="https://archive.apache.org/dist/dubbo/3.0.9/apache-dubbo-3.0.9-src.zip.sha512">sha512&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h4 id="maven-release-2">Maven Release&lt;/h4>
+&lt;h4 id="maven-release-5">Maven Release&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://search.maven.org/artifact/org.apache.dubbo/dubbo/3.0.9/jar">org.apache.dubbo:dubbo:3.0.9&lt;/a>&lt;/li>
 &lt;/ul>
@@ -6590,10 +6638,10 @@
 &lt;/blockquote>
 &lt;p>Dubbo Spring 外部化配置是由 Dubbo &lt;code>2.5.8&lt;/code> 引入的新特性，可通过 Spring &lt;code>Environment&lt;/code> 属性自动地生成并绑定 Dubbo 配置 Bean，实现配置简化，并且降低微服务开发门槛。&lt;/p>
 &lt;p>假设您的 Nacos Server 同样运行在服务器 &lt;code>10.20.153.10&lt;/code> 上，并使用默认 Nacos 服务端口 &lt;code>8848&lt;/code>，您只需将 &lt;code>dubbo.registry.address&lt;/code> 属性调整如下：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>## 其他属性保持不变
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">## 其他属性保持不变&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## Nacos registry address
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address = nacos://10.20.153.10:8848
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">## Nacos registry address&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">nacos://10.20.153.10:8848&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>随后，重启您的 Dubbo 应用，Dubbo 的服务提供和消费信息在 Nacos 控制台中可以显示：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-registry-nacos-1.png" alt="dubbo-registry-nacos-1.png">&lt;/p>
@@ -6677,10 +6725,10 @@
 &lt;/blockquote>
 &lt;p>Dubbo Spring 外部化配置是由 Dubbo &lt;code>2.5.8&lt;/code> 引入的新特性，可通过 Spring &lt;code>Environment&lt;/code> 属性自动地生成并绑定 Dubbo 配置 Bean，实现配置简化，并且降低微服务开发门槛。&lt;/p>
 &lt;p>假设您的 Nacos Server 同样运行在服务器 &lt;code>10.20.153.10&lt;/code> 上，并使用默认 Nacos 服务端口 &lt;code>8848&lt;/code>，您只需将 &lt;code>dubbo.registry.address&lt;/code> 属性调整如下：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>## 其他属性保持不变
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">## 其他属性保持不变&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## Nacos registry address
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address = nacos://10.20.153.10:8848
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">## Nacos registry address&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">nacos://10.20.153.10:8848&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>随后，重启您的 Dubbo 应用，Dubbo 的服务提供和消费信息在 Nacos 控制台中可以显示：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-registry-nacos-1.png" alt="dubbo-registry-nacos-1.png">&lt;/p>
@@ -7007,9 +7055,7 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/pixiu/overview/pixiu-sidecar.png" alt="img">&lt;/p>
 &lt;p>对于接入 dubbo 的多语言解决方案。首推的当然是 pixiu 作为 sidecar 和 服务进行同时部署。pixiu提供 服务发现，流量治理，路由能力，协议转换能力和通讯能力。如图的左侧部分，使用sidecar的服务可以和原生使用 dubbp 框架的服务组成集群，无感的进行相互调用。
 另外一种方案是 pixiu 只单单作为代理，将服务注册到dubbo集群中，如图右侧部分，这种方案部署和运维较为简单，比如适合中小规模的集群。&lt;/p></description></item><item><title>Docs3-V2: QOS 概述</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/qos/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/qos/overview/</guid><description>
-&lt;h2 id="特性说明">特性说明&lt;/h2>
-&lt;p>dubbo &lt;code>2.5.8&lt;/code> 新版本增加了 QOS 模块，提供了新的 telnet 命令支持。&lt;/p>
-&lt;h4 id="相关参数说明">相关参数说明&lt;/h4>
+&lt;h2 id="相关参数说明">相关参数说明&lt;/h2>
 &lt;p>QoS 提供了一些启动参数，来对启动进行配置，他们主要包括：&lt;/p>
 &lt;table>
 &lt;thead>
@@ -7040,7 +7086,7 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;blockquote>
 &lt;p>注意，从2.6.4/2.7.0开始，qos-accept-foreign-ip默认配置改为false，如果qos-accept-foreign-ip设置为true，有可能带来安全风险，请仔细评估后再打开。&lt;/p>
 &lt;/blockquote>
-&lt;h4 id="qos-参数配置">QoS 参数配置&lt;/h4>
+&lt;h2 id="qos-参数配置">QoS 参数配置&lt;/h2>
 &lt;ul>
 &lt;li>系统属性&lt;/li>
 &lt;li>dubbo.properties&lt;/li>
@@ -7048,15 +7094,14 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;li>Spring-boot 自动装配方式&lt;/li>
 &lt;/ul>
 &lt;p>其中，上述方式的优先顺序为系统属性 &amp;gt; dubbo.properties &amp;gt; XML/Spring-boot 自动装配方式。&lt;/p>
-&lt;h2 id="使用说明">使用说明&lt;/h2>
-&lt;h4 id="端口">端口&lt;/h4>
+&lt;h2 id="端口">端口&lt;/h2>
 &lt;p>新版本的 telnet 端口 与 dubbo 协议的端口是不同的端口，默认为 &lt;code>22222&lt;/code>&lt;/p>
 &lt;p>可以通过配置文件&lt;code>dubbo.properties&lt;/code> 修改:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.qos-port=33333
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>或者
 可以通过设置 JVM 参数:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-port=33333
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="安全">安全&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安全">安全&lt;/h2>
 &lt;p>默认情况下，dubbo 接收任何主机发起的命令&lt;/p>
 &lt;p>可以通过配置文件&lt;code>dubbo.properties&lt;/code> 修改:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.qos-accept-foreign-ip=false
@@ -7064,7 +7109,8 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;p>可以通过设置 JVM 参数:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-accept-foreign-ip=false
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>拒绝远端主机发出的命令，只允许服务本机执行。&lt;/p>
-&lt;h4 id="telnet-与-http-协议">telnet 与 http 协议&lt;/h4>
+&lt;h2 id="协议">协议&lt;/h2>
+&lt;h3 id="telnet-与-http-协议">telnet 与 http 协议&lt;/h3>
 &lt;p>telnet 模块现在同时支持 http 协议和 telnet 协议，方便各种情况的使用
 示例：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>➜ ~ telnet localhost 22222
@@ -7107,16 +7153,17 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------------------+---+
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|Consumer Service Name|NUM|
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------------------+---+
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="使用系统属性方式配置">使用系统属性方式配置&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="使用配置">使用配置&lt;/h2>
+&lt;h3 id="使用系统属性方式配置">使用系统属性方式配置&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-enable=true
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-port=33333
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-accept-foreign-ip=false
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="使用-dubboproperties-文件配置">使用 dubbo.properties 文件配置&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="使用-dubboproperties-文件配置">使用 dubbo.properties 文件配置&lt;/h3>
 &lt;p>在项目的&lt;code>src/main/resources&lt;/code>目录下添加 dubbo.properties文件，内容如下:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.qos-enable=true
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-port=33333
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-accept-foreign-ip=false
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="使用xml方法配置">使用XML方法配置&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="使用xml方法配置">使用XML方法配置&lt;/h3>
 &lt;p>如果要通过 XML 配置响应的QoS相关的参数，可以进行如下配置：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;beans&lt;/span> xmlns=&lt;span style="color:#2aa198">&amp;#34;http://www.springframework.org/schema/beans&amp;#34;&lt;/span>
@@ -7135,7 +7182,7 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:service&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;org.apache.dubbo.demo.provider.DemoService&amp;#34;&lt;/span> ref=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;bean&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> class=&lt;span style="color:#2aa198">&amp;#34;org.apache.dubbo.demo.provider.DemoServiceImpl&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="使用-spring-boot-自动装配方式配置">使用 spring-boot 自动装配方式配置&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="使用-spring-boot-自动装配方式配置">使用 spring-boot 自动装配方式配置&lt;/h3>
 &lt;p>如果是 spring-boot 的应用，可以在&lt;code>application.properties&lt;/code>或者&lt;code>application.yml&lt;/code>上配置:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.qos-enable=true
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-port=33333
@@ -7370,28 +7417,28 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;/ol>
 &lt;/blockquote>
 &lt;p>修改 Dubbo Provider 配置 &lt;code>dubbo-provider.properties&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># provider
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.name=dubbo-samples-mesh-provider
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.metadataServicePort=20885
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address=N/A
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.name=tri
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.port=50052
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosEnable=true
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 为了使 Kubernetes 集群能够正常访问到探针，需要开启 QOS 允许远程访问，此操作有可能带来安全风险，请仔细评估后再打开
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosAcceptForeignIp=true
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># provider&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.name&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">dubbo-samples-mesh-provider&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.metadataServicePort&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">20885&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">N/A&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.name&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">tri&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.port&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">50052&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosEnable&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 为了使 Kubernetes 集群能够正常访问到探针，需要开启 QOS 允许远程访问，此操作有可能带来安全风险，请仔细评估后再打开&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosAcceptForeignIp&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">true&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>修改 Dubbo Consumer 配置 &lt;code>dubbo-consumer.properties&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># consumer
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.name=dubbo-samples-mesh-consumer
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.metadataServicePort=20885
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address=N/A
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.name=tri
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.port=20880
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.consumer.timeout=30000
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosEnable=true
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 为了使 Kubernetes 集群能够正常访问到探针，需要开启 QOS 允许远程访问，此操作有可能带来安全风险，请仔细评估后再打开
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosAcceptForeignIp=true
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 标记开启 mesh sidecar 代理模式
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.consumer.meshEnable=true
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># consumer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.name&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">dubbo-samples-mesh-consumer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.metadataServicePort&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">20885&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">N/A&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.name&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">tri&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.port&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">20880&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.consumer.timeout&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">30000&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosEnable&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 为了使 Kubernetes 集群能够正常访问到探针，需要开启 QOS 允许远程访问，此操作有可能带来安全风险，请仔细评估后再打开&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosAcceptForeignIp&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 标记开启 mesh sidecar 代理模式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.consumer.meshEnable&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">true&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>完成代码修改后，通过项目提供的 Dockerfile 打包镜像&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 打包并推送镜像&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mvn compile jib:build
@@ -7416,6 +7463,18 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 关闭自动注入sidecar&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl label namespace &lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">your&lt;/span> namespace&lt;span style="color:#2aa198">}&lt;/span> istio-injection&lt;span style="color:#719e07">=&lt;/span>disabled --overwrite
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="6-注意事项">6 注意事项&lt;/h2>
+&lt;ol>
+&lt;li>示例中，生产者消费者都属于同一个namespace；如果需要调用不同的namespace的提供者，需要按如下配置(&lt;strong>dubbo版本&amp;gt;=3.1.1&lt;/strong>)：&lt;/li>
+&lt;/ol>
+&lt;p>注解方式：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@DubboReference&lt;/span>&lt;span style="color:#719e07">(&lt;/span>providedBy &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;istio-demo-dubbo-producer&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span>providerPort &lt;span style="color:#719e07">=&lt;/span> 20885&lt;span style="color:#719e07">,&lt;/span> providerNamespace &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;istio-demo&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>xml方式&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> check=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> interface=&lt;span style="color:#2aa198">&amp;#34;org.apache.dubbo.samples.basic.api.DemoService&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> provider-port=&lt;span style="color:#2aa198">&amp;#34;20885&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> provided-by=&lt;span style="color:#2aa198">&amp;#34;istio-dubbo-producer&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> provider-namespace=&lt;span style="color:#2aa198">&amp;#34;istio-demo&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Spring Boot</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/quick-start/spring-boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/quick-start/spring-boot/</guid><description>
 &lt;blockquote>
 &lt;p>Dubbo 还提供了包括&lt;a href="../../reference-manual/config/xml">XML&lt;/a>、&lt;a href="../../reference-manual/config/api">API&lt;/a>等多种启动与接入方式，更多开发方式和配置细节可参见&lt;a href="../../reference-manual/config/">配置手册&lt;/a>。&lt;/p>
