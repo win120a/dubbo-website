@@ -198,7 +198,7 @@
 &lt;/ul>
 &lt;h2 id="流量治理">流量治理&lt;/h2>
 &lt;p>Dubbo2 开始 Dubbo 就提供了丰富服务治理规则，包括路由规则、动态配置等。&lt;/p>
-&lt;p>一方面 Dubbo3 正在通过对接 xDS 对接到时下流行的 Mesh 产品如 Istio 中所使用的以 VirtualService、DestinationRule 为代表的治理规则，另一方面 Dubbo 正寻求设计一套自有规则以实现在不通部署场景下的流量治理，以及灵活的治理能力。&lt;/p>
+&lt;p>一方面 Dubbo3 正在通过对接 xDS 对接到时下流行的 Mesh 产品如 Istio 中所使用的以 VirtualService、DestinationRule 为代表的治理规则，另一方面 Dubbo 正寻求设计一套自有规则以实现在不同部署场景下的流量治理，以及灵活的治理能力。&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="../../tasks/traffic-management">Dubbo2 服务治理规则&lt;/a>&lt;/li>
 &lt;li>Dubbo3 服务治理规则&lt;/li>
@@ -397,7 +397,7 @@ Dubbo 定义了一些中心化组件，这包括：&lt;/p>
 &lt;/ul>
 &lt;h3 id="网关组件">网关组件&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://dubbo.apache.org/zh/blog/2022/05/04/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87-apache-shenyu-%E7%BD%91%E5%85%B3%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1/">Apache Shenyu(Incubating)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dubbo.apache.org/zh/blog/2022/05/04/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87-apache-shenyu-%E7%BD%91%E5%85%B3%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1/">Apache Shenyu&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://dubbo.apache.org/zh/blog/2022/01/18/%E4%BB%8E%E5%8E%9F%E7%90%86%E5%88%B0%E6%93%8D%E4%BD%9C%E8%AE%A9%E4%BD%A0%E5%9C%A8-apache-apisix-%E4%B8%AD%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1%E6%9B%B4%E4%BE%BF%E6%8D%B7/">Apache APISIX&lt;/a>&lt;/li>
 &lt;li>[Apache Dubbo-pixiu]&lt;/li>
 &lt;li>[Tengine]&lt;/li>
