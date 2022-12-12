@@ -864,7 +864,7 @@ Dubbo这边有没有集合文档展示和测试功能,能不用写文档就能�
 &lt;p>所以，客户端异步的出发点是节省线程资源开销，代价是需要了解下异步的使用方式:)。在同步方式下API接口的返回类型是代表着某个业务类，而当异步情况下，响应返回与请求发出是完全独立的两个事件，需要API接口的返回类型变为上述中说的CompletionStage才是最贴合的，这是Dubbo在异步上支持的必然异步。回到最近的Dubbo发布版，是不改变接口的情况下，需要在服务创建时注册一个回调接口来处理响应返回事件。&lt;/p>
 &lt;p>下面以示例来说。&lt;/p>
 &lt;h3 id="示例">示例&lt;/h3>
-&lt;p>事件通知的示例代码请参考：&lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-notify">https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-notify&lt;/a>&lt;/p>
+&lt;p>事件通知的示例代码请参考：&lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/2-advanced/dubbo-samples-notify">https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-notify&lt;/a>&lt;/p>
 &lt;p>事件通知允许 Consumer 端在调用之前、调用正常返回之后或调用出现异常时，触发 &lt;code>oninvoke&lt;/code>、&lt;code>onreturn&lt;/code>、&lt;code>onthrow&lt;/code> 三个事件。&lt;/p>
 &lt;p>可以通过在配置 Consumer 时，指定事件需要通知的方法，如：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;bean&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoCallback&amp;#34;&lt;/span> class=&lt;span style="color:#2aa198">&amp;#34;com.alibaba.dubbo.samples.notify.impl.NotifyImpl&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
@@ -1660,10 +1660,10 @@ Dubbo这边有没有集合文档展示和测试功能,能不用写文档就能�
 &lt;hr>
 &lt;ol>
 &lt;li id="fn:1">
-&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-stub">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-stub&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-stub">https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-stub&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:2">
-&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mock">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mock&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-mock">https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-mock&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:3">
 &lt;p>/zh/docsv2.7/user/examples/local-mock/&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
@@ -4602,7 +4602,7 @@ random的定义在配置文件&lt;code>META-INF/dubbo/internal/com.alibaba.dubbo
 &lt;p>以上所有的增强，是在兼容已有异步编程的基础上进行的，因此基于2.6.x版本编写的异步程序不用做任何改造即可顺利编译通过。&lt;/p>
 &lt;p>接下来，我们通过几个示例看一下如何实现一个全异步的Dubbo服务调用链。&lt;/p>
 &lt;h2 id="示例1completablefuture类型接口">示例1：CompletableFuture类型接口&lt;/h2>
-&lt;p>CompletableFuture类型的接口既可以用作同步调用，也可以实现Consumer或Provider的异步调用。本示例实现了Consumer和Provider端异步调用，代码参见&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-async/dubbo-samples-async-original-future">dubbo-samples-async-original-future&lt;/a>。&lt;/p>
+&lt;p>CompletableFuture类型的接口既可以用作同步调用，也可以实现Consumer或Provider的异步调用。本示例实现了Consumer和Provider端异步调用，代码参见&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-async/dubbo-samples-async-original-future">dubbo-samples-async-original-future&lt;/a>。&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>定义接口&lt;/p>
@@ -4668,7 +4668,7 @@ random的定义在配置文件&lt;code>META-INF/dubbo/internal/com.alibaba.dubbo
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="示例2重载同步接口">示例2：重载同步接口&lt;/h2>
-&lt;p>这个示例演示了如何在同步接口的基础上，通过增加重载方法实现消费端的异步调用，具体代码参见地址&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-async/dubbo-samples-async-generated-future">dubbo-samples-async-generated-future&lt;/a>&lt;/p>
+&lt;p>这个示例演示了如何在同步接口的基础上，通过增加重载方法实现消费端的异步调用，具体代码参见地址&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-async/dubbo-samples-async-generated-future">dubbo-samples-async-generated-future&lt;/a>&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>定义接口&lt;/p>
@@ -4725,7 +4725,7 @@ random的定义在配置文件&lt;code>META-INF/dubbo/internal/com.alibaba.dubbo
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="示例3使用asynccontext">示例3：使用AsyncContext&lt;/h2>
-&lt;p>本示例演示了如何在同步接口的基础上，通过AsyncContext实现Provider端异步执行，示例代码参见&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-async/dubbo-samples-async-provider">dubbo-samples-async-provider&lt;/a>。&lt;/p>
+&lt;p>本示例演示了如何在同步接口的基础上，通过AsyncContext实现Provider端异步执行，示例代码参见&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-async/dubbo-samples-async-provider">dubbo-samples-async-provider&lt;/a>。&lt;/p>
 &lt;blockquote>
 &lt;p>之前已经提到过，已经是CompletableFuture签名的接口，要实现Provider端异步没必要再用AsyncContext。&lt;/p>
 &lt;/blockquote>
