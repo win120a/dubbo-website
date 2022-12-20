@@ -29,7 +29,7 @@
 &lt;p>Dubbo Proxyless 模式是指 Dubbo 直接与 Istiod通信，通过 xDS协议实现服务发现和服务治理等能力。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/20220905/2.png" alt="Proxyless">&lt;/p>
 &lt;p>Proxyless 模式使得微服务又回到了 2.x 时代的部署架构，同 Dubbo 经典服务治理模式非常相似，所以说这个模式并不新鲜， Dubbo 从最开始就是这样的设计模式。
-这样做可以极大的提升应用性能，降低网络延迟。有人说这种做法又回答了原始的基于 SDK 的微服务模式，其实非也，它依然使用了 Envoy 的 xDS API，
+这样做可以极大的提升应用性能，降低网络延迟。有人说这种做法又回到了原始的基于 SDK 的微服务模式，其实非也，它依然使用了 Envoy 的 xDS API，
 但是因为不再需要向应用程序中注入 Sidecar 代理，因此可以减少应用程序性能的损耗。&lt;/p>
 &lt;p>但相比于 Mesh 架构，Dubbo 经典服务治理模式并没有强调控制面的统一管控，而这点恰好是 Service Mesh 所强调的，强调对流量、可观测性、证书等的标准化管控与治理，也是 Mesh 理念先进的地方。&lt;/p>
 &lt;p>在 Dubbo Proxyless 架构模式下，Dubbo 进程将直接与控制面通信，Dubbo 进程之间也继续保持直连通信模式，我们可以看出 Proxyless 架构的优势：&lt;/p>
@@ -7644,7 +7644,7 @@ DubboComponentScanRegistrar-85]-[main]-[INFO] 0 annotated @Service Components { 
 &lt;li>打印返回结果 &lt;em>hi, dubbo&lt;/em>。&lt;/li>
 &lt;/ol>
 &lt;h3 id="运行">运行&lt;/h3>
-&lt;p>完整的示例在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-api">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-api&lt;/a> 上提供。在完整的示例中，由于配置了 &lt;em>exec-maven-plugin&lt;/em>，可以很方便的在命令行下通过 maven 的方式执行。当然，您也可以在 IDE 里直接执行，但是需要注意的是，由于使用了组播的方式来发现服务，运行时需要指定 &lt;em>-Djava.net.preferIPv4Stack=true&lt;/em>。&lt;/p>
+&lt;p>完整的示例在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-api">https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-api&lt;/a> 上提供。在完整的示例中，由于配置了 &lt;em>exec-maven-plugin&lt;/em>，可以很方便的在命令行下通过 maven 的方式执行。当然，您也可以在 IDE 里直接执行，但是需要注意的是，由于使用了组播的方式来发现服务，运行时需要指定 &lt;em>-Djava.net.preferIPv4Stack=true&lt;/em>。&lt;/p>
 &lt;h4 id="构建示例">构建示例&lt;/h4>
 &lt;p>通过以下的命令来同步示例代码并完成构建：&lt;/p>
 &lt;ol>
@@ -7999,7 +7999,7 @@ DubboComponentScanRegistrar-85]-[main]-[INFO] 0 annotated @Service Components { 
 &lt;/ol>
 &lt;p>另外，需要注意的是，application、module、consumer、protocol、monitor、registry（从 7 到 12）需要提供的是对应的 spring bean 的名字，而这些 bean 的组装要么通过传统的 XML 配置方式完成，要么通过现代的 Java Config 来完成。在本文中，将会展示 Java Config 的使用方式。&lt;/p>
 &lt;h2 id="示例实战">示例实战&lt;/h2>
-&lt;p>了解了 &lt;code>@EnableDubbo&lt;/code>， &lt;code>@Service&lt;/code>，&lt;code>@Reference&lt;/code> 的作用，下面以一个实际的例子来展示如何使用 annotation 来开发 Dubbo 应用。以下的代码可以在 &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-annotation">https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-annotation&lt;/a> 中找到。&lt;/p>
+&lt;p>了解了 &lt;code>@EnableDubbo&lt;/code>， &lt;code>@Service&lt;/code>，&lt;code>@Reference&lt;/code> 的作用，下面以一个实际的例子来展示如何使用 annotation 来开发 Dubbo 应用。以下的代码可以在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-annotation">https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-annotation&lt;/a> 中找到。&lt;/p>
 &lt;h3 id="1-接口定义">1. 接口定义&lt;/h3>
 &lt;p>定义一个简单的 &lt;code>GreetingService&lt;/code> 接口，里面只有一个简单的方法 &lt;code>sayHello&lt;/code> 向调用者问好。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">GreetingService&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -9486,17 +9486,17 @@ Spring 配置：&lt;/p>
 &lt;h3 id="链接之间增加空格">链接之间增加空格&lt;/h3>
 &lt;p>用法：&lt;/p>
 &lt;blockquote>
-&lt;p>请 &lt;a href="https://www.cnkirito.moe/chinese-copywriting-guidelines/#">提交一个 issue&lt;/a> 并分配给相关同事。&lt;/p>
+&lt;p>请 &lt;a href="https://github.com/mzlogin/chinese-copywriting-guidelines">提交一个 issue&lt;/a> 并分配给相关同事。&lt;/p>
 &lt;/blockquote>
 &lt;blockquote>
-&lt;p>访问我们网站的最新动态，请 &lt;a href="https://www.cnkirito.moe/chinese-copywriting-guidelines/#">点击这里&lt;/a> 进行订阅！&lt;/p>
+&lt;p>访问我们网站的最新动态，请 &lt;a href="https://github.com/mzlogin/chinese-copywriting-guidelines">点击这里&lt;/a> 进行订阅！&lt;/p>
 &lt;/blockquote>
 &lt;p>对比用法：&lt;/p>
 &lt;blockquote>
-&lt;p>请&lt;a href="https://www.cnkirito.moe/chinese-copywriting-guidelines/#">提交一个 issue&lt;/a> 并分配给相关同事。&lt;/p>
+&lt;p>请&lt;a href="https://github.com/mzlogin/chinese-copywriting-guidelines">提交一个 issue&lt;/a> 并分配给相关同事。&lt;/p>
 &lt;/blockquote>
 &lt;blockquote>
-&lt;p>访问我们网站的最新动态，请&lt;a href="https://www.cnkirito.moe/chinese-copywriting-guidelines/#">点击这里&lt;/a>进行订阅！&lt;/p>
+&lt;p>访问我们网站的最新动态，请&lt;a href="https://github.com/mzlogin/chinese-copywriting-guidelines">点击这里&lt;/a>进行订阅！&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="简体中文使用直角引号">简体中文使用直角引号&lt;/h3>
 &lt;p>用法：&lt;/p>
