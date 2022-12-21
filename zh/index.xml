@@ -1,252 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Apache Dubbo</title><link>https://dubbo.apache.org/zh/</link><description>Recent content on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Dubbo 3.1.3、3.2.0-beta.2 正式发布</title><link>https://dubbo.apache.org/zh/blog/2022/11/29/dubbo-3.1.33.2.0-beta.2-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83/</link><pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2022/11/29/dubbo-3.1.33.2.0-beta.2-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83/</guid><description>
-&lt;h2 id="dubbo-313">Dubbo 3.1.3&lt;/h2>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/release/3-1-3.png" alt="image.png">&lt;/p>
-&lt;h3 id="修改内容">修改内容&lt;/h3>
-&lt;ul>
-&lt;li>修复本地调用的过程中 Filter 顺序异常的问题&lt;/li>
-&lt;li>支持导入协议配置项到 MetadataService&lt;/li>
-&lt;li>支持在发布 MetadataService 时自动选择可用端口&lt;/li>
-&lt;li>完善错误码内容&lt;/li>
-&lt;li>泛化调用下支持一致性哈希负载均衡&lt;/li>
-&lt;li>修复泛化调用时反序列化异常的问题&lt;/li>
-&lt;li>修复由于 JVM Methods 顺序不一致导致的应用级元数据无法复用的问题&lt;/li>
-&lt;li>默认关闭端口复用能力，修复 remoting 组建找不到 SPI 的问题&lt;/li>
-&lt;li>修复由于引用计数异常导致的 safe gard 问题&lt;/li>
-&lt;li>删除 Nacos 注册中心组建中使用的 guava 依赖&lt;/li>
-&lt;li>修复接口级使用 Nacos 注册中心时由于地址聚合导致的无法下线的问题&lt;/li>
-&lt;li>多个代码质量优化提交&lt;/li>
-&lt;/ul>
-&lt;h3 id="新贡献者">新贡献者&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/zhangzq7">@zhangzq7&lt;/a> 在 &lt;a href="https://github.com/apache/dubbo/pull/10847">#10847&lt;/a> 中提交了第一个贡献&lt;/li>
-&lt;li>&lt;a href="https://github.com/akaakking">@akaakking&lt;/a> 在 &lt;a href="https://github.com/apache/dubbo/pull/10799">#10799&lt;/a> 中提交了第一个贡献&lt;/li>
-&lt;li>&lt;a href="https://github.com/wxbty">@wxbty&lt;/a> 在 &lt;a href="https://github.com/apache/dubbo/pull/10921">#10921&lt;/a> 中提交了第一个贡献&lt;/li>
-&lt;li>&lt;a href="https://github.com/haoxz11">@haoxz11&lt;/a> 在 &lt;a href="https://github.com/apache/dubbo/pull/10937">#10937&lt;/a> 中提交了第一个贡献&lt;/li>
-&lt;/ul>
-&lt;h2 id="dubbo-320-beta2">Dubbo 3.2.0-beta.2&lt;/h2>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/release/3-2-0-beta-2.png" alt="image.png">&lt;/p>
-&lt;h3 id="修改内容-1">修改内容&lt;/h3>
-&lt;ul>
-&lt;li>切换到在用户线程序列化，提升协议性能&lt;/li>
-&lt;li>支持 Netty3 的端口复用&lt;/li>
-&lt;li>修复存在多个用户配置的 providedBy 时不生效的问题&lt;/li>
-&lt;li>支持 istio 的 first-party-jwt 能力&lt;/li>
-&lt;li>删除 fastjson 和 gson 的传递依赖&lt;/li>
-&lt;li>支持可选 appResponse 不透传的能力&lt;/li>
-&lt;li>切换到 Fastjson2 为默认序列化依赖&lt;/li>
-&lt;li>完善注册中心推送的日志&lt;/li>
-&lt;li>修复路由刷新时机早于服务目录刷新时机的问题&lt;/li>
-&lt;li>关闭地址推空保护&lt;/li>
-&lt;li>更新支持 GraalVM Native 的 SPI 生成代码&lt;/li>
-&lt;li>支持使用 plain text 模式传输 xds 通道&lt;/li>
-&lt;li>支持 Nacos 批量注册，修复多注册覆盖的问题&lt;/li>
-&lt;li>支持 Spring Framework 6 and Spring Boot 3&lt;/li>
-&lt;li>多个代码质量优化提交&lt;/li>
-&lt;li>前述 Dubbo 3.1.3 的所有修改内容&lt;/li>
-&lt;/ul>
-&lt;h3 id="新贡献者-1">新贡献者&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/weixsun">@weixsun&lt;/a> 在 &lt;a href="https://github.com/apache/dubbo/pull/10941">#10941&lt;/a> 中提交了第一个贡献&lt;/li>
-&lt;/ul>
-&lt;h2 id="未来的版本规划">未来的版本规划&lt;/h2>
-&lt;p>3.0、3.1、3.2 有什么区别？未来会怎么发展？发版周期是怎么样的？更多的版本迭代规划也将在近期推出，欢迎关注 Apache Dubbo 官方公众号获取最新的信息。&lt;/p></description></item><item><title>Blog: Apache Dubbo 多语言体系再添新员：首个 Rust 语言版本正式发布</title><link>https://dubbo.apache.org/zh/blog/2022/10/23/apache-dubbo-%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%93%E7%B3%BB%E5%86%8D%E6%B7%BB%E6%96%B0%E5%91%98%E9%A6%96%E4%B8%AA-rust-%E8%AF%AD%E8%A8%80%E7%89%88%E6%9C%AC%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2022/10/23/apache-dubbo-%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%93%E7%B3%BB%E5%86%8D%E6%B7%BB%E6%96%B0%E5%91%98%E9%A6%96%E4%B8%AA-rust-%E8%AF%AD%E8%A8%80%E7%89%88%E6%9C%AC%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83/</guid><description>
-&lt;p>Dubbo Rust 定位为 Dubbo 多语言体系的重要实现，提供高性能、易用、可扩展的 RPC 框架，同时通过接入 Dubbo Mesh 体系提供丰富的服务治理能力。本文主要为大家介绍 Dubbo Rust 项目基本情况，通过一个示例快速体验 Rust 首个正式版本特性，并给出了 Dubbo Rust 社区的近期规划，适合于关注或正在采用 Rust 语言的开发者与企业用户阅读。&lt;/p>
-&lt;h2 id="1-dubbo-rust-简介">1 Dubbo Rust 简介&lt;/h2>
-&lt;p>Dubbo 作为 Apache 基金会最活跃的明星项目之一，同时也是国内最受欢迎的开源微服务框架，在易用性、高性能通信、服务治理等方面有着非常大的优势，通过 Dubbo3、Dubbo Mesh 等提供了云原生友好的开发与部署模式。与此同时，Dubbo 的多语言体系也得到了快速发展，长期以来提供的有 Java、Golang 两种语言实现，Rust、Node、Python、C++ 等语言实现的支持也已在社区正式启动。&lt;/p>
-&lt;ul>
-&lt;li>Dubbo 官网 &lt;a href="https://dubbo.apache.org/">https://dubbo.apache.org/&lt;/a>&lt;/li>
-&lt;li>Dubbo Java &lt;a href="https://github.com/apache/dubbo/">https://github.com/apache/dubbo/&lt;/a>&lt;/li>
-&lt;li>Dubbo Golang &lt;a href="https://github.com/apache/dubbo-go/">https://github.com/apache/dubbo-go/&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Dubbo Rust &lt;a href="https://github.com/apache/dubbo-rust/">https://github.com/apache/dubbo-rust/&lt;/a>&lt;/strong>&lt;/li>
-&lt;/ul>
-&lt;p>Dubbo Rust 目标是对齐 Dubbo3 的所有核心功能设计，包括基于 HTTP/2 的高性能通信、用户友好的微服务开发编程模式、通过接入DubboMesh提供丰富的服务治理能力等，相比于其他语言实现，Dubbo Rust 将很好的利用 Rust 语言极致性能、安全和指令级掌控能力的特点。
-对于微服务框架，主流的编程语言都有对应的实现，而 Dubbo Rust 将很好的填补 Rust 领域的空白：&lt;/p>
-&lt;ul>
-&lt;li>Golang：在微服务框架领域已经占据着很重要的地位；开源社区出现了dubbo-go、gRPC、go-micro、go-zero等多个微服务框架&lt;/li>
-&lt;li>Java：国内用户量最大的编程语言，Spring Cloud、Dubbo等优秀的微服务框架已经非常流行&lt;/li>
-&lt;li>C/C++：brpc、grpc 等微服务框架&lt;/li>
-&lt;li>Rust：目前没有很完善的微服务框架&lt;/li>
-&lt;/ul>
-&lt;p>依托 Dubbo 庞大的用户群，以及 Dubbo 体系下的 Mesh 服务治理整体方案规划。Dubbo Rust 可以轻松地融入到现有的云原生研发体系中，不会增加使用者的研发负担。下图是社区推出的 Dubbo Mesh 架构设计。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/rust/dubbo-rust-mesh.png" alt="dubbo-rust">&lt;/p>
-&lt;p>在上述架构下，整体分为控制面和数据面两个部分，其中，&lt;/p>
-&lt;ul>
-&lt;li>控制面负责管理流量治理、地址发现、安全认证、可观测性等服务治理相关的配置信管控工作，包括与K8S等底层技术设施的对接；&lt;/li>
-&lt;li>Dubbo Rust 作为数据面组件，负责接收来自控制面的配置；将配置应用到服务中；同时为服务提供基础的RPC通信能力。&lt;/li>
-&lt;/ul>
-&lt;p>在架构设计方面，Dubbo Rust 将围绕 Dubbo 核心设计以及 Rust 语言的特性进行设计，并将 Dubbo 框架的核心设计输出为文档，从而提升Dubbo框架的易用性。因此，Dubbo Rust 具有如下特点：易用性、高性能以及可扩展，同时面向云原生提供丰富的服务治理能力。&lt;/p>
-&lt;h2 id="2-快速体验-dubbo-rust">2 快速体验 Dubbo Rust&lt;/h2>
-&lt;h3 id="21-首个版本核心能力">2.1 首个版本核心能力&lt;/h3>
-&lt;p>&lt;strong>Dubbo Rust 首个正式版本为 v0.2.0&lt;/strong>，v0.2.0 提供的能力包括&lt;/p>
-&lt;ul>
-&lt;li>基于 HTTP/2 的 Triple 协议的基础通信能力&lt;/li>
-&lt;li>基于 IDL 的 RPC 定义支持，Protobuf 来生成代码，同时支持 Serde 序列化&lt;/li>
-&lt;li>request-response、request/response streaming、bi-streaming 通信模型支持&lt;/li>
-&lt;li>设计了简洁的、可扩展的架构，支持对 Listener、Connector、Filter、Protocol以及Invoker组件进行扩展&lt;/li>
-&lt;/ul>
-&lt;p>Dubbo Rust v0.2.0 的核心组件及通信流程如下图所示&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/rust/dubbo-rust-module.png" alt="dubbo-rust">&lt;/p>
-&lt;p>核心架构已经基本完成，接下来的版本将重点关注核心组件的扩展以及服务治理相关组件的设计实现。&lt;/p>
-&lt;h3 id="22-quick-start">2.2 Quick Start&lt;/h3>
-&lt;blockquote>
-&lt;p>完整示例可查看 【Dubbo官网】 -&amp;gt; 【Rust SDK 文档】。
-&lt;a href="https://dubbo.apache.org/zh/docs3-v2/rust-sdk/quick-start/">https://dubbo.apache.org/zh/docs3-v2/rust-sdk/quick-start/&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;p>使用 Dubbo Rust 服务开发的基本步骤为&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>使用 IDL 定义服务&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>添加 Dubbo Rust 依赖到项目&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>编译 IDL&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>基于 IDL 编译生成的 stub 编写 Server &amp;amp; Client 逻辑&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>运行项目&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>使用 IDL 定义 Dubb 服务&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-protobuf" data-lang="protobuf">&lt;span style="display:flex;">&lt;span>```protobuf
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// ./proto/greeter.proto
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>syntax &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;proto3&amp;#34;&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">option&lt;/span> java_multiple_files &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#cb4b16">true&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">package&lt;/span> org&lt;span style="color:#719e07">.&lt;/span>apache.dubbo.sample.tri;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// The request message containing the user&amp;#39;s name.
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#268bd2">message&lt;/span> &lt;span style="color:#268bd2">GreeterRequest&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#dc322f">string&lt;/span> name &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">1&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// The response message containing the greetings
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#268bd2">message&lt;/span> &lt;span style="color:#268bd2">GreeterReply&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#dc322f">string&lt;/span> &lt;span style="color:#268bd2">message&lt;/span> &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">1&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">service&lt;/span> Greeter{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// unary
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#719e07">rpc&lt;/span> greet(GreeterRequest) &lt;span style="color:#719e07">returns&lt;/span> (GreeterReply);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>�
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2. 增加 Dubbo Rust 依赖
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```toml
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```toml
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># ./Cargo.toml
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[package]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>name = &amp;#34;example-greeter&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>version = &amp;#34;0.1.0&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>edition = &amp;#34;2021&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[dependencies]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo = &amp;#34;0.1.0&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo-config = &amp;#34;0.1.0&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[build-dependencies]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo-build = &amp;#34;0.1.0&amp;#34;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>�3. 编译 IDL 并根据生成的 stub 编写逻辑
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>编写 Dubbo Server
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```rust
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>#[tokio::main]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>async fn main() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> register_server(GreeterServerImpl {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: &amp;#34;greeter&amp;#34;.to_string(),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> // Dubbo::new().start().await;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Dubbo::new()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .with_config({
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> let r = RootConfig::new();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> match r.load() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ok(config) =&amp;gt; config,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Err(_err) =&amp;gt; panic!(&amp;#34;err: {:?}&amp;#34;, _err), // response was droped
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .start()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .await;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>struct GreeterServerImpl {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: String,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>impl Greeter for GreeterServerImpl {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> async fn greet(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;amp;self,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> request: Request&amp;lt;GreeterRequest&amp;gt;,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ) -&amp;gt; Result&amp;lt;Response&amp;lt;GreeterReply&amp;gt;, dubbo::status::Status&amp;gt; {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println!(&amp;#34;GreeterServer::greet {:?}&amp;#34;, request.metadata);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ok(Response::new(GreeterReply {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message: &amp;#34;hello, dubbo-rust&amp;#34;.to_string(),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>�
-编写 Dubbo Client&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rust" data-lang="rust">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">#[tokio::main]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">async&lt;/span> &lt;span style="color:#719e07">fn&lt;/span> &lt;span style="color:#268bd2">main&lt;/span>() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> &lt;span style="color:#719e07">mut&lt;/span> cli &lt;span style="color:#719e07">=&lt;/span> GreeterClient::new().with_uri(&lt;span style="color:#2aa198">&amp;#34;http://127.0.0.1:8888&amp;#34;&lt;/span>.to_string());
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println!(&lt;span style="color:#2aa198">&amp;#34;# unary call&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> resp &lt;span style="color:#719e07">=&lt;/span> cli
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .greet(Request::new(GreeterRequest {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: &lt;span style="color:#2aa198">&amp;#34;message from client&amp;#34;&lt;/span>.to_string(),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#719e07">await&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> resp &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">match&lt;/span> resp {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b58900">Ok&lt;/span>(resp) &lt;span style="color:#719e07">=&amp;gt;&lt;/span> resp,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b58900">Err&lt;/span>(err) &lt;span style="color:#719e07">=&amp;gt;&lt;/span> &lt;span style="color:#719e07">return&lt;/span> println!(&lt;span style="color:#2aa198">&amp;#34;{:?}&amp;#34;&lt;/span>, err),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> (_parts, body) &lt;span style="color:#719e07">=&lt;/span> resp.into_parts();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println!(&lt;span style="color:#2aa198">&amp;#34;Response: {:?}&amp;#34;&lt;/span>, body);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样，一个简单的 Dubbo Rust 示例就开发完成了，可以到 Dubbo 官网查看完整文档。&lt;/p>
-&lt;h2 id="3-roadmap-与未来规划">3 Roadmap 与未来规划&lt;/h2>
-&lt;p>Dubbo Rust Roadmap 规划分为三个阶段：&lt;/p>
-&lt;ul>
-&lt;li>首先，提供作为 RPC 框架的基础能力，此阶段重点完成的包括基于 HTTP/2 的 RPC 通信、基于 IDL 的 RPC 定义、其他必要的 RPC 内核组件等&lt;/li>
-&lt;li>其实，是完善 Dubbo Rust 作为微服务框架的高级功能，此阶段包括微服务定义、配置、功能设计等，如服务超时、异步调用、上下文传递等，具体可参见 Dubbo Java 的高级特性。&lt;/li>
-&lt;li>第三阶段重点是引入丰富的服务治理能力支持，如流量治理、限流降级、可观测性等，这一目标将主要通过融入 Dubbo Mesh 体系，即适配 Dubbo Mesh 控制面实现。&lt;/li>
-&lt;/ul>
-&lt;p>其中，第一阶段的工作已经基本完成，大家可通过上文的 Quick Start 进行深入体验，第二、第三阶段的工作已经在社区全面开展，欢迎感兴趣的社区开发者参与进来，具体联系方式参见下文。&lt;/p>
-&lt;p>下图是侧重从第一阶段（RPC框架）、第二阶段（微服务开发框架）的视角对当前 Dubbo Rust 功能完备性的评估和任务拆解。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/rust/dubbo-rust-tasks.png" alt="dubbo-rust">&lt;/p>
-&lt;p>上图中都是 Dubbo Rust 核心设计的重要组件，保证 Dubbo Rust 具备微服务框架中完整的 RPC 通信能力以及服务治理能力。&lt;/p>
-&lt;ul>
-&lt;li>Protocol、Filter、Listener、Connector 等组件都是 RPC 通信核心能力&lt;/li>
-&lt;li>服务注册发现、负载均衡、Cluster、Metadata 为后续服务治理能力做铺垫&lt;/li>
-&lt;/ul>
-&lt;p>除了上图列出的模块以外，还有一些非功能需求也需要支持，例如：&lt;/p>
-&lt;ul>
-&lt;li>Dubbo 多语言框架之间相互通信测试&lt;/li>
-&lt;li>性能验证与持续的 benchmark 机制&lt;/li>
-&lt;li>整体架构的持续优化，如核心配置简化以及相应的文档完善&lt;/li>
-&lt;/ul>
-&lt;h2 id="4-参与-dubbo-rust-社区">4 参与 Dubbo Rust 社区&lt;/h2>
-&lt;p>和 Rust 语言一样，Dubbo Rust 是一个非常有活力、非常前沿的社区，另一方面，依赖 Apache Dubbo 社区背后庞大的开发者群体和企业用户，Dubbo Rust 有着非常深厚的用户基础和发展潜力。Dubbo Rust 的快速发展期待社区贡献者的加入
-参与 Dubbo Rust 社区可以收获&lt;/p>
-&lt;ul>
-&lt;li>见证 Dubbo Rust 开源项目的建设以及发展&lt;/li>
-&lt;li>在大型项目中通过实际使用学习 Rust 语言，加深对 Rust 语言的理解&lt;/li>
-&lt;li>获得提名为 Apache Dubbo CommitterPMC&lt;/li>
-&lt;li>借助 Dubbo 社区提高个人曝光度，提高个人技术影响力&lt;/li>
-&lt;li>与阿里巴巴等企业专家的面对面交流机会，快速提高技术视野&lt;/li>
-&lt;/ul>
-&lt;p>参与 Dubbo Rust 社区的方式有如下几种&lt;/p>
-&lt;ul>
-&lt;li>搜索并加入钉钉群并参与社区双周会，钉钉群号 &lt;strong>44694199&lt;/strong>&lt;/li>
-&lt;li>到 GitHub 提 Issue 或贡献代码 &lt;a href="https://github.com/apache/dubbo-rust">https://github.com/apache/dubbo-rust&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Blog: Proxyless Mesh在Dubbo中的实践</title><link>https://dubbo.apache.org/zh/blog/2022/09/05/proxyless-mesh%E5%9C%A8dubbo%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5/</link><pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2022/09/05/proxyless-mesh%E5%9C%A8dubbo%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Apache Dubbo</title><link>https://dubbo.apache.org/zh/</link><description>Recent content on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Proxyless Mesh在Dubbo中的实践</title><link>https://dubbo.apache.org/zh/blog/2022/09/05/proxyless-mesh%E5%9C%A8dubbo%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5/</link><pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2022/09/05/proxyless-mesh%E5%9C%A8dubbo%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5/</guid><description>
 &lt;h2 id="背景">背景&lt;/h2>
 &lt;p>随着 Dubbo 3.1 的 release，Dubbo 在云原生的路上又迈出了重要的一步。在这个版本中添加了 Proxyless Mesh 的新特性，Dubbo Proxyless Mesh 直接实现 xDS 协议解析，
 实现 Dubbo 与 Control Plane 的直接通信，进而实现控制面对流量管控、服务治理、可观测性、安全等的统一管控，规避 Sidecar 模式带来的性能损耗与部署架构复杂性。&lt;/p>
@@ -277,7 +29,7 @@
 &lt;p>Dubbo Proxyless 模式是指 Dubbo 直接与 Istiod通信，通过 xDS协议实现服务发现和服务治理等能力。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/20220905/2.png" alt="Proxyless">&lt;/p>
 &lt;p>Proxyless 模式使得微服务又回到了 2.x 时代的部署架构，同 Dubbo 经典服务治理模式非常相似，所以说这个模式并不新鲜， Dubbo 从最开始就是这样的设计模式。
-这样做可以极大的提升应用性能，降低网络延迟。有人说这种做法又回到了原始的基于 SDK 的微服务模式，其实非也，它依然使用了 Envoy 的 xDS API，
+这样做可以极大的提升应用性能，降低网络延迟。有人说这种做法又回答了原始的基于 SDK 的微服务模式，其实非也，它依然使用了 Envoy 的 xDS API，
 但是因为不再需要向应用程序中注入 Sidecar 代理，因此可以减少应用程序性能的损耗。&lt;/p>
 &lt;p>但相比于 Mesh 架构，Dubbo 经典服务治理模式并没有强调控制面的统一管控，而这点恰好是 Service Mesh 所强调的，强调对流量、可观测性、证书等的标准化管控与治理，也是 Mesh 理念先进的地方。&lt;/p>
 &lt;p>在 Dubbo Proxyless 架构模式下，Dubbo 进程将直接与控制面通信，Dubbo 进程之间也继续保持直连通信模式，我们可以看出 Proxyless 架构的优势：&lt;/p>
@@ -8618,11 +8370,11 @@ SPI提供程序可以调用ExtensionLoader。getActivateExtension(URL、String�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">.&lt;/span>getAdaptiveExtension&lt;span style="color:#719e07">());&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>原文： &lt;a href="https://blog.elastic.link/2022/07/10/dubbo/4-dubbo-de-spi-kuo-zhan-ji-zhi-yu-extensionloader-dui-xiang-de-chuang-jian-yuan-ma-jie-xi/">&amp;laquo;Dubbo的扩展机制&amp;raquo;&lt;/a>&lt;/p></description></item><item><title>Blog: 03-框架,应用程序,模块领域模型Model对象的初始化</title><link>https://dubbo.apache.org/zh/blog/2022/08/03/03-%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A8%A1%E5%9D%97%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8Bmodel%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96/</link><pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2022/08/03/03-%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A8%A1%E5%9D%97%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8Bmodel%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96/</guid><description>
 &lt;h1 id="3-框架应用程序模块领域模型model对象的初始化">3-框架,应用程序,模块领域模型Model对象的初始化&lt;/h1>
-&lt;p>在上一章中我们详细看了服务配置ServiceConfig类型的初始化，不过我们跳过了AbstractMethodConfig的构造器中创建模块模型对象的过程，那这一章我们就来看下模块模型对象的初始化过程:&lt;/p>
+&lt;p>在上一章中我们详细看了服务配置ServiceConfig类型的初始化,不过我们跳过了AbstractMethodConfig的构造器中创建模块模型对象的过程,那这一章我们就来看下模块模型对象的初始化过程:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">AbstractMethodConfig&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">super&lt;/span>&lt;span style="color:#719e07">(&lt;/span>ApplicationModel&lt;span style="color:#719e07">.&lt;/span>defaultModel&lt;span style="color:#719e07">().&lt;/span>getDefaultModule&lt;span style="color:#719e07">());&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>那为什么会在Dubbo3的新版本中加入这个域模型呢&lt;/strong>，主要有如下原因
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>那为什么会在Dubbo3的新版本中加入这个域模型呢&lt;/strong>,主要有如下原因
 之前dubbo都是只有一个作用域的，通过静态类 属性共享
 增加域模型是为了:&lt;/p>
 &lt;ol>
@@ -8630,13 +8382,13 @@ SPI提供程序可以调用ExtensionLoader。getActivateExtension(URL、String�
 &lt;li>从架构设计上，解决静态属性资源共享、清理的问题&lt;/li>
 &lt;li>分层模型将应用的管理和服务的管理分开&lt;/li>
 &lt;/ol>
-&lt;p>可能比较抽象，可以具体点来看。Dubbo3中在启动时候需要启动配置中心、元数据中心，这个配置中心和元数据中心可以归应用模型来管理。Dubbo作为RPC框架又需要启动服务和引用服务，服务级别的管理就交给了这个模块模型来管理。分层次的管理方便我们理解和处理逻辑，父子级别的模型又方便了数据传递。&lt;/p>
-&lt;p>了解过JVM类加载机制的同学应该就比较清楚JVM类加载过程中的数据访问模型。子类加载器先交给父类加载器查找，找不到再从子类加载器中查找。Dubbo的分层模型类似这样一种机制，这一章先来简单了解下，后面用到时候具体细说。&lt;/p>
+&lt;p>可能比较抽象，可以具体点来看Dubbo3中在启动时候需要启动配置中心，元数据中心这个配置中心和元数据中心可以归应用模型来管理，Dubbo作为RPC框架有需要启动服务和引用服务，服务级别的管理就交给了这个模块模型来管理，分层次的管理方便我们理解和处理逻辑，父子级别的模型又方便了数据传递。&lt;/p>
+&lt;p>了解过JVM类加载机制的同学应该就比较清楚 JVM类加载过程中的数据访问模型,子类加载器先去父类加载器去找不到则从子类型加载器中查找类型,Dubbo的分层模型类似这样一种机制,这一章先来简单了解下后面用到时候具体细说。&lt;/p>
 &lt;h2 id="31-模型对象的关系">3.1 模型对象的关系&lt;/h2>
-&lt;p>为了不增加复杂性，我们这里仅仅列出模型对象类型类型之间的继承关系如下所示:
+&lt;p>为了不增加复杂性,我们这里仅仅列出模型对象类型类型之间的继承关系如下所示:
 &lt;img src="https://dubbo.apache.org/imgs/blog/source-blog/3-model.png" alt="在这里插入图片描述">&lt;/p>
 &lt;center>图3.1 模型对象的继承关系&lt;/center>
-&lt;p>模型对象一共有4个，公共的属性和操作放在了域模型类型中，下面我们来详细说下这几个模型类型:&lt;/p>
+&lt;p>模型对象一共有4个,公共的属性和操作放在了域模型类型中,下面我们来详细说下这几个模型类型:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;strong>ExtensionAccessor&lt;/strong> 扩展的统一访问器&lt;/p>
@@ -8656,17 +8408,17 @@ SPI提供程序可以调用ExtensionLoader。getActivateExtension(URL、String�
 &lt;li>描述信息&lt;/li>
 &lt;li>类加载器管理&lt;/li>
 &lt;li>父模型管理parent&lt;/li>
-&lt;li>当前模型的所属域ExtensionScope有:&lt;strong>FRAMEWORK(框架)&lt;/strong>，&lt;strong>APPLICATION(应用)&lt;/strong>，&lt;strong>MODULE(模块)&lt;/strong>，&lt;strong>SELF(自给自足&lt;/strong>，为每个作用域创建一个实例，用于特殊的SPI扩展，如ExtensionInjector)&lt;/li>
+&lt;li>当前模型的所属域ExtensionScope有:&lt;strong>FRAMEWORK(框架)&lt;/strong>,&lt;strong>APPLICATION(应用)&lt;/strong>,&lt;strong>MODULE(模块)&lt;/strong>,&lt;strong>SELF(自给自足&lt;/strong>，为每个作用域创建一个实例，用于特殊的SPI扩展，如ExtensionInjector)&lt;/li>
 &lt;li>具体的扩展加载程序管理器对象的管理:&lt;strong>ExtensionDirector&lt;/strong>&lt;/li>
-&lt;li>域Bean工厂管理，一个内部共享的Bean工厂&lt;strong>ScopeBeanFactory&lt;/strong>&lt;/li>
+&lt;li>域Bean工厂管理,一个内部共享的Bean工厂&lt;strong>ScopeBeanFactory&lt;/strong>&lt;/li>
 &lt;li>等等&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>FrameworkModel&lt;/strong> dubbo框架模型，可与多个应用程序共享&lt;/p>
 &lt;ul>
-&lt;li>FrameworkModel实例对象集合，allInstances&lt;/li>
-&lt;li>所有ApplicationModel实例对象集合，applicationModels&lt;/li>
+&lt;li>FrameworkModel实例对象集合,allInstances&lt;/li>
+&lt;li>所有ApplicationModel实例对象集合,applicationModels&lt;/li>
 &lt;li>发布的ApplicationModel实例对象集合pubApplicationModels&lt;/li>
 &lt;li>框架的服务存储库&lt;strong>FrameworkServiceRepository&lt;/strong>类型对象(数据存储在内存中)&lt;/li>
 &lt;li>内部的应用程序模型对象internalApplicationModel&lt;/li>
@@ -8699,7 +8451,7 @@ ApplicationModel包括许多关于&lt;strong>发布服务&lt;/strong>的Provider
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>了解了这几个模型对象的关系我们可以了解到这几个模型对象的管理层级从框架到应用程序，然后到模块的管理(FrameworkModel-&amp;gt;ApplicationModel-&amp;gt;ModuleModel)，他们主要用来针对框架，应用程序，模块的&lt;strong>存储&lt;/strong>，&lt;strong>发布管理，&lt;/strong>，&lt;strong>配置管理&lt;/strong>&lt;/p>
+&lt;p>了解了这几个模型对象的关系我们可以了解到这几个模型对象的管理层级从框架到应用程序,然后到模块的管理(FrameworkModel-&amp;gt;ApplicationModel-&amp;gt;ModuleModel),他们主要用来针对框架,应用程序,模块的&lt;strong>存储&lt;/strong>,&lt;strong>发布管理,&lt;/strong>,&lt;strong>配置管理&lt;/strong>&lt;/p>
 &lt;p>看来Dubbo3 针对应用服务治理与运维这一块也是在努力尝试.&lt;/p>
 &lt;h3 id="311-abstractmethodconfig-配置对象中获取模型对象的调用">3.1.1 AbstractMethodConfig 配置对象中获取模型对象的调用&lt;/h3>
 &lt;p>模块模型(ModuleModel)参数对象的创建
@@ -8738,7 +8490,7 @@ ApplicationModel包括许多关于&lt;strong>发布服务&lt;/strong>的Provider
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="313-刷新重置默认框架模型对象">3.1.3 刷新重置默认框架模型对象&lt;/h3>
 &lt;p>FrameworkModel中的重置默认框架模型resetDefaultFrameworkModel&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">private&lt;/span> &lt;span style="color:#268bd2">static&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">resetDefaultFrameworkModel&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//全局悲观锁，同一个时刻只能有一个线程执行重置操作
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//全局悲观锁,同一个时刻只能有一个线程执行重置操作
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">synchronized&lt;/span> &lt;span style="color:#719e07">(&lt;/span>globalLock&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//defaultInstance为当前成员变量FrameworkModel类型代表当前默认的FrameworkModel类型的实例对象
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>defaultInstance &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span> &lt;span style="color:#719e07">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#719e07">!&lt;/span>defaultInstance&lt;span style="color:#719e07">.&lt;/span>isDestroyed&lt;span style="color:#719e07">())&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -8759,22 +8511,22 @@ ApplicationModel包括许多关于&lt;strong>发布服务&lt;/strong>的Provider
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上面单例做了很多的初始化操作，这里开始调用构造器来创建框架模型对象，如下代码:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上面单例做了很多的初始化操作,这里开始调用构造器来创建框架模型对象,如下代码:&lt;/p>
 &lt;h2 id="32--创建frameworkmodel对象">3.2 创建FrameworkModel对象&lt;/h2>
 &lt;p>FrameworkModel()构造器&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">FrameworkModel&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//调用父类型ScopeModel传递参数，这个构造器的第一个参数为空代表这是一个顶层的域模型，第二个代表了这个是框架FRAMEWORK域，第三个false不是内部域
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//调用父类型ScopeModel传递参数,这个构造器的第一个参数为空代表这是一个顶层的域模型,第二个代表了这个是框架FRAMEWORK域,第三个false不是内部域
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">super&lt;/span>&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#cb4b16">null&lt;/span>&lt;span style="color:#719e07">,&lt;/span> ExtensionScope&lt;span style="color:#719e07">.&lt;/span>FRAMEWORK&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#cb4b16">false&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//内部id用于表示模型树的层次结构，如层次结构:
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//FrameworkModel（索引=1）-&amp;gt;ApplicationModel（索引=2）-&amp;gt;ModuleModel（索引=1，第一个用户模块）
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//这个index变量是static类型的为静态全局变量默认值从1开始，如果有多个框架模型对象则internalId编号从1开始依次递增
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//这个index变量是static类型的为静态全局变量默认值从1开始,如果有多个框架模型对象则internalId编号从1开始依次递增
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>setInternalId&lt;span style="color:#719e07">(&lt;/span>String&lt;span style="color:#719e07">.&lt;/span>valueOf&lt;span style="color:#719e07">(&lt;/span>index&lt;span style="color:#719e07">.&lt;/span>getAndIncrement&lt;span style="color:#719e07">()));&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// register FrameworkModel instance early
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//将当前新创建的框架实例对象添加到容器中
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">synchronized&lt;/span> &lt;span style="color:#719e07">(&lt;/span>globalLock&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//将当前框架模型实例添加到所有框架模型缓存对象中
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> allInstances&lt;span style="color:#719e07">.&lt;/span>add&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//如上面代码所示重置默认的框架模型对象，这里将会是缓存实例列表的第一个，新增了一个刷新默认实例对象
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//如上面代码所示重置默认的框架模型对象,这里将会是缓存实例列表的第一个,新增了一个刷新默认实例对象
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> resetDefaultFrameworkModel&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>LOGGER&lt;span style="color:#719e07">.&lt;/span>isInfoEnabled&lt;span style="color:#719e07">())&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -8792,26 +8544,26 @@ ApplicationModel包括许多关于&lt;strong>发布服务&lt;/strong>的Provider
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">super&lt;/span>&lt;span style="color:#719e07">.&lt;/span>initialize&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//使用TypeDefinitionBuilder的静态方法initBuilders来初始化类型构建器TypeBuilder类型集合
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> TypeDefinitionBuilder&lt;span style="color:#719e07">.&lt;/span>initBuilders&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//框架服务存储仓库对象，可以用于快速查询服务提供者信息
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//框架服务存储仓库对象,可以用于快速查询服务提供者信息
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> serviceRepository &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> FrameworkServiceRepository&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取ScopeModelInitializer类型(域模型初始化器)的扩展加载器ExtensionLoader，每个扩展类型都会创建一个扩展加载器缓存起来
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取ScopeModelInitializer类型(域模型初始化器)的扩展加载器ExtensionLoader,每个扩展类型都会创建一个扩展加载器缓存起来
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> ExtensionLoader&lt;span style="color:#719e07">&amp;lt;&lt;/span>ScopeModelInitializer&lt;span style="color:#719e07">&amp;gt;&lt;/span> initializerExtensionLoader &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>getExtensionLoader&lt;span style="color:#719e07">(&lt;/span>ScopeModelInitializer&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取ScopeModelInitializer类型的支持的扩展集合，这里当前版本存在8个扩展类型实现
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取ScopeModelInitializer类型的支持的扩展集合,这里当前版本存在8个扩展类型实现
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> Set&lt;span style="color:#719e07">&amp;lt;&lt;/span>ScopeModelInitializer&lt;span style="color:#719e07">&amp;gt;&lt;/span> initializers &lt;span style="color:#719e07">=&lt;/span> initializerExtensionLoader&lt;span style="color:#719e07">.&lt;/span>getSupportedExtensionInstances&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//遍历这些扩展实现调用他们的initializeFrameworkModel方法来传递FrameworkModel类型对象，细节我们待会再详细说下
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//遍历这些扩展实现调用他们的initializeFrameworkModel方法来传递FrameworkModel类型对象,细节我们待会再详细说下
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>ScopeModelInitializer initializer &lt;span style="color:#719e07">:&lt;/span> initializers&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> initializer&lt;span style="color:#719e07">.&lt;/span>initializeFrameworkModel&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//创建一个内部的ApplicationModel类型，细节下面说
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//创建一个内部的ApplicationModel类型,细节下面说
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> internalApplicationModel &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ApplicationModel&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#cb4b16">true&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//创建ApplicationConfig类型对象同时传递应用程序模型对象internalApplicationModel
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//获取ConfigManager类型对象，然后设置添加当前应用配置对象
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//获取ConfigManager类型对象,然后设置添加当前应用配置对象
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> internalApplicationModel&lt;span style="color:#719e07">.&lt;/span>getApplicationConfigManager&lt;span style="color:#719e07">().&lt;/span>setApplication&lt;span style="color:#719e07">(&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">new&lt;/span> ApplicationConfig&lt;span style="color:#719e07">(&lt;/span>internalApplicationModel&lt;span style="color:#719e07">,&lt;/span> CommonConstants&lt;span style="color:#719e07">.&lt;/span>DUBBO_INTERNAL_APPLICATION&lt;span style="color:#719e07">));&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//设置公开的模块名字为常量DUBBO_INTERNAL_APPLICATION
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> internalApplicationModel&lt;span style="color:#719e07">.&lt;/span>setModelName&lt;span style="color:#719e07">(&lt;/span>CommonConstants&lt;span style="color:#719e07">.&lt;/span>DUBBO_INTERNAL_APPLICATION&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>继续上面代码的调用链路，我们来看
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>继续上面代码的调用链路,我们来看
 FrameworkModel的super.initialize();方法 调用父类型ScopeModel的initialize()方法&lt;/p>
 &lt;h3 id="322-初始化scopemodel">3.2.2 初始化ScopeModel&lt;/h3>
 &lt;p>ScopeModel类型的初始化方法initialize():&lt;/p>
@@ -8820,11 +8572,11 @@ FrameworkModel的super.initialize();方法 调用父类型ScopeModel的initializ
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//ExtensionDirector支持多个级别，子级可以继承父级的扩展实例。
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//查找和创建扩展实例的方法类似于Java classloader。
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>extensionDirector &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ExtensionDirector&lt;span style="color:#719e07">(&lt;/span>parent &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span> &lt;span style="color:#719e07">?&lt;/span> parent&lt;span style="color:#719e07">.&lt;/span>getExtensionDirector&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span>&lt;span style="color:#719e07">,&lt;/span> scope&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//这个参考了Spring的生命周期回调思想，添加一个扩展初始化的前后调用的处理器，在扩展初始化之前或之后调用的后处理器，参数类型为ExtensionPostProcessor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//这个参考了Spring的生命周期回调思想,添加一个扩展初始化的前后调用的处理器,在扩展初始化之前或之后调用的后处理器,参数类型为ExtensionPostProcessor
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>extensionDirector&lt;span style="color:#719e07">.&lt;/span>addExtensionPostProcessor&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">new&lt;/span> ScopeModelAwareExtensionProcessor&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">));&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//创建一个内部共享的域工厂对象，用于注册Bean，创建Bean，获取Bean，初始化Bean等
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//创建一个内部共享的域工厂对象,用于注册Bean,创建Bean,获取Bean,初始化Bean等
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>beanFactory &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ScopeBeanFactory&lt;span style="color:#719e07">(&lt;/span>parent &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span> &lt;span style="color:#719e07">?&lt;/span> parent&lt;span style="color:#719e07">.&lt;/span>getBeanFactory&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span>&lt;span style="color:#719e07">,&lt;/span> extensionDirector&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//使用数据结构链表，创建销毁监听器容器，一般用于关闭进程，重置应用程序对象等操作时候调用
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//使用数据结构链表,创建销毁监听器容器,一般用于关闭进程,重置应用程序对象等操作时候调用
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>destroyListeners &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> LinkedList&lt;span style="color:#719e07">&amp;lt;&amp;gt;();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//使用ConcurrentHashMap属性集合
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>attributes &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ConcurrentHashMap&lt;span style="color:#719e07">&amp;lt;&amp;gt;();&lt;/span>
@@ -8853,9 +8605,9 @@ FrameworkModel的super.initialize();方法 调用父类型ScopeModel的initializ
 &lt;p>域模型初始化器的获取与初始化(ScopeModelInitializer类型和initializeFrameworkModel方法)
 加载到的ScopeModelInitializer类型的SPI扩展实现&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>ExtensionLoader&lt;span style="color:#719e07">&amp;lt;&lt;/span>ScopeModelInitializer&lt;span style="color:#719e07">&amp;gt;&lt;/span> initializerExtensionLoader &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>getExtensionLoader&lt;span style="color:#719e07">(&lt;/span>ScopeModelInitializer&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取ScopeModelInitializer类型的支持的扩展集合，这里当前版本存在8个扩展类型实现
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取ScopeModelInitializer类型的支持的扩展集合,这里当前版本存在8个扩展类型实现
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> Set&lt;span style="color:#719e07">&amp;lt;&lt;/span>ScopeModelInitializer&lt;span style="color:#719e07">&amp;gt;&lt;/span> initializers &lt;span style="color:#719e07">=&lt;/span> initializerExtensionLoader&lt;span style="color:#719e07">.&lt;/span>getSupportedExtensionInstances&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//遍历这些扩展实现调用他们的initializeFrameworkModel方法来传递FrameworkModel类型对象，细节我们待会再详细说下
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//遍历这些扩展实现调用他们的initializeFrameworkModel方法来传递FrameworkModel类型对象,细节我们待会再详细说下
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>ScopeModelInitializer initializer &lt;span style="color:#719e07">:&lt;/span> initializers&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> initializer&lt;span style="color:#719e07">.&lt;/span>initializeFrameworkModel&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
@@ -8883,14 +8635,14 @@ FrameworkModel的super.initialize();方法 调用父类型ScopeModel的initializ
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="325-将内部应用配置对象创建与添加至应用模型中">3.2.5 将内部应用配置对象创建与添加至应用模型中&lt;/h3>
 &lt;p>创建ApplicationConfig对象让后将其添加至应用模型中
-内部应用程序模型，这里为应用配置管理器设置一个应用配置对象，将这个应用配置的模块名字配置名字设置为DUBBO_INTERNAL_APPLICATION，应用配置记录着我们常见的应用配置信息，如下面表格所示:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取ConfigManager类型对象，然后设置添加当前应用配置对象
+内部应用程序模型,这里为应用配置管理器设置一个应用配置对象,将这个应用配置的模块名字配置名字设置为DUBBO_INTERNAL_APPLICATION,应用配置记录着我们常见的应用配置信息,如下面表格所示:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取ConfigManager类型对象,然后设置添加当前应用配置对象
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> internalApplicationModel&lt;span style="color:#719e07">.&lt;/span>getApplicationConfigManager&lt;span style="color:#719e07">().&lt;/span>setApplication&lt;span style="color:#719e07">(&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">new&lt;/span> ApplicationConfig&lt;span style="color:#719e07">(&lt;/span>internalApplicationModel&lt;span style="color:#719e07">,&lt;/span> CommonConstants&lt;span style="color:#719e07">.&lt;/span>DUBBO_INTERNAL_APPLICATION&lt;span style="color:#719e07">));&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//设置公开的模块名字为常量DUBBO_INTERNAL_APPLICATION
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> internalApplicationModel&lt;span style="color:#719e07">.&lt;/span>setModelName&lt;span style="color:#719e07">(&lt;/span>CommonConstants&lt;span style="color:#719e07">.&lt;/span>DUBBO_INTERNAL_APPLICATION&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>来自官网目前版本的配置解释:
-官网当前的配置描述知道到了元数据类型，后面我再补充几个&lt;/p>
+官网当前的配置描述知道到了元数据类型,后面我再补充几个&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -9056,7 +8808,7 @@ FrameworkModel的super.initialize();方法 调用父类型ScopeModel的initializ
 &lt;/table>
 &lt;h2 id="33-创建applicationmodel对象">3.3 创建ApplicationModel对象&lt;/h2>
 &lt;p>ApplicationModel对象的初始化调用
-在前面 3.2.4 FrameworkModel框架模型的初始化方法initialize() 章节中，我们看到了代码ApplicationModel对象的初始化调用如下代码，这里我们来详细说一下:&lt;/p>
+在前面 3.2.4 FrameworkModel框架模型的初始化方法initialize() 章节中,我们看到了代码ApplicationModel对象的初始化调用如下代码,这里我们来详细说一下:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> internalApplicationModel &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ApplicationModel&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#cb4b16">true&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> internalApplicationModel&lt;span style="color:#719e07">.&lt;/span>getApplicationConfigManager&lt;span style="color:#719e07">().&lt;/span>setApplication&lt;span style="color:#719e07">(&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">new&lt;/span> ApplicationConfig&lt;span style="color:#719e07">(&lt;/span>internalApplicationModel&lt;span style="color:#719e07">,&lt;/span> CommonConstants&lt;span style="color:#719e07">.&lt;/span>DUBBO_INTERNAL_APPLICATION&lt;span style="color:#719e07">));&lt;/span>
@@ -9066,7 +8818,7 @@ FrameworkModel的super.initialize();方法 调用父类型ScopeModel的initializ
 &lt;p>ApplicationModel(FrameworkModel frameworkModel, boolean isInternal)
 刚刚3.2.9那个地方我们看到了使用代码&lt;strong>new ApplicationModel(this, true)&lt;/strong> 来创建对象这里我们详细看下代码细节:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">ApplicationModel&lt;/span>&lt;span style="color:#719e07">(&lt;/span>FrameworkModel frameworkModel&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#dc322f">boolean&lt;/span> isInternal&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//调用父类型ScopeModel传递参数，这个构造器的传递没与前面看到的FrameworkModel构造器的中的调用参数有些不同第一个参数我们为frameworkModel代表父域模型，第二个参数标记域为应用程序级别APPLICATION，第三个参数我们传递的为true代表为内部域
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//调用父类型ScopeModel传递参数,这个构造器的传递没与前面看到的FrameworkModel构造器的中的调用参数有些不同第一个参数我们为frameworkModel代表父域模型,第二个参数标记域为应用程序级别APPLICATION,第三个参数我们传递的为true代表为内部域
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">super&lt;/span>&lt;span style="color:#719e07">(&lt;/span>frameworkModel&lt;span style="color:#719e07">,&lt;/span> ExtensionScope&lt;span style="color:#719e07">.&lt;/span>APPLICATION&lt;span style="color:#719e07">,&lt;/span> isInternal&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert&lt;span style="color:#719e07">.&lt;/span>notNull&lt;span style="color:#719e07">(&lt;/span>frameworkModel&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;FrameworkModel can not be null&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//应用程序域成员变量记录frameworkModel对象
@@ -9083,7 +8835,7 @@ FrameworkModel的super.initialize();方法 调用父类型ScopeModel的initializ
 &lt;p>FrameworkModel的添加应用程序方法addApplication:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">addApplication&lt;/span>&lt;span style="color:#719e07">(&lt;/span>ApplicationModel applicationModel&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// can not add new application if it&amp;#39;s destroying
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//检查FrameworkModel对象是否已经被标记为销毁状态，如果已经被销毁了则抛出异常无需执行逻辑
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//检查FrameworkModel对象是否已经被标记为销毁状态,如果已经被销毁了则抛出异常无需执行逻辑
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> checkDestroyed&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">synchronized&lt;/span> &lt;span style="color:#719e07">(&lt;/span>instLock&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//如果还未添加过当前参数传递应用模型
@@ -9101,7 +8853,7 @@ FrameworkModel的super.initialize();方法 调用父类型ScopeModel的initializ
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>内部id生成算法buildInternalId方法代码如下:
-看代码胜过，文字解释&lt;/p>
+看代码胜过,文字解释&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">protected&lt;/span> String &lt;span style="color:#268bd2">buildInternalId&lt;/span>&lt;span style="color:#719e07">(&lt;/span>String parentInternalId&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#dc322f">long&lt;/span> childIndex&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// FrameworkModel 1
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">// ApplicationModel 1.1
@@ -9114,7 +8866,7 @@ FrameworkModel的super.initialize();方法 调用父类型ScopeModel的initializ
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>重置默认的应用模型对象&lt;/strong>
 FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
-与默认框架模型设置方式类似取集合的第一个，这里应用模型需要使用公开的应用模型的第一个做为默认应用模型，代码如下所示:&lt;/p>
+与默认框架模型设置方式类似取集合的第一个,这里应用模型需要使用公开的应用模型的第一个做为默认应用模型,代码如下所示:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">private&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">resetDefaultAppModel&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">synchronized&lt;/span> &lt;span style="color:#719e07">(&lt;/span>instLock&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>defaultAppModel &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span> &lt;span style="color:#719e07">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#719e07">!&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>defaultAppModel&lt;span style="color:#719e07">.&lt;/span>isDestroyed&lt;span style="color:#719e07">())&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -9139,7 +8891,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 在前面&lt;strong>3.2.10 ApplicationModel的构造器ApplicationModel(FrameworkModel frameworkModel, boolean isInternal)&lt;/strong> 中的最后一行开始初始化应用模型我们还未详细说明下面可以来看下&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@Override&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">protected&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">initialize&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//这个是调用域模型来初始化基础信息如扩展访问器等，可以参考 3.2.5 ScopeModel类型的初始化方法initialize()章节
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//这个是调用域模型来初始化基础信息如扩展访问器等,可以参考 3.2.5 ScopeModel类型的初始化方法initialize()章节
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">super&lt;/span>&lt;span style="color:#719e07">.&lt;/span>initialize&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//创建一个内部的模块模型对象
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> internalModule &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ModuleModel&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#cb4b16">true&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
@@ -9147,15 +8899,15 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>serviceRepository &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ServiceRepository&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取应用程序初始化监听器ApplicationInitListener扩展
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> ExtensionLoader&lt;span style="color:#719e07">&amp;lt;&lt;/span>ApplicationInitListener&lt;span style="color:#719e07">&amp;gt;&lt;/span> extensionLoader &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>getExtensionLoader&lt;span style="color:#719e07">(&lt;/span>ApplicationInitListener&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//如果存在应用程序初始化监听器扩展则执行这个初始化方法，在当前的版本还未看到有具体的扩展实现类型
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//如果存在应用程序初始化监听器扩展则执行这个初始化方法,在当前的版本还未看到有具体的扩展实现类型
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> Set&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">&amp;gt;&lt;/span> listenerNames &lt;span style="color:#719e07">=&lt;/span> extensionLoader&lt;span style="color:#719e07">.&lt;/span>getSupportedExtensions&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>String listenerName &lt;span style="color:#719e07">:&lt;/span> listenerNames&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> extensionLoader&lt;span style="color:#719e07">.&lt;/span>getExtension&lt;span style="color:#719e07">(&lt;/span>listenerName&lt;span style="color:#719e07">).&lt;/span>init&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//初始化扩展(这个是应用程序生命周期的方法调用，这里调用初始化方法
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//初始化扩展(这个是应用程序生命周期的方法调用,这里调用初始化方法
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> initApplicationExts&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取域模型初始化器扩展对象列表，然后执行初始化方法
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取域模型初始化器扩展对象列表,然后执行初始化方法
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> ExtensionLoader&lt;span style="color:#719e07">&amp;lt;&lt;/span>ScopeModelInitializer&lt;span style="color:#719e07">&amp;gt;&lt;/span> initializerExtensionLoader &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>getExtensionLoader&lt;span style="color:#719e07">(&lt;/span>ScopeModelInitializer&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Set&lt;span style="color:#719e07">&amp;lt;&lt;/span>ScopeModelInitializer&lt;span style="color:#719e07">&amp;gt;&lt;/span> initializers &lt;span style="color:#719e07">=&lt;/span> initializerExtensionLoader&lt;span style="color:#719e07">.&lt;/span>getSupportedExtensionInstances&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>ScopeModelInitializer initializer &lt;span style="color:#719e07">:&lt;/span> initializers&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -9172,8 +8924,8 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/source-blog/3-extension.png" alt="在这里插入图片描述">&lt;/p>
 &lt;h4 id="3341-configmanager类型的initialize方法">3.3.4.1 ConfigManager类型的initialize方法&lt;/h4>
-&lt;p>先简单说下ConfigManager的作用，无锁配置管理器（通过ConcurrentHashMap），用于快速读取操作。写入操作锁带有配置类型的子配置映射，用于安全检查和添加新配置。
-其实ConfigManager实现类中并没有这个初始化方法initialize，不过ConfigManager的父类型AbstractConfigManager中是有initialize方法的，如下所示:&lt;/p>
+&lt;p>先简单说下ConfigManager的作用,无锁配置管理器（通过ConcurrentHashMap），用于快速读取操作。写入操作锁带有配置类型的子配置映射，用于安全检查和添加新配置。
+其实ConfigManager实现类中并没有这个初始化方法initialize,不过ConfigManager的父类型AbstractConfigManager中是有initialize方法的,如下所示:&lt;/p>
 &lt;p>AbstractConfigManager的初始化方法initialize&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@Override&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">initialize&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#268bd2">throws&lt;/span> IllegalStateException &lt;span style="color:#719e07">{&lt;/span>
@@ -9181,10 +8933,10 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(!&lt;/span>initialized&lt;span style="color:#719e07">.&lt;/span>compareAndSet&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#cb4b16">false&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#cb4b16">true&lt;/span>&lt;span style="color:#719e07">))&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//从模块环境中获取组合配置，目前Environment中有6种重要的配置，我们后面详细说
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//从模块环境中获取组合配置,目前Environment中有6种重要的配置,我们后面详细说
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> CompositeConfiguration configuration &lt;span style="color:#719e07">=&lt;/span> scopeModel&lt;span style="color:#719e07">.&lt;/span>getModelEnvironment&lt;span style="color:#719e07">().&lt;/span>getConfiguration&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// dubbo.config.mode获取配置模式，配置模式对应枚举类型ConfigMode，目前有这么几个STRICT，OVERRIDE，OVERRIDE_ALL，OVERRIDE_IF_ABSENT，IGNORE，这个配置决定了属性覆盖的顺序，当有同一个配置key多次出现时候，以最新配置为准，还是以最老的那个配置为准，还是配置重复则抛出异常，默认值为严格模式STRICT重复则抛出异常
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// dubbo.config.mode获取配置模式,配置模式对应枚举类型ConfigMode,目前有这么几个STRICT,OVERRIDE,OVERRIDE_ALL,OVERRIDE_IF_ABSENT,IGNORE,这个配置决定了属性覆盖的顺序,当有同一个配置key多次出现时候,以最新配置为准,还是以最老的那个配置为准,还是配置重复则抛出异常,默认值为严格模式STRICT重复则抛出异常
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> String configModeStr &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">(&lt;/span>String&lt;span style="color:#719e07">)&lt;/span> configuration&lt;span style="color:#719e07">.&lt;/span>getProperty&lt;span style="color:#719e07">(&lt;/span>ConfigKeys&lt;span style="color:#719e07">.&lt;/span>DUBBO_CONFIG_MODE&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">try&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>StringUtils&lt;span style="color:#719e07">.&lt;/span>hasText&lt;span style="color:#719e07">(&lt;/span>configModeStr&lt;span style="color:#719e07">))&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -9211,7 +8963,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger&lt;span style="color:#719e07">.&lt;/span>info&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;Config settings: &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> map&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="3342-environment类型的initialize方法">3.3.4.2 Environment类型的initialize方法&lt;/h4>
-&lt;p>这是一个与环境配置有关系的类型，我们先来简单了解下它的初始化方法，后期再详细说明:&lt;/p>
+&lt;p>这是一个与环境配置有关系的类型,我们先来简单了解下它的初始化方法,后期再详细说明:&lt;/p>
 &lt;p>Environment类型的initialize方法&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Override&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">initialize&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#268bd2">throws&lt;/span> IllegalStateException &lt;span style="color:#719e07">{&lt;/span>
@@ -9227,7 +8979,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>externalConfiguration &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> InmemoryConfiguration&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;ExternalConfig&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//外部的应用配置如:config-center中的应用配置
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>appExternalConfiguration &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> InmemoryConfiguration&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;AppExternalConfig&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//本地应用配置 ， 如Spring Environment/PropertySources/application.properties
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//本地应用配置 , 如Spring Environment/PropertySources/application.properties
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>appConfiguration &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> InmemoryConfiguration&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;AppConfig&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//服务迁移配置加载 dubbo2升级dubbo3的一些配置
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> loadMigrationRule&lt;span style="color:#719e07">();&lt;/span>
@@ -9249,7 +9001,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>localMigrationRule &lt;span style="color:#719e07">=&lt;/span> ConfigUtils&lt;span style="color:#719e07">.&lt;/span>loadMigrationRule&lt;span style="color:#719e07">(&lt;/span>scopeModel&lt;span style="color:#719e07">.&lt;/span>getClassLoaders&lt;span style="color:#719e07">(),&lt;/span> path&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>ConfigUtils中读取迁移规则配置文件loadMigrationRule&lt;/strong>
-这个我们不细说了，贴一下代码感兴趣可以了解下，这个代码主要是读取文件到内存字符串:&lt;/p>
+这个我们不细说了,贴一下代码感兴趣可以了解下,这个代码主要是读取文件到内存字符串:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">static&lt;/span> String &lt;span style="color:#268bd2">loadMigrationRule&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Set&lt;span style="color:#719e07">&amp;lt;&lt;/span>ClassLoader&lt;span style="color:#719e07">&amp;gt;&lt;/span> classLoaders&lt;span style="color:#719e07">,&lt;/span> String fileName&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String rawRule &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;&amp;#34;&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>checkFileNameExist&lt;span style="color:#719e07">(&lt;/span>fileName&lt;span style="color:#719e07">))&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -9309,13 +9061,12 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> File file &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> File&lt;span style="color:#719e07">(&lt;/span>fileName&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> file&lt;span style="color:#719e07">.&lt;/span>exists&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>​&lt;/p>
-&lt;h2 id="34-创建modulemodel对象">3.4 创建ModuleModel对象&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="34-创建modulemodel对象">3.4 创建ModuleModel对象&lt;/h2>
 &lt;p>前面ApplicationModel对象初始化的时候创建了ModuleModel如下代码:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>internalModule &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ModuleModel&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#cb4b16">true&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这里我们来看下这个它所对应的构造器&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">ModuleModel&lt;/span>&lt;span style="color:#719e07">(&lt;/span>ApplicationModel applicationModel&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#dc322f">boolean&lt;/span> isInternal&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//调用ScopeModel传递3个参数父模型，模型域为模块域，是否为内部模型参数为true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//调用ScopeModel传递3个参数父模型,模型域为模块域,是否为内部模型参数为true
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">super&lt;/span>&lt;span style="color:#719e07">(&lt;/span>applicationModel&lt;span style="color:#719e07">,&lt;/span> ExtensionScope&lt;span style="color:#719e07">.&lt;/span>MODULE&lt;span style="color:#719e07">,&lt;/span> isInternal&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert&lt;span style="color:#719e07">.&lt;/span>notNull&lt;span style="color:#719e07">(&lt;/span>applicationModel&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;ApplicationModel can not be null&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//初始化成员变量applicationModel
@@ -9332,7 +9083,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert&lt;span style="color:#719e07">.&lt;/span>assertTrue&lt;span style="color:#719e07">(&lt;/span>moduleConfigManager&lt;span style="color:#719e07">.&lt;/span>isInitialized&lt;span style="color:#719e07">(),&lt;/span> &lt;span style="color:#2aa198">&amp;#34;ModuleConfigManager can not be initialized&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// notify application check state
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//获取应用程序发布对象，通知检查状态
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//获取应用程序发布对象,通知检查状态
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> ApplicationDeployer applicationDeployer &lt;span style="color:#719e07">=&lt;/span> applicationModel&lt;span style="color:#719e07">.&lt;/span>getDeployer&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>applicationDeployer &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span>&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> applicationDeployer&lt;span style="color:#719e07">.&lt;/span>notifyModuleChanged&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">,&lt;/span> DeployState&lt;span style="color:#719e07">.&lt;/span>PENDING&lt;span style="color:#719e07">);&lt;/span>
@@ -9352,7 +9103,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> checkDestroyed&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//添加至模块模型成员变量中
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>moduleModels&lt;span style="color:#719e07">.&lt;/span>add&lt;span style="color:#719e07">(&lt;/span>moduleModel&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//设置模块模型内部id，这个内部id生成过程与上面将应用模型添加到框架模型中的方式是一致的
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//设置模块模型内部id,这个内部id生成过程与上面将应用模型添加到框架模型中的方式是一致的
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//可以参考 3.3.2 将ApplicationModel添加至FrameworkModel容器中
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> moduleModel&lt;span style="color:#719e07">.&lt;/span>setInternalId&lt;span style="color:#719e07">(&lt;/span>buildInternalId&lt;span style="color:#719e07">(&lt;/span>getInternalId&lt;span style="color:#719e07">(),&lt;/span> moduleIndex&lt;span style="color:#719e07">.&lt;/span>getAndIncrement&lt;span style="color:#719e07">()));&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//如果不是内部模型则添加到公开模块模型中
@@ -9366,7 +9117,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;p>前面ModuleModel构造器中通过initialize()方法来进行初始化操作如下代码:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@Override&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">protected&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">initialize&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//调用域模型ScopeModel的初始化，可以参考 3.2.5 ScopeModel类型的初始化方法initialize()章节
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//调用域模型ScopeModel的初始化,可以参考 3.2.5 ScopeModel类型的初始化方法initialize()章节
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">super&lt;/span>&lt;span style="color:#719e07">.&lt;/span>initialize&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//创建模块服务存储库对象
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>serviceRepository &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ModuleServiceRepository&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
@@ -9411,7 +9162,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#719e07">((&lt;/span>ApplicationModel&lt;span style="color:#719e07">)&lt;/span> scopeModel&lt;span style="color:#719e07">).&lt;/span>getFrameworkModel&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span> &lt;span style="color:#719e07">else&lt;/span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>scopeModel &lt;span style="color:#719e07">instanceof&lt;/span> ModuleModel&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ModuleModel moduleModel &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">(&lt;/span>ModuleModel&lt;span style="color:#719e07">)&lt;/span> scopeModel&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//间接通过ApplicationModel获取，不越级获取
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//间接通过ApplicationModel获取,不越级获取
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">return&lt;/span> moduleModel&lt;span style="color:#719e07">.&lt;/span>getApplicationModel&lt;span style="color:#719e07">().&lt;/span>getFrameworkModel&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span> &lt;span style="color:#719e07">else&lt;/span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>scopeModel &lt;span style="color:#719e07">instanceof&lt;/span> FrameworkModel&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#719e07">(&lt;/span>FrameworkModel&lt;span style="color:#719e07">)&lt;/span> scopeModel&lt;span style="color:#719e07">;&lt;/span>
@@ -9427,7 +9178,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ModuleConfigManager的构造器代码如下:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">ModuleConfigManager&lt;/span>&lt;span style="color:#719e07">(&lt;/span>ModuleModel moduleModel&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//向抽象的配置管理器AbstractConfigManager传递参数
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//模块模型参数，模块支持的配置类型集合
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//模块模型参数,模块支持的配置类型集合
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">super&lt;/span>&lt;span style="color:#719e07">(&lt;/span>moduleModel&lt;span style="color:#719e07">,&lt;/span> Arrays&lt;span style="color:#719e07">.&lt;/span>asList&lt;span style="color:#719e07">(&lt;/span>ModuleConfig&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">,&lt;/span> ServiceConfigBase&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">,&lt;/span> ReferenceConfigBase&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">,&lt;/span> ProviderConfig&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">,&lt;/span> ConsumerConfig&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">));&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//获取应用程序配置管理器
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> applicationConfigManager &lt;span style="color:#719e07">=&lt;/span> moduleModel&lt;span style="color:#719e07">.&lt;/span>getApplicationModel&lt;span style="color:#719e07">().&lt;/span>getApplicationConfigManager&lt;span style="color:#719e07">();&lt;/span>
@@ -9443,7 +9194,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> CompositeConfiguration configuration &lt;span style="color:#719e07">=&lt;/span> scopeModel&lt;span style="color:#719e07">.&lt;/span>getModelEnvironment&lt;span style="color:#719e07">().&lt;/span>getConfiguration&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// dubbo.config.mode
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//3.3.4.1提到过这里再重复一次 dubbo.config.mode获取配置模式，配置模式对应枚举类型ConfigMode，目前有这么几个STRICT，OVERRIDE，OVERRIDE_ALL，OVERRIDE_IF_ABSENT，IGNORE，这个配置决定了属性覆盖的顺序，当有同一个配置key多次出现时候，以最新配置为准，还是以最老的那个配置为准，还是配置重复则抛出异常，默认值为严格模式STRICT重复则抛出异常
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//3.3.4.1提到过这里再重复一次 dubbo.config.mode获取配置模式,配置模式对应枚举类型ConfigMode,目前有这么几个STRICT,OVERRIDE,OVERRIDE_ALL,OVERRIDE_IF_ABSENT,IGNORE,这个配置决定了属性覆盖的顺序,当有同一个配置key多次出现时候,以最新配置为准,还是以最老的那个配置为准,还是配置重复则抛出异常,默认值为严格模式STRICT重复则抛出异常
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> String configModeStr &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">(&lt;/span>String&lt;span style="color:#719e07">)&lt;/span> configuration&lt;span style="color:#719e07">.&lt;/span>getProperty&lt;span style="color:#719e07">(&lt;/span>ConfigKeys&lt;span style="color:#719e07">.&lt;/span>DUBBO_CONFIG_MODE&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">try&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>StringUtils&lt;span style="color:#719e07">.&lt;/span>hasText&lt;span style="color:#719e07">(&lt;/span>configModeStr&lt;span style="color:#719e07">))&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -9503,7 +9254,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//order the propertiesProvider according the priority descending
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//根据优先级进行排序，值越小优先级越高
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">//根据优先级进行排序,值越小优先级越高
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> orderedPropertiesProviders&lt;span style="color:#719e07">.&lt;/span>sort&lt;span style="color:#719e07">((&lt;/span>a&lt;span style="color:#719e07">,&lt;/span> b&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">-&amp;gt;&lt;/span> b&lt;span style="color:#719e07">.&lt;/span>priority&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">-&lt;/span> a&lt;span style="color:#719e07">.&lt;/span>priority&lt;span style="color:#719e07">());&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -10747,7 +10498,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上述代码中，&lt;code>DemoServiceImpl&lt;/code> 会打印接收到的 &lt;code>httpRequestContext&lt;/code>，并通过返回包含有指定 Key 的 Map 对象去描述该 Dubbo 请求的 HTTP 响应。&lt;/p>
 &lt;h4 id="操作步骤">操作步骤&lt;/h4>
 &lt;ol>
-&lt;li>启动 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-tengine#install-dubbo">&lt;code>dubbo-samples&lt;/code>&lt;/a>。&lt;/li>
+&lt;li>启动 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-tengine#install-dubbo">&lt;code>dubbo-samples&lt;/code>&lt;/a>。&lt;/li>
 &lt;li>在 &lt;code>config.yaml&lt;/code> 文件中进行 &lt;code>dubbo-proxy&lt;/code> 插件启用。&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># Add this in config.yaml&lt;/span>
@@ -11286,7 +11037,7 @@ FrameworkModel 重置默认的应用模型对象 resetDefaultAppModel()方法
 &lt;li>至此，消费者可以接收外部流量，并对提供者发起 Dubbo RPC 调用&lt;/li>
 &lt;/ul>
 &lt;blockquote>
-&lt;p>在以上流程中，我们只考虑了一切顺利的情况，但在更详细的设计或编码实现中，我们还需要严格约定一些异常场景下的框架行为。比如，如果消费者 MetadataService 调用失败，则在重试直到成功之前，消费者将不可以接收外部流量。&lt;/p>
+&lt;p>在以上流程中，我们只考虑了一切顺利的情况，但在更详细的设计或编码实现中，我们还需要严格约定一些异常场景下的框架行为。比如，如果消费者 MetadataService 调用失败，则在重试知道成功之前，消费者将不可以接收外部流量。&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="43-服务自省中的关键机制">4.3 服务自省中的关键机制&lt;/h3>
 &lt;h4 id="431-元数据同步机制">4.3.1 元数据同步机制&lt;/h4>
@@ -14674,4 +14425,442 @@ HTTP 协议与 dubbo 协议之间的映射关系。&lt;/p>
 &lt;/ul>
 &lt;p>新一代的 RPC 协议和应用级服务发现模型将会是这一部分的前置基础。&lt;/p>
 &lt;h1 id="总结与展望">总结与展望&lt;/h1>
-&lt;p>作为系列文章开篇，我们在这里对 Dubbo 过去一年的成绩做了简要的总结与回顾，包括 Dubbo 社区、产品迭代的发展。接下来我们会看到更多来自深度 Dubbo 用户的落地经验分享，Dubbo-go 子社区的发展故事等。更重要的，我们也对下一代云原生 Dubbo - Dubbo 3.0 做了展望，后续关于 Dubbo 3.0 Roadmap、方案设计与进展解析等也将在此系列中发布。&lt;/p></description></item></channel></rss>
+&lt;p>作为系列文章开篇，我们在这里对 Dubbo 过去一年的成绩做了简要的总结与回顾，包括 Dubbo 社区、产品迭代的发展。接下来我们会看到更多来自深度 Dubbo 用户的落地经验分享，Dubbo-go 子社区的发展故事等。更重要的，我们也对下一代云原生 Dubbo - Dubbo 3.0 做了展望，后续关于 Dubbo 3.0 Roadmap、方案设计与进展解析等也将在此系列中发布。&lt;/p></description></item><item><title>Blog: 记一次在 mosn 对 dubbo、dubbo-go-hessian2 的性能优化</title><link>https://dubbo.apache.org/zh/blog/2021/01/14/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%9C%A8-mosn-%E5%AF%B9-dubbodubbo-go-hessian2-%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</link><pubDate>Thu, 14 Jan 2021 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2021/01/14/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%9C%A8-mosn-%E5%AF%B9-dubbodubbo-go-hessian2-%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</guid><description>
+&lt;h3 id="背景">背景&lt;/h3>
+&lt;p>蚂蚁内部对 Service Mesh 的稳定性和性能要求是比较高的，内部 mosn 广泛用于生产环境。在云上和开源社区，RPC 领域 dubbo 和 spring cloud 同样广泛用于生产环境，我们在 mosn 基础上，支持了 dubbo 和 spring cloud 流量代理。我们发现在支持 dubbo 协议过程中，经过 Mesh 流量代理后，性能有非常大的性能损耗，在大商户落地 Mesh 中也对性能有较高要求，因此本文会重点描述在基于 Go 语言库 &lt;a href="https://github.com/apache/dubbo-go-hessian2">dubbo-go-hessian2&lt;/a> 、dubbo 协议中对 &lt;a href="https://github.com/mosn/mosn">mosn&lt;/a> 所做的性能优化。&lt;/p>
+&lt;h3 id="性能优化概述">性能优化概述&lt;/h3>
+&lt;p>根据实际业务部署场景，并没有选用高性能机器，使用普通 linux 机器，配置和压测参数如下：&lt;/p>
+&lt;ul>
+&lt;li>Intel(R) Xeon(R) Platinum 8163 CPU @ 2.50GHz 4 核 16G 。&lt;/li>
+&lt;li>pod 配置 &lt;code>2c、1g&lt;/code>，JVM 参数 &lt;code>-server -Xms1024m -Xmx1024m&lt;/code>。&lt;/li>
+&lt;li>网络延迟 0.23 ms, 2 台 linux 机器，分别部署 server + mosn, 压测程序 &lt;a href="https://github.com/zonghaishang/rpc-performance">rpc-perfomance&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;p>经过 3 轮性能优化后，使用优化版本 mosn 将会获得以下性能收益（框架随机 512 和 1k 字节压测）：&lt;/p>
+&lt;ul>
+&lt;li>512 字节数据：mosn + dubbo 服务调用 TPS 整体提升 55-82.8%，RT 降低 45% 左右，内存占用 40M，&lt;/li>
+&lt;li>1k 数据：mosn + dubbo 服务调用 TPS 整体提升 51.1-69.3%，RT 降低 41% 左右, 内存占用 41M。&lt;/li>
+&lt;/ul>
+&lt;h3 id="性能优化工具-pprof">性能优化工具 pprof&lt;/h3>
+&lt;p>磨刀不误砍柴工，在性能优化前首先要找到性能卡点，找到性能卡点后，另一个难点就是如何用高效代码优化替代 slow code。因为蚂蚁 Service Mesh 是基于 go 语言实现的，我们首选 go 自带的 pprof 性能工具，我们简要介绍这个工具如何使用。如果我们 go 库自带 http.Server 时并且在 main 头部导入&lt;code>import _ &amp;quot;net/http/pprof&amp;quot;&lt;/code>，go 会帮我们挂载对应的 handler , 详细可以参考 &lt;a href="https://pkg.go.dev/net/http/pprof?tab=doc">godoc&lt;/a> 。&lt;/p>
+&lt;p>因为 mosn 默认会在&lt;code>34902&lt;/code>端口暴露 http 服务，通过以下命令轻松获取 mosn 的性能诊断文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go tool pprof -seconds &lt;span style="color:#2aa198">60&lt;/span> http://benchmark-server-ip:34902/debug/pprof/profile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 会生成类似以下文件，该命令采样cpu 60秒&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># pprof.mosn.samples.cpu.001.pb.gz&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后继续用 pprof 打开诊断文件，方便在浏览器查看，在图 1-1 给出压测后 profiler 火焰图：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># http=:8000代表pprof打开8000端口然后用于web浏览器分析&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># mosnd代表mosn的二进制可执行文件，用于分析代码符号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># pprof.mosn.samples.cpu.001.pb.gz是cpu诊断文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>go tool pprof -http&lt;span style="color:#719e07">=&lt;/span>:8000 mosnd pprof.mosn.samples.cpu.001.pb.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/moson-optimize/p1.png" alt="">&lt;/p>
+&lt;p>图 1-1 mosn 性能压测火焰图&lt;/p>
+&lt;p>在获得诊断数据后，可以切到浏览器 Flame Graph（火焰图，go 1.11 以上版本自带），火焰图的 x 轴坐标代表 CPU 消耗情况， y 轴代码方法调用堆栈。在优化开始之前，我们借助 go 工具 pprof 可以诊断出大致的性能卡点在以下几个方面（直接压 server 端 mosn）：&lt;/p>
+&lt;ul>
+&lt;li>mosn 在接收 dubbo 请求，CPU 卡点在 streamConnection.Dispatch&lt;/li>
+&lt;li>mosn 在转发 dubbo 请求，CPU 卡点在 downStream.Receive&lt;/li>
+&lt;/ul>
+&lt;p>可以点击火焰图任意横条，进去查看长方块耗时和堆栈明细（请参考图 1-2 和 1-3 所示）：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/moson-optimize/p2.png" alt="">&lt;/p>
+&lt;p>图 1-2 Dispatch 火焰图明细&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/moson-optimize/p3.png" alt="">&lt;/p>
+&lt;p>图 1-3 Receive 火焰图明细&lt;/p>
+&lt;h3 id="性能优化思路">性能优化思路&lt;/h3>
+&lt;p>本文重点记录优化了哪些 case 才能提升 50% 以上的吞吐量和降低 RT，因此后面直接分析当前优化了哪些 case。在此之前，我们以 Dispatch 为例，看下它为甚么那么吃性能 。在 terminal 中通过以下命令可以查看代码行耗费 CPU 数据（代码有删减）：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">go&lt;/span> tool pprof mosnd pprof.mosn.samples.cpu&lt;span style="color:#2aa198">.001&lt;/span>.pb.&lt;span style="color:#268bd2">gz&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(pprof) list Dispatch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Total: &lt;span style="color:#2aa198">1.75&lt;/span>mins
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">370&lt;/span>ms &lt;span style="color:#2aa198">37.15&lt;/span>&lt;span style="color:#268bd2">s&lt;/span> (flat, cum) &lt;span style="color:#2aa198">35.46&lt;/span>&lt;span style="color:#719e07">%&lt;/span> of Total
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">123&lt;/span>:&lt;span style="color:#268bd2">func&lt;/span> (conn &lt;span style="color:#719e07">*&lt;/span>streamConnection) &lt;span style="color:#268bd2">Dispatch&lt;/span>(buffer types.IoBuffer) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">40&lt;/span>ms &lt;span style="color:#2aa198">630&lt;/span>ms &lt;span style="color:#2aa198">125&lt;/span>: log.DefaultLogger.&lt;span style="color:#268bd2">Tracef&lt;/span>(&lt;span style="color:#2aa198">&amp;#34;stream connection dispatch data string = %v&amp;#34;&lt;/span>, buffer.&lt;span style="color:#268bd2">String&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">126&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">127&lt;/span>: &lt;span style="color:#586e75">// get sub protocol codec
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> . &lt;span style="color:#2aa198">250&lt;/span>ms &lt;span style="color:#2aa198">128&lt;/span>: requestList &lt;span style="color:#719e07">:=&lt;/span> conn.codec.&lt;span style="color:#268bd2">SplitFrame&lt;/span>(buffer.&lt;span style="color:#268bd2">Bytes&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">20&lt;/span>ms &lt;span style="color:#2aa198">20&lt;/span>ms &lt;span style="color:#2aa198">129&lt;/span>: &lt;span style="color:#719e07">for&lt;/span> _, request &lt;span style="color:#719e07">:=&lt;/span> &lt;span style="color:#719e07">range&lt;/span> requestList {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">160&lt;/span>ms &lt;span style="color:#2aa198">134&lt;/span>: headers &lt;span style="color:#719e07">:=&lt;/span> &lt;span style="color:#b58900">make&lt;/span>(&lt;span style="color:#268bd2">map&lt;/span>[&lt;span style="color:#dc322f">string&lt;/span>]&lt;span style="color:#dc322f">string&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">135&lt;/span>: &lt;span style="color:#586e75">// support dynamic route
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">50&lt;/span>ms &lt;span style="color:#2aa198">920&lt;/span>ms &lt;span style="color:#2aa198">136&lt;/span>: headers[strings.&lt;span style="color:#268bd2">ToLower&lt;/span>(protocol.MosnHeaderHostKey)] = conn.connection.&lt;span style="color:#268bd2">RemoteAddr&lt;/span>().&lt;span style="color:#268bd2">String&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">149&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">150&lt;/span>: &lt;span style="color:#586e75">// get stream id
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">440&lt;/span>ms &lt;span style="color:#2aa198">151&lt;/span>: streamID &lt;span style="color:#719e07">:=&lt;/span> conn.codec.&lt;span style="color:#268bd2">GetStreamID&lt;/span>(request)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">156&lt;/span>: &lt;span style="color:#586e75">// request route
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> . &lt;span style="color:#2aa198">50&lt;/span>ms &lt;span style="color:#2aa198">157&lt;/span>: requestRouteCodec, ok &lt;span style="color:#719e07">:=&lt;/span> conn.codec.(xprotocol.RequestRouting)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">158&lt;/span>: &lt;span style="color:#719e07">if&lt;/span> ok {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . &lt;span style="color:#2aa198">20.11&lt;/span>s &lt;span style="color:#2aa198">159&lt;/span>: routeHeaders &lt;span style="color:#719e07">:=&lt;/span> requestRouteCodec.&lt;span style="color:#268bd2">GetMetas&lt;/span>(request)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">165&lt;/span>: }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">166&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">167&lt;/span>: &lt;span style="color:#586e75">// tracing
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">80&lt;/span>ms &lt;span style="color:#2aa198">168&lt;/span>: tracingCodec, ok &lt;span style="color:#719e07">:=&lt;/span> conn.codec.(xprotocol.Tracing)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">169&lt;/span>: &lt;span style="color:#268bd2">var&lt;/span> span types.Span
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">170&lt;/span>: &lt;span style="color:#719e07">if&lt;/span> ok {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">1.91&lt;/span>s &lt;span style="color:#2aa198">171&lt;/span>: serviceName &lt;span style="color:#719e07">:=&lt;/span> tracingCodec.&lt;span style="color:#268bd2">GetServiceName&lt;/span>(request)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . &lt;span style="color:#2aa198">2.17&lt;/span>s &lt;span style="color:#2aa198">172&lt;/span>: methodName &lt;span style="color:#719e07">:=&lt;/span> tracingCodec.&lt;span style="color:#268bd2">GetMethodName&lt;/span>(request)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">176&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">177&lt;/span>: &lt;span style="color:#719e07">if&lt;/span> trace.&lt;span style="color:#268bd2">IsEnabled&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . &lt;span style="color:#2aa198">50&lt;/span>ms &lt;span style="color:#2aa198">179&lt;/span>: tracer &lt;span style="color:#719e07">:=&lt;/span> trace.&lt;span style="color:#268bd2">Tracer&lt;/span>(protocol.Xprotocol)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">180&lt;/span>: &lt;span style="color:#719e07">if&lt;/span> tracer &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">20&lt;/span>ms &lt;span style="color:#2aa198">1.66&lt;/span>s &lt;span style="color:#2aa198">181&lt;/span>: span = tracer.&lt;span style="color:#268bd2">Start&lt;/span>(conn.context, headers, time.&lt;span style="color:#268bd2">Now&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">182&lt;/span>: }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">183&lt;/span>: }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">184&lt;/span>: }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">185&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . &lt;span style="color:#2aa198">110&lt;/span>ms &lt;span style="color:#2aa198">186&lt;/span>: reqBuf &lt;span style="color:#719e07">:=&lt;/span> networkbuffer.&lt;span style="color:#268bd2">NewIoBufferBytes&lt;/span>(request)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">188&lt;/span>: &lt;span style="color:#586e75">// append sub protocol header
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">950&lt;/span>ms &lt;span style="color:#2aa198">189&lt;/span>: headers[types.HeaderXprotocolSubProtocol] = &lt;span style="color:#b58900">string&lt;/span>(conn.subProtocol)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">4.96&lt;/span>s &lt;span style="color:#2aa198">190&lt;/span>: conn.&lt;span style="color:#268bd2">OnReceive&lt;/span>(ctx, streamID, protocol.&lt;span style="color:#268bd2">CommonHeader&lt;/span>(headers), reqBuf, span, isHearbeat)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">30&lt;/span>ms &lt;span style="color:#2aa198">60&lt;/span>ms &lt;span style="color:#2aa198">191&lt;/span>: buffer.&lt;span style="color:#268bd2">Drain&lt;/span>(requestLen)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">192&lt;/span>: }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">193&lt;/span>:}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>通过上面 &lt;code>list Dispatch&lt;/code> 命令，性能卡点主要分布在 &lt;code>159&lt;/code> 、 &lt;code>171&lt;/code> 、&lt;code>172&lt;/code> 、 &lt;code>181&lt;/code> 、和 &lt;code>190&lt;/code> 等行，主要卡点在解码 dubbo 参数、重复解参数、tracer、发序列化和 log 等。&lt;/p>
+&lt;h4 id="1-优化-dubbo-解码-getmetas">1. 优化 dubbo 解码 GetMetas&lt;/h4>
+&lt;p>我们通过解码 dubbo 的 body 可以获得以下信息，调用的目标接口（ interface ）和调用方法的服务分组（ group ）等信息，但是需要跳过所有业务方法参数，目前使用开源的 &lt;a href="https://github.com/apache/dubbo-go-hessian2">dubbo-go-hessian2&lt;/a> 库，解析 string 和 map 性能较差, 提升 hessian 库解码性能，会在本文后面讲解。&lt;/p>
+&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>在 mosn 的 ingress 端（ mosn 直接转发请求给本地 java server 进程）, 我们根据请求的 path 和 version 窥探用户使用的 interface 和 group , 构建正确的 dataID 可以进行无脑转发，无需解码 body，榨取性能提升。&lt;/p>
+&lt;p>我们可以在服务注册时，构建服务发布的 path 、version 和 group 到 interface 、group 映射。在 mosn 转发 dubbo 请求时可以通过读锁查 cache + 跳过解码 body，加速 mosn 性能。&lt;/p>
+&lt;p>因此我们构建以下 cache 实现（数组 + 链表数据结构）, 可参见 &lt;a href="https://github.com/mosn/mosn/pull/1174/commits/9020ee9995cd15a7a4321a375a9506cf94dc70a8#diff-f5ff30debd68b8318c8236a0b5ccde07R6">优化代码 diff&lt;/a> ：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// metadata.go
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// DubboPubMetadata dubbo pub cache metadata
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#268bd2">var&lt;/span> DubboPubMetadata = &lt;span style="color:#719e07">&amp;amp;&lt;/span>Metadata{}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// DubboSubMetadata dubbo sub cache metadata
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#268bd2">var&lt;/span> DubboSubMetadata = &lt;span style="color:#719e07">&amp;amp;&lt;/span>Metadata{}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// Metadata cache service pub or sub metadata.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// speed up for decode or encode dubbo peformance.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// please do not use outside of the dubbo framwork.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#268bd2">type&lt;/span> Metadata &lt;span style="color:#268bd2">struct&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data &lt;span style="color:#268bd2">map&lt;/span>[&lt;span style="color:#dc322f">string&lt;/span>]&lt;span style="color:#719e07">*&lt;/span>Node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mu sync.RWMutex &lt;span style="color:#586e75">// protect data internal
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// Find cached pub or sub metatada.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// caller should be check match is true
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#268bd2">func&lt;/span> (m &lt;span style="color:#719e07">*&lt;/span>Metadata) &lt;span style="color:#268bd2">Find&lt;/span>(path, version &lt;span style="color:#dc322f">string&lt;/span>) (node &lt;span style="color:#719e07">*&lt;/span>Node, matched &lt;span style="color:#dc322f">bool&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// we found nothing
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">if&lt;/span> m.data &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span>, &lt;span style="color:#cb4b16">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m.mu.&lt;span style="color:#268bd2">RLocker&lt;/span>().&lt;span style="color:#268bd2">Lock&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// for performance
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">// m.mu.RLocker().Unlock() should be called.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// we check head node first
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> head &lt;span style="color:#719e07">:=&lt;/span> m.data[path]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> head &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span> &lt;span style="color:#719e07">||&lt;/span> head.count &lt;span style="color:#719e07">&amp;lt;=&lt;/span> &lt;span style="color:#2aa198">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m.mu.&lt;span style="color:#268bd2">RLocker&lt;/span>().&lt;span style="color:#268bd2">Unlock&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span>, &lt;span style="color:#cb4b16">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node = head.Next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// just only once, just return
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">// for dubbo framwork, that&amp;#39;s what we&amp;#39;re expected.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">if&lt;/span> head.count &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m.mu.&lt;span style="color:#268bd2">RLocker&lt;/span>().&lt;span style="color:#268bd2">Unlock&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> node, &lt;span style="color:#cb4b16">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> count &lt;span style="color:#dc322f">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> found &lt;span style="color:#719e07">*&lt;/span>Node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span> ; node &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span>; node = node.Next {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> node.Version &lt;span style="color:#719e07">==&lt;/span> version {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> found &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> found = node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count&lt;span style="color:#719e07">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m.mu.&lt;span style="color:#268bd2">RLocker&lt;/span>().&lt;span style="color:#268bd2">Unlock&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> found, count &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// Register pub or sub metadata
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#268bd2">func&lt;/span> (m &lt;span style="color:#719e07">*&lt;/span>Metadata) &lt;span style="color:#268bd2">Register&lt;/span>(path &lt;span style="color:#dc322f">string&lt;/span>, node &lt;span style="color:#719e07">*&lt;/span>Node) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m.mu.&lt;span style="color:#268bd2">Lock&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// for performance
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">// m.mu.Unlock() should be called.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> m.data &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m.data = &lt;span style="color:#b58900">make&lt;/span>(&lt;span style="color:#268bd2">map&lt;/span>[&lt;span style="color:#dc322f">string&lt;/span>]&lt;span style="color:#719e07">*&lt;/span>Node, &lt;span style="color:#2aa198">4&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// we check head node first
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> head &lt;span style="color:#719e07">:=&lt;/span> m.data[path]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> head &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head = &lt;span style="color:#719e07">&amp;amp;&lt;/span>Node{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count: &lt;span style="color:#2aa198">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// update head
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> m.data[path] = head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> insert &lt;span style="color:#719e07">:=&lt;/span> &lt;span style="color:#719e07">&amp;amp;&lt;/span>Node{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Service: node.Service,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Version: node.Version,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Group: node.Group,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> next &lt;span style="color:#719e07">:=&lt;/span> head.Next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> next &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// fist insert, just insert to head
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> head.Next = insert
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// record last element
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> head.last = insert
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m.mu.&lt;span style="color:#268bd2">Unlock&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// we check already exist first
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">for&lt;/span> ; next &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span>; next = next.Next {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// we found it
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">if&lt;/span> next.Version &lt;span style="color:#719e07">==&lt;/span> node.Version &lt;span style="color:#719e07">&amp;amp;&amp;amp;&lt;/span> next.Group &lt;span style="color:#719e07">==&lt;/span> node.Group {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// release lock and no nothing
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> m.mu.&lt;span style="color:#268bd2">Unlock&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head.count&lt;span style="color:#719e07">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// append node to the end of the list
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> head.last.Next = insert
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// update last element
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> head.last = insert
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m.mu.&lt;span style="color:#268bd2">Unlock&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>通过服务注册时构建好的 cache，可以在 mosn 的 stream 做解码时命中 cache , 无需解码参数获取接口和 group 信息，可参见&lt;a href="https://github.com/mosn/mosn/pull/1174/commits/9020ee9995cd15a7a4321a375a9506cf94dc70a8#diff-73d1153005841c788c91116915f460a5R188">优化代码 diff&lt;/a> :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// decoder.go
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// for better performance.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// If the ingress scenario is not using group,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// we can skip parsing attachment to improve performance
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#719e07">if&lt;/span> listener &lt;span style="color:#719e07">==&lt;/span> IngressDubbo {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> node, matched = DubboPubMetadata.&lt;span style="color:#268bd2">Find&lt;/span>(path, version); matched {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> meta[ServiceNameHeader] = node.Service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> meta[GroupNameHeader] = node.Group
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>} &lt;span style="color:#719e07">else&lt;/span> &lt;span style="color:#719e07">if&lt;/span> listener &lt;span style="color:#719e07">==&lt;/span> EgressDubbo {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// for better performance.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">// If the egress scenario is not using group,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#586e75">// we can skip parsing attachment to improve performance
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">if&lt;/span> node, matched = DubboSubMetadata.&lt;span style="color:#268bd2">Find&lt;/span>(path, version); matched {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> meta[ServiceNameHeader] = node.Service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> meta[GroupNameHeader] = node.Group
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在 mosn 的 egress 端（ mosn 直接转发请求给本地 java client 进程）, 我们采用类似的思路, 我们根据请求的 path 和 version 去窥探用户使用的 interface 和 group , 构建正确的 dataID 可以进行无脑转发，无需解码 body，榨取性能提升。&lt;/p>
+&lt;h4 id="2-优化-dubbo-解码参数">2. 优化 dubbo 解码参数&lt;/h4>
+&lt;p>在 dubbo 解码参数值的时候 ，mosn 采用的是 hessian 的正则表达式查找，非常耗费性能。我们先看下优化前后 benchmark 对比, 性能提升 50 倍。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go &lt;span style="color:#b58900">test&lt;/span> -bench&lt;span style="color:#719e07">=&lt;/span>BenchmarkCountArgCount -run&lt;span style="color:#719e07">=&lt;/span>^$ -benchmem
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BenchmarkCountArgCountByRegex-12 &lt;span style="color:#2aa198">200000&lt;/span> &lt;span style="color:#2aa198">6236&lt;/span> ns/op &lt;span style="color:#2aa198">1472&lt;/span> B/op &lt;span style="color:#2aa198">24&lt;/span> allocs/op
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BenchmarkCountArgCountOptimized-12 &lt;span style="color:#2aa198">10000000&lt;/span> &lt;span style="color:#2aa198">124&lt;/span> ns/op &lt;span style="color:#2aa198">0&lt;/span> B/op &lt;span style="color:#2aa198">0&lt;/span> allocs/op
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>可以消除正则表达式，采用简单字符串解析识别参数类型个数， &lt;a href="https://github.com/zonghaishang/dubbo/blob/e0fd702825a274379fb609229bdb06ca0586122e/dubbo-common/src/main/java/org/apache/dubbo/common/utils/ReflectUtils.java#L370">dubbo 编码参数个数字符串实现&lt;/a> 并不复杂, 主要给对象加 L 前缀、数组加 [、primitive 类型有单字符代替。采用 go 可以实现同等解析, 可以参考&lt;a href="https://github.com/mosn/mosn/pull/1174/commits/9020ee9995cd15a7a4321a375a9506cf94dc70a8#diff-73d1153005841c788c91116915f460a5R245">优化代码 diff&lt;/a> ：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">func&lt;/span> &lt;span style="color:#268bd2">getArgumentCount&lt;/span>(desc &lt;span style="color:#dc322f">string&lt;/span>) &lt;span style="color:#dc322f">int&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len &lt;span style="color:#719e07">:=&lt;/span> &lt;span style="color:#b58900">len&lt;/span>(desc)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> len &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">0&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#2aa198">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> args, next = &lt;span style="color:#2aa198">0&lt;/span>, &lt;span style="color:#cb4b16">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span> _, ch &lt;span style="color:#719e07">:=&lt;/span> &lt;span style="color:#719e07">range&lt;/span> desc {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// is array ?
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">if&lt;/span> ch &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">&amp;#39;[&amp;#39;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// is object ?
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">if&lt;/span> next &lt;span style="color:#719e07">&amp;amp;&amp;amp;&lt;/span> ch &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#2aa198">&amp;#39;;&amp;#39;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">switch&lt;/span> ch {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> &lt;span style="color:#2aa198">&amp;#39;V&amp;#39;&lt;/span>, &lt;span style="color:#586e75">// void
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">&amp;#39;Z&amp;#39;&lt;/span>, &lt;span style="color:#586e75">// boolean
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">&amp;#39;B&amp;#39;&lt;/span>, &lt;span style="color:#586e75">// byte
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">&amp;#39;C&amp;#39;&lt;/span>, &lt;span style="color:#586e75">// char
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">&amp;#39;D&amp;#39;&lt;/span>, &lt;span style="color:#586e75">// double
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">&amp;#39;F&amp;#39;&lt;/span>, &lt;span style="color:#586e75">// float
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">&amp;#39;I&amp;#39;&lt;/span>, &lt;span style="color:#586e75">// int
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">&amp;#39;J&amp;#39;&lt;/span>, &lt;span style="color:#586e75">// long
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#2aa198">&amp;#39;S&amp;#39;&lt;/span>: &lt;span style="color:#586e75">// short
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> args&lt;span style="color:#719e07">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">default&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// we found object
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#719e07">if&lt;/span> ch &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">&amp;#39;L&amp;#39;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> args&lt;span style="color:#719e07">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> next = &lt;span style="color:#cb4b16">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// end of object ?
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> } &lt;span style="color:#719e07">else&lt;/span> &lt;span style="color:#719e07">if&lt;/span> ch &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">&amp;#39;;&amp;#39;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> next = &lt;span style="color:#cb4b16">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> args
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="3-优化-dubbo-hessian-go-解码-string-性能">3. 优化 dubbo hessian go 解码 string 性能&lt;/h4>
+&lt;p>在图 1-2 中可以看到 dubbo hessian go 在解码 string 占比 CPU 采样较高，我们在解码 dubbo 请求时，会解析 dubbo 框架版本、调用 path 、接口版本和方法名，这些都是 string 类型，dubbo hessian go 解析 string 会影响 RPC 性能。&lt;/p>
+&lt;p>我们首先跑一下 benchmar k 前后解码 string 性能对比，性能提升 56.11%， 对应到 RPC 中有 5% 左右提升。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>BenchmarkDecodeStringOriginal-12 &lt;span style="color:#2aa198">1967202&lt;/span> &lt;span style="color:#2aa198">613&lt;/span> ns/op &lt;span style="color:#2aa198">272&lt;/span> B/op &lt;span style="color:#2aa198">6&lt;/span> allocs/op
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BenchmarkDecodeStringOptimized-12 &lt;span style="color:#2aa198">4477216&lt;/span> &lt;span style="color:#2aa198">269&lt;/span> ns/op &lt;span style="color:#2aa198">224&lt;/span> B/op &lt;span style="color:#2aa198">5&lt;/span> allocs/op
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>直接使用 UTF-8 byte 解码，性能最高，之前先解码 byte 成 rune , 对 rune 解码成 string ，及其耗费性能。增加批量 string chunk copy ，降低 read 调用，并且使用 unsafe 转换 string（避免一些校验），因为代码优化 diff 较多，这里给出&lt;a href="https://github.com/apache/dubbo-go-hessian2/pull/188">优化代码 PR&lt;/a> 。&lt;/p>
+&lt;p>go SDK 代码&lt;code>runtime/string.go#slicerunetostring&lt;/code>（ rune 转换成 string ）， 同样是把 rune 转成 byte 数组，这里给了我优化思路启发。&lt;/p>
+&lt;h4 id="4-优化-hessian-库编解码对象">4. 优化 hessian 库编解码对象&lt;/h4>
+&lt;p>虽然消除了 dubbo 的 body 解码部分，但是 mosn 在处理 dubbo 请求时，必须要借助 hessian 去 decode 请求头部的框架版本、请求 path 和接口版本值。但是每次在解码的时候都会创建序列化对象，开销非常高，因为 hessian 每次在创建 reader 的时候会 allocate 4k 数据并 reset。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">75&lt;/span>:&lt;span style="color:#268bd2">func&lt;/span> &lt;span style="color:#268bd2">unSerialize&lt;/span>(serializeId &lt;span style="color:#dc322f">int&lt;/span>, data []&lt;span style="color:#dc322f">byte&lt;/span>, parseCtl unserializeCtl) &lt;span style="color:#719e07">*&lt;/span>dubboAttr {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">10&lt;/span>ms &lt;span style="color:#2aa198">140&lt;/span>ms &lt;span style="color:#2aa198">82&lt;/span>: attr &lt;span style="color:#719e07">:=&lt;/span> &lt;span style="color:#719e07">&amp;amp;&lt;/span>dubboAttr{}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">80&lt;/span>ms &lt;span style="color:#2aa198">2.56&lt;/span>s &lt;span style="color:#2aa198">83&lt;/span>: decoder &lt;span style="color:#719e07">:=&lt;/span> hessian.&lt;span style="color:#268bd2">NewDecoderWithSkip&lt;/span>(data[:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ROUTINE &lt;span style="color:#719e07">========================&lt;/span> bufio.NewReaderSize in &lt;span style="color:#719e07">/&lt;/span>usr&lt;span style="color:#719e07">/&lt;/span>local&lt;span style="color:#719e07">/&lt;/span>&lt;span style="color:#719e07">go&lt;/span>&lt;span style="color:#719e07">/&lt;/span>src&lt;span style="color:#719e07">/&lt;/span>bufio&lt;span style="color:#719e07">/&lt;/span>bufio.&lt;span style="color:#719e07">go&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">50&lt;/span>ms &lt;span style="color:#2aa198">2.44&lt;/span>&lt;span style="color:#268bd2">s&lt;/span> (flat, cum) &lt;span style="color:#2aa198">2.33&lt;/span>&lt;span style="color:#719e07">%&lt;/span> of Total
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . &lt;span style="color:#2aa198">220&lt;/span>ms &lt;span style="color:#2aa198">55&lt;/span>: r &lt;span style="color:#719e07">:=&lt;/span> &lt;span style="color:#b58900">new&lt;/span>(Reader)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">50&lt;/span>ms &lt;span style="color:#2aa198">2.22&lt;/span>s &lt;span style="color:#2aa198">56&lt;/span>: r.&lt;span style="color:#268bd2">reset&lt;/span>(&lt;span style="color:#b58900">make&lt;/span>([]&lt;span style="color:#dc322f">byte&lt;/span>, size), rd)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">57&lt;/span>: &lt;span style="color:#719e07">return&lt;/span> r
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . &lt;span style="color:#2aa198">58&lt;/span>:}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>我们可以写个池化内存前后性能对比, 性能提升 85.4% , &lt;a href="https://github.com/zonghaishang/dubbo-go-hessian2/blob/9b418c4e2700964f244e6b982855b4e89b45990d/string_test.go#L161">benchmark 用例&lt;/a> ：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>BenchmarkNewDecoder-12 &lt;span style="color:#2aa198">1487685&lt;/span> &lt;span style="color:#2aa198">803&lt;/span> ns/op &lt;span style="color:#2aa198">4528&lt;/span> B/op &lt;span style="color:#2aa198">9&lt;/span> allocs/op
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BenchmarkNewDecoderOptimized-12 &lt;span style="color:#2aa198">10564024&lt;/span> &lt;span style="color:#2aa198">117&lt;/span> ns/op &lt;span style="color:#2aa198">128&lt;/span> B/op &lt;span style="color:#2aa198">3&lt;/span> allocs/op
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>在每次编解码时，池化 hessian 的 decoder 对象，新增 NewCheapDecoderWithSkip 并支持 reset 复用 decoder 。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">var&lt;/span> decodePool = &lt;span style="color:#719e07">&amp;amp;&lt;/span>sync.Pool{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> New: &lt;span style="color:#268bd2">func&lt;/span>() &lt;span style="color:#268bd2">interface&lt;/span>{} {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> hessian.&lt;span style="color:#268bd2">NewCheapDecoderWithSkip&lt;/span>([]&lt;span style="color:#dc322f">byte&lt;/span>{})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// 在解码时按照如下方法调用
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>decoder &lt;span style="color:#719e07">:=&lt;/span> decodePool.&lt;span style="color:#268bd2">Get&lt;/span>().(&lt;span style="color:#719e07">*&lt;/span>hessian.Decoder)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// fill decode data
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>decoder.&lt;span style="color:#268bd2">Reset&lt;/span>(data[:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hessianPool.&lt;span style="color:#268bd2">Put&lt;/span>(decoder)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="5-优化重复解码-service-和-methodname-值">5. 优化重复解码 service 和 methodName 值&lt;/h4>
+&lt;p>xprotocol 在实现 xprotocol.Tracing 获取服务名称和方法时，会触发调用并解析 2 次，调用开销比较大。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>10ms 1.91s 171: serviceName :&lt;span style="color:#719e07">=&lt;/span> tracingCodec.GetServiceName&lt;span style="color:#719e07">(&lt;/span>request&lt;span style="color:#719e07">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . 2.17s 172: methodName :&lt;span style="color:#719e07">=&lt;/span> tracingCodec.GetMethodName&lt;span style="color:#719e07">(&lt;/span>request&lt;span style="color:#719e07">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>因为在 GetMetas 里面已经解析过一次了，可以把解析过的 headers 传进去，如果 headers 有了就不用再去解析了，并且重构接口名称为一个，返回值为二元组，消除一次调用。&lt;/p>
+&lt;h4 id="6-优化-streamid-类型转换">6. 优化 streamID 类型转换&lt;/h4>
+&lt;p>在 go 中将 byte 数组和 streamID 进行互转的时候，比较费性能。&lt;/p>
+&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>生产代码中, 尽量不要使用 fmt.Sprintf 和 fmt.Printf 去做类型转换和打印信息。可以使用 strconv 去转换。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span> . &lt;span style="color:#2aa198">430&lt;/span>ms &lt;span style="color:#2aa198">147&lt;/span>: reqIDStr &lt;span style="color:#719e07">:=&lt;/span> fmt.&lt;span style="color:#268bd2">Sprintf&lt;/span>(&lt;span style="color:#2aa198">&amp;#34;%d&amp;#34;&lt;/span>, reqID)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">60&lt;/span>ms &lt;span style="color:#2aa198">4.10&lt;/span>s &lt;span style="color:#2aa198">168&lt;/span>: fmt.&lt;span style="color:#268bd2">Printf&lt;/span>(&lt;span style="color:#2aa198">&amp;#34;src=%s, len=%d, reqid:%v\n&amp;#34;&lt;/span>, streamID, reqIDStrLen, reqIDStr)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="7-优化昂贵的系统调用">7. 优化昂贵的系统调用&lt;/h4>
+&lt;p>mosn 在解码 dubbo 的请求时，会在 header 中塞一份远程 host 的地址，并且在 for 循环中获取 remote IP，系统调用开销比较高。&lt;/p>
+&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">50&lt;/span>ms &lt;span style="color:#2aa198">920&lt;/span>ms &lt;span style="color:#2aa198">136&lt;/span>: headers[strings.&lt;span style="color:#268bd2">ToLower&lt;/span>(protocol.MosnHeaderHostKey)] = conn.connection.&lt;span style="color:#268bd2">RemoteAddr&lt;/span>().&lt;span style="color:#268bd2">String&lt;/span>()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在获取远程地址时，尽可能在 streamConnection 中 cache 远程 IP 值，不要每次都去调用 RemoteAddr。&lt;/p>
+&lt;h4 id="8-优化-slice-和-map-触发扩容和-rehash">8. 优化 slice 和 map 触发扩容和 rehash&lt;/h4>
+&lt;p>在 mosn 处理 dubbo 请求时，会根据接口、版本和分组去构建 dataID ，然后匹配 cluster , 会创建默认 slice 和 map 对象，经过性能诊断，导致不断 allocate slice 和 grow map 容量比较费性能。&lt;/p>
+&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>使用 slice 和 map 时，尽可能预估容量大小，使用 make(type, capacity) 去指定初始大小。&lt;/p>
+&lt;h4 id="9-优化-trace-日志级别输出">9. 优化 trace 日志级别输出&lt;/h4>
+&lt;p>mosn 中不少代码在处理逻辑时，会打很多 trace 级别的日志，并且会传递不少参数值。&lt;/p>
+&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>调用 trace 输出前，尽量判断一下日志级别，如果有多个 trace 调用，尽可能把所有字符串写到 buf 中，然后把 buf 内容写到日志中，并且尽可能少的调用 trace 日志方法。&lt;/p>
+&lt;h4 id="10-优化-tracerlog-和-metrics">10. 优化 tracer、log 和 metrics&lt;/h4>
+&lt;p>在大促期间，对机器的性能要求较高，经过性能诊断，tracer、mosn log 和 cloud metrics 写日志（ IO 操作）非常耗费性能。&lt;/p>
+&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>通过配置中心下发配置或者增加大促开关，允许 API 调用这些 feature 的开关。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>/api/v1/downgrade/on
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/api/v1/downgrade/off
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="11-优化-route-header-解析">11. 优化 route header 解析&lt;/h4>
+&lt;p>mosn 中在做路由前，需要做大量的 header 的 map 访问，比如 IDC、antvip 等逻辑判断，商业版或者开源 mosn 不需要这些逻辑，这些也会占用一些开销。&lt;/p>
+&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>如果是云上逻辑，主站的逻辑都不走。&lt;/p>
+&lt;h4 id="12-优化-featuregate-调用">12. 优化 featuregate 调用&lt;/h4>
+&lt;p>在 mosn 中处理请求时，为了区分主站和商业版路由逻辑，会通过 featuregate 判断逻辑走哪部分。通过 featuregate 调用开销较大，需要频繁的做类型转换和多层 map 去获取。&lt;/p>
+&lt;p>&lt;strong>优化思路：&lt;/strong>&lt;/p>
+&lt;p>通过一个 bool 变量记录 featuregate 对应开关，如果没有初始化过，就主动调用一下 featuregate。&lt;/p>
+&lt;h3 id="未来性能优化思考">未来性能优化思考&lt;/h3>
+&lt;p>经过几轮性能优化 ，目前看火焰图，卡点都在 connection 的 read 和 write ，可以优化的空间比较小了。但是可能从以下场景中获得收益：&lt;/p>
+&lt;ul>
+&lt;li>减少 connection 的 read 和 write 次数 (syscall) 。&lt;/li>
+&lt;li>优化 IO 线程模型，减少携程和上下文切换等。&lt;/li>
+&lt;/ul>
+&lt;p>作为结束，给出了最终优化后的火焰图 ，大部分卡点都在系统调用和网络读写, 请参考图 1-4。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/moson-optimize/p4.png" alt="">&lt;/p>
+&lt;p>图 1-4 优化版本 mosn + dubbo 火线图&lt;/p>
+&lt;h3 id="其他">其他&lt;/h3>
+&lt;p>pprof 工具异常强大，可以诊断 CPU、memory、go 协程、tracer 和死锁等，该工具可以参考 &lt;a href="https://blog.golang.org/pprof">godoc&lt;/a>，性能优化参考：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://blog.golang.org/pprof">https://blog.golang.org/pprof&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.cnblogs.com/Dr-wei/p/11742414.html">https://www.cnblogs.com/Dr-wei/p/11742414.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/N3PWzBeLX2M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Profiling and Optimizing Go">&lt;/iframe>
+&lt;/div>
+&lt;h2 id="欢迎加入-dubbo-go-社区">欢迎加入 dubbo-go 社区&lt;/h2>
+&lt;p>Dubbo-go 的社区钉钉群： 23331795，欢迎感兴趣的小伙伴们加入！&lt;/p>
+&lt;blockquote>
+&lt;p>关于作者 诣极，github ID zonghaishang，Apache Dubbo PMC，目前就职于蚂蚁金服中间件团队，主攻 RPC 和 Service Mesh 方向。《深入理解 Apache Dubbo 与实战》一书作者。&lt;/p>
+&lt;/blockquote></description></item><item><title>Blog: 解构 Dubbo-go 的核心注册引擎 Nacos</title><link>https://dubbo.apache.org/zh/blog/2021/01/14/%E8%A7%A3%E6%9E%84-dubbo-go-%E7%9A%84%E6%A0%B8%E5%BF%83%E6%B3%A8%E5%86%8C%E5%BC%95%E6%93%8E-nacos/</link><pubDate>Thu, 14 Jan 2021 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2021/01/14/%E8%A7%A3%E6%9E%84-dubbo-go-%E7%9A%84%E6%A0%B8%E5%BF%83%E6%B3%A8%E5%86%8C%E5%BC%95%E6%93%8E-nacos/</guid><description>
+&lt;p>近几年，随着Go语言社区逐渐发展和壮大，越来越多的公司开始尝试采用Go搭建微服务体系，也涌现了一批Go的微服务框架，如go-micro、go-kit、Dubbo-go等，跟微服务治理相关的组件也逐渐开始在Go生态发力，如Sentinel、Hystrix等都推出了Go语言版本，而作为微服务框架的核心引擎&amp;ndash;注册中心，也是必不可缺少的组件，市面已经有多款注册中心支持Go语言，应该如何选择呢？我们可以对目前主流的支持Go语言的注册中心做个对比。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/nacos/p1.png" alt="">&lt;/p>
+&lt;p>根据上表的对比我们可以从以下几个维度得出结论：&lt;/p>
+&lt;ul>
+&lt;li>生态:各注册中心对Go语言都有支持，但是Nacos、 Consul、Etcd 社区活跃，zookeeper和Eureka社区活跃度较低；&lt;/li>
+&lt;li>易用性：Nacos、Eureka、Consul都有现成的管控平台，Etcd、zookeeper本身作为kv存储，没有相应的管控平台，Nacos支持中文界面，比较符合国人使用习惯；&lt;/li>
+&lt;li>场景支持：CP模型主要针对强一致场景，如金融类，AP模型适用于高可用场景，Nacos可以同时满足两种场景，Eureka主要满足高可用场景，Consul、Zookeepr、Etcd主要满足强一致场景，此外Nacos支持从其它注册中心同步数据，方便用户注册中心迁移；&lt;/li>
+&lt;li>功能完整性：所有注册中心都支持健康检查，Nacos、Consul支持的检查方式较多，满足不同应用场景，Zookeeper通过keep alive方式，能实时感知实例变化；Nacos、Consul和Eureka都支持负载均衡策略，Nacos通过Metadata selector支持更灵活的策略；此外，Nacos、Eureka都支持雪崩保护，避免因为过多的实例不健康对健康的实例造成雪崩效应。&lt;/li>
+&lt;/ul>
+&lt;p>综合上面各维度的对比，可以了解到Nacos作为注册中心有一定的优势，那么它对Go微服务生态的集成做得如何？接下来我们首先探索下Nacos是如何与Dubbo-go集成。&lt;/p>
+&lt;h2 id="引言">引言&lt;/h2>
+&lt;p>Dubbo-go目前是Dubbo多语言生态中最火热的一个项目，从2016年发布至今，已经走过5个年头。最近，Dubbo-go发布了v1.5版本，全面兼容Dubbo 2.7.x版本，支持了应用维度的服务注册与发现，和主流的注册模型保持一致，标志着Dubbo-go向云原生迈出了关键的一步。作为驱动服务运转的核心引擎&amp;ndash;注册中心，在切换到应用维度的注册模型后，也需要做相应的适配，本文将解析如何以Nacos为核心引擎实现应用维度的服务注册与发现，并且给出相应的实践案例。此外，本文代码基于Dubbo-go v1.5.1，Nacos-SDK-go v1.0.0和Nacos v1.3.2。&lt;/p>
+&lt;h2 id="服务注册与发现架构">服务注册与发现架构&lt;/h2>
+&lt;p>从架构中，我们可以看到，与接口级别的服务注册发现不同的是，Dubbo-go的provider启动后会调用Nacos-go-sdk的RegisterInstance接口向Nacos注册服务实例，注册的服务名即为应用名称，而不是接口名称。Conusmer启动后则会调用Subscribe接口订阅该应用的服务实例变化，并对的实例发起服务调用。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/nacos/p2.png" alt="">&lt;/p>
+&lt;h2 id="服务模型">服务模型&lt;/h2>
+&lt;p>图3是我们Dubbo-go的应用维度服务发现模型，主要有服务和实例两个层级关系，服务实例的属性主要包含实例Id、主机地址、服务端口、激活状态和元数据。图4为Nacos的服务分级存储模型，包含服务、集群和实例三个层次。两者对比，多了一个集群维度的层级，而且实例属性信息能够完全匹配。所以在Dubbo-go将应用服务实例注册到Nacos时，我们只需要将集群设置为默认集群，再填充服务和实例的相关属性，即可完成服务模型上的匹配。此外Nacos可以将服务注册到不同的Namespace下，实现多租户的隔离。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/nacos/p3.png" alt="">&lt;/p>
+&lt;p>!
+&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/nacos/p4.png" alt="">&lt;/p>
+&lt;h2 id="服务实例心跳维持">服务实例心跳维持&lt;/h2>
+&lt;p>Dubbo-go的Provider在向Nacos注册应用服务实例信息后，需要主动上报心跳，让Nacos服务端感知实例的存活与否，以判断是否将该节点从实例列表中移除。维护心跳的工作是在Nacos-SDK-go完成的，从图5代码中可以看到，当Dubbo-go调用RegisterInstance注册一个服务实例时，SDK除了调用Nacos的Register API之外，还会调用AddBeatInfo，将服务实例信息添加到本地缓存，通过后台协程定期向Nacos发送服务实例信息，保持心跳。当服务下线时，可以通过调用DeRegisterInstance执行反注册，并移除本地的心跳保持任务，Nacos实例列表中也会将该实例移除。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/nacos/p5.png" alt="">&lt;/p>
+&lt;h1 id="订阅服务实例变化">订阅服务实例变化&lt;/h1>
+&lt;p>Dubbo-go的Consumer在启动的时候会调用Nacos-SDK-go的Subscribe接口，该接口入参如图6，订阅的时候只需要传递ServiceName即应用名和回调函数SubscribeCallback，Nacos在服务实例发生变化的时候即可通过回调函数通知Dubbo-go。Nacos-SDK-go是如何感知Nacos的服务实例变化的呢？主要有两种方式：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Nacos服务端主动推送，Nacos-SDK-go在启动的时候会监听一个UDP端口，该端口在调用Nacos Register API的时候作为参数传递，Nacos会记录Ip和端口，当服务实例发生变化时，Nacos会对所有监听该服务的Ip和端口发送UDP请求，推送变化后的服务实例信息。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Nacos-SDK-go定期查询，SDK会对订阅的服务实例定时调用查询接口，如果查询有变化则通过回调接口通知Dubbo-go。作为兜底策略保证Nacos服务端推送失败后，仍能感知到变化。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/nacos/p6.png" alt="">&lt;/p>
+&lt;p>此外Nacos-SDK-go还支持推空保护，当Nacos推送的实例列表为空时，不更新本地缓存，也不通知Dubbo-go变更，避免Consumer无可用实例调用，造成故障。同时，SDK还支持服务实例信息本地持久化存储，可以保证在Nacos服务故障过程中，Consumer重启也能获取到可用实例，具备容灾效果。&lt;/p>
+&lt;h1 id="范例实践">范例实践&lt;/h1>
+&lt;h2 id="环境准备">环境准备&lt;/h2>
+&lt;p>dubbo-go samples代码下载：https://github.com/apache/dubbo-go-samples/tree/master，基于Nacos注册中心的应用级服务发现的hello world代码目录在 registry/servicediscovery/nacos。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/nacos/p7.png" alt="">&lt;/p>
+&lt;p>Nacos服务端搭建，参考官方文档：https://nacos.io/zh-cn/docs/quick-start.html，或者使用官方提供的公共Nacos服务：http://console.nacos.io/nacos(账号密码:nacos，仅供测试)，或者购买阿里云服务：https://help.aliyun.com/document_detail/139460.html?spm=a2c4g.11186623.6.559.d7e264b7bLpZIs&lt;/p>
+&lt;h2 id="server端搭建">Server端搭建&lt;/h2>
+&lt;p>进入registry/servicediscovery/nacos/go-server/profiles文件，可以看到有dev、release和test三个文件夹，分别对应开发、测试和生产配置。我们使用dev配置来搭建开发环境，dev文件下有log.yml和server.yml文件，下面对server.yml配置进行修改。&lt;/p>
+&lt;p>remote配置，这里使用公共的Nacos服务，address支持配置多个地址，用逗号分割。params参数配置nacos-sdk的日志目录。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Yaml" data-lang="Yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">remote&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">nacos&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">address&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;console.nacos.io:80&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">timeout&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;5s&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">params&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">logDir&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;/data/nacos-sdk/log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>configCenter配置
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">config_center&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">protocol&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;nacos&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">address&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;console.nacos.io:80&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置server端环境变量&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Bash" data-lang="Bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">export&lt;/span> &lt;span style="color:#268bd2">CONF_PROVIDER_FILE_PATH&lt;/span>&lt;span style="color:#719e07">=&lt;/span>server端的server.yml文件路径
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">export&lt;/span> &lt;span style="color:#268bd2">APP_LOG_CONF_FILE&lt;/span>&lt;span style="color:#719e07">=&lt;/span>server端的log.yml文件路径
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>进入registry/servicediscovery/nacos/go-server/app，运行server.go的main方法，可以从Nacos的控制台（http://console.nacos.io/nacos/#/serviceManagement?dataId=&amp;amp;group=&amp;amp;appName=&amp;amp;namespace=）&lt;/p>
+&lt;p>看到，应用user-info-server已经注册成功。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/nacos/p8.png" alt="">&lt;/p>
+&lt;h2 id="client端搭建">Client端搭建&lt;/h2>
+&lt;p>client的配置文件在registry/servicediscovery/nacos/go-server/profiles目录下，需要修改的地方跟server端一样，这里不赘述。&lt;/p>
+&lt;p>配置client端环境变量&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Bash" data-lang="Bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">export&lt;/span> &lt;span style="color:#268bd2">CONF_CONSUMER_FILE_PATH&lt;/span>&lt;span style="color:#719e07">=&lt;/span>client端的server.yml文件路径
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">export&lt;/span> &lt;span style="color:#268bd2">APP_LOG_CONF_FILE&lt;/span>&lt;span style="color:#719e07">=&lt;/span>client端的log.yml文件路径
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>进入registry/servicediscovery/nacos/go-client/app，运行client.go的main方法，看到如下日志输出，表示调用server端成功。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-go/nacos/p9.png" alt="">&lt;/p>
+&lt;blockquote>
+&lt;p>作者：李志鹏 Github账号：Lzp0412，Nacos-SDK-go作者，Apache/Dubbo-go Contributor。现就职于阿里云云原生应用平台，主要参与服务发现、CoreDNS、ServiceMesh相关工作，负责推动Nacos Go微服务生态建设。&lt;/p>
+&lt;/blockquote></description></item></channel></rss>
