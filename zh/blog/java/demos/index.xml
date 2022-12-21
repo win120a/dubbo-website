@@ -29,7 +29,7 @@
 &lt;p>Dubbo Proxyless 模式是指 Dubbo 直接与 Istiod通信，通过 xDS协议实现服务发现和服务治理等能力。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/20220905/2.png" alt="Proxyless">&lt;/p>
 &lt;p>Proxyless 模式使得微服务又回到了 2.x 时代的部署架构，同 Dubbo 经典服务治理模式非常相似，所以说这个模式并不新鲜， Dubbo 从最开始就是这样的设计模式。
-这样做可以极大的提升应用性能，降低网络延迟。有人说这种做法又回答了原始的基于 SDK 的微服务模式，其实非也，它依然使用了 Envoy 的 xDS API，
+这样做可以极大的提升应用性能，降低网络延迟。有人说这种做法又回到了原始的基于 SDK 的微服务模式，其实非也，它依然使用了 Envoy 的 xDS API，
 但是因为不再需要向应用程序中注入 Sidecar 代理，因此可以减少应用程序性能的损耗。&lt;/p>
 &lt;p>但相比于 Mesh 架构，Dubbo 经典服务治理模式并没有强调控制面的统一管控，而这点恰好是 Service Mesh 所强调的，强调对流量、可观测性、证书等的标准化管控与治理，也是 Mesh 理念先进的地方。&lt;/p>
 &lt;p>在 Dubbo Proxyless 架构模式下，Dubbo 进程将直接与控制面通信，Dubbo 进程之间也继续保持直连通信模式，我们可以看出 Proxyless 架构的优势：&lt;/p>
@@ -814,7 +814,7 @@ Dubbo这边有没有集合文档展示和测试功能,能不用写文档就能�
 &lt;p>在CPU资源的管理上，OS和JVM的最小调度单位都是线程，业务应用通过扩展实现的协程包是可以具备独立的运行单位，事实上也是基于线程来做的，核心应该是遇到IO阻塞，或者锁等待时，保存上下文，然后切换到另一个协程。至于说的协程开销低，能更高效的使用CPU，这些考虑到协程库的用户态实现和上下文设计是支持的，但也建议大家结合实际业务场景做性能测试。&lt;/p>
 &lt;p>&lt;strong>在默认的Dubbo线程策略中，是有worker线程池来执行业务逻辑，但也常常会发生ThreadPool Full的问题，为了尽快释放worker线程，在业务服务的实现中会另起线程。代价是再次增加线程上下文切换，同时需要考虑链路级别的数据传送(比如tracing信息)和流控的出口控制等等。当然，如果Dubbo能够切换到Same-thread策略，再配合协程库的支持，服务端异步是一种值得推荐的使用方式。&lt;/strong>&lt;/p>
 &lt;h2 id="示例">示例&lt;/h2>
-&lt;p>通过示例来体验下Dubbo服务端异步接口。Demo代码请访问github之&lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-notify">https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-notify&lt;/a>。&lt;/p>
+&lt;p>通过示例来体验下Dubbo服务端异步接口。Demo代码请访问github之&lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/2-advanced/dubbo-samples-notify">https://github.com/dubbo/dubbo-samples/tree/master/2-advanced/dubbo-samples-notify&lt;/a>。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">AsyncServiceImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> AsyncService &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Override&lt;/span>
@@ -864,7 +864,7 @@ Dubbo这边有没有集合文档展示和测试功能,能不用写文档就能�
 &lt;p>所以，客户端异步的出发点是节省线程资源开销，代价是需要了解下异步的使用方式:)。在同步方式下API接口的返回类型是代表着某个业务类，而当异步情况下，响应返回与请求发出是完全独立的两个事件，需要API接口的返回类型变为上述中说的CompletionStage才是最贴合的，这是Dubbo在异步上支持的必然异步。回到最近的Dubbo发布版，是不改变接口的情况下，需要在服务创建时注册一个回调接口来处理响应返回事件。&lt;/p>
 &lt;p>下面以示例来说。&lt;/p>
 &lt;h3 id="示例">示例&lt;/h3>
-&lt;p>事件通知的示例代码请参考：&lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-notify">https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-notify&lt;/a>&lt;/p>
+&lt;p>事件通知的示例代码请参考：&lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/2-advanced/dubbo-samples-notify">https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-notify&lt;/a>&lt;/p>
 &lt;p>事件通知允许 Consumer 端在调用之前、调用正常返回之后或调用出现异常时，触发 &lt;code>oninvoke&lt;/code>、&lt;code>onreturn&lt;/code>、&lt;code>onthrow&lt;/code> 三个事件。&lt;/p>
 &lt;p>可以通过在配置 Consumer 时，指定事件需要通知的方法，如：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;bean&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoCallback&amp;#34;&lt;/span> class=&lt;span style="color:#2aa198">&amp;#34;com.alibaba.dubbo.samples.notify.impl.NotifyImpl&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
@@ -1053,7 +1053,7 @@ Dubbo这边有没有集合文档展示和测试功能,能不用写文档就能�
 &lt;h2 id="示例">示例&lt;/h2>
 &lt;h3 id="示例-1使用-dubbo-开发-grpc-服务">示例 1，使用 Dubbo 开发 gRPC 服务&lt;/h3>
 &lt;p>&lt;a href="https://grpc.io/">gRPC&lt;/a> 是 Google 开源的构建在 HTTP/2 之上的一个 PRC 通信协议。Dubbo 依赖其灵活的协议扩展机制，增加了对 gRPC (HTTP/2) 协议的支持。&lt;/p>
-&lt;p>目前的支持限定在 Dubbo Java 语言版本，后续 Go 语言或其他语言版本将会以类似方式提供支持。下面，通过一个&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-grpc">简单的示例&lt;/a>来演示如何在 Dubbo 中使用 gRPC 协议通信。&lt;/p>
+&lt;p>目前的支持限定在 Dubbo Java 语言版本，后续 Go 语言或其他语言版本将会以类似方式提供支持。下面，通过一个&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/protocol/dubbo-samples-grpc">简单的示例&lt;/a>来演示如何在 Dubbo 中使用 gRPC 协议通信。&lt;/p>
 &lt;h4 id="1-定义服务-idl">1. 定义服务 IDL&lt;/h4>
 &lt;p>首先，通过标准的 Protobuf 协议定义服务如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>syntax = &lt;span style="color:#2aa198">&amp;#34;proto3&amp;#34;&lt;/span>;
@@ -1317,7 +1317,7 @@ Dubbo这边有没有集合文档展示和测试功能,能不用写文档就能�
 &lt;p>&lt;strong>三、TLS 配置&lt;/strong>&lt;/p>
 &lt;p>配置方式和 Dubbo 提供的通用的 &lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/security/tls/">TLS 支持&lt;/a>一致，具体请参见文档&lt;/p>
 &lt;h3 id="示例-2-使用-protobuf-开发-dubbo-服务">示例 2， 使用 Protobuf 开发 Dubbo 服务&lt;/h3>
-&lt;p>下面，我们以一个&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-protobuf">具体的示例&lt;/a>来看一下基于 Protobuf 的 Dubbo 服务开发流程。&lt;/p>
+&lt;p>下面，我们以一个&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/serialization/dubbo-samples-protobuf">具体的示例&lt;/a>来看一下基于 Protobuf 的 Dubbo 服务开发流程。&lt;/p>
 &lt;h4 id="1-定义服务">1. 定义服务&lt;/h4>
 &lt;p>通过标准 Protobuf 定义服务&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>syntax = &lt;span style="color:#2aa198">&amp;#34;proto3&amp;#34;&lt;/span>;
@@ -1370,7 +1370,7 @@ Dubbo这边有没有集合文档展示和测试功能,能不用写文档就能�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;/execution&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;/executions&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/plugin&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注意，这里与 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-grpc">Dubbo 对 gRPC&lt;/a> 支持部分的区别在于：
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注意，这里与 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/protocol/dubbo-samples-grpc">Dubbo 对 gRPC&lt;/a> 支持部分的区别在于：
 &lt;code> &amp;lt;pluginParameter&amp;gt;dubbo&amp;lt;/pluginParameter&amp;gt;&lt;/code>&lt;/p>
 &lt;ol start="2">
 &lt;li>
@@ -1660,10 +1660,10 @@ Dubbo这边有没有集合文档展示和测试功能,能不用写文档就能�
 &lt;hr>
 &lt;ol>
 &lt;li id="fn:1">
-&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-stub">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-stub&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-stub">https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-stub&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:2">
-&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mock">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mock&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-mock">https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-mock&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:3">
 &lt;p>/zh/docsv2.7/user/examples/local-mock/&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
@@ -3544,7 +3544,7 @@ ProtocolFilterWrapper代码如下：&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> entry&lt;span style="color:#719e07">.&lt;/span>getValue&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>argumentIndex是在初始化Selector的时候一起赋值的，代表着需要用哪几个请求参数作Hash映射获取Invoker。比如：有方法methodA(Integer a, Integer b, Integer c)，如果argumentIndex的值为{0,2}，那么即用a和c拼接的字符串来计算Hash值。&lt;/p>
-&lt;p>我们已经知道virtualInvokers是一个TreeMap，TreeMap的底层实现是红黑树。对于TreeMap的方法ceilingEntry(hash)，它的作用是用来&lt;strong>获取比传入值大的第一个元素&lt;/strong>。可以看到，这一点与一般的一致性Hash算法的处理逻辑完全是相同的。&lt;/p>
+&lt;p>我们已经知道virtualInvokers是一个TreeMap，TreeMap的底层实现是红黑树。对于TreeMap的方法ceilingEntry(hash)，它的作用是用来&lt;strong>获取大于等于传入值的首个元素&lt;/strong>。可以看到，这一点与一般的一致性Hash算法的处理逻辑完全是相同的。&lt;/p>
 &lt;p>但这里的回环逻辑有点不同。对于取模运算来讲，大于最大值后，会自动回环从0开始，而这里的逻辑是：当没有比传入ceilingEntry()方法中的值大的元素的时候，virtualInvokers.ceilingEntry(hash)必然会得到null，于是，就用virtualInvokers.firstEntry()来获取整个TreeMap的第一个元素。&lt;/p>
 &lt;p>从selectForKey中获取到Invoker后，负载均衡策略也就算是执行完毕了。后续获取远程调用客户端等调用流程不再赘述。&lt;/p></description></item><item><title>Blog: Dubbo可扩展机制实战</title><link>https://dubbo.apache.org/zh/blog/2019/04/25/dubbo%E5%8F%AF%E6%89%A9%E5%B1%95%E6%9C%BA%E5%88%B6%E5%AE%9E%E6%88%98/</link><pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2019/04/25/dubbo%E5%8F%AF%E6%89%A9%E5%B1%95%E6%9C%BA%E5%88%B6%E5%AE%9E%E6%88%98/</guid><description>
 &lt;h2 id="1-dubbo的扩展机制">1. Dubbo的扩展机制&lt;/h2>
@@ -4602,7 +4602,7 @@ random的定义在配置文件&lt;code>META-INF/dubbo/internal/com.alibaba.dubbo
 &lt;p>以上所有的增强，是在兼容已有异步编程的基础上进行的，因此基于2.6.x版本编写的异步程序不用做任何改造即可顺利编译通过。&lt;/p>
 &lt;p>接下来，我们通过几个示例看一下如何实现一个全异步的Dubbo服务调用链。&lt;/p>
 &lt;h2 id="示例1completablefuture类型接口">示例1：CompletableFuture类型接口&lt;/h2>
-&lt;p>CompletableFuture类型的接口既可以用作同步调用，也可以实现Consumer或Provider的异步调用。本示例实现了Consumer和Provider端异步调用，代码参见&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-async/dubbo-samples-async-original-future">dubbo-samples-async-original-future&lt;/a>。&lt;/p>
+&lt;p>CompletableFuture类型的接口既可以用作同步调用，也可以实现Consumer或Provider的异步调用。本示例实现了Consumer和Provider端异步调用，代码参见&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-async/dubbo-samples-async-original-future">dubbo-samples-async-original-future&lt;/a>。&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>定义接口&lt;/p>
@@ -4668,7 +4668,7 @@ random的定义在配置文件&lt;code>META-INF/dubbo/internal/com.alibaba.dubbo
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="示例2重载同步接口">示例2：重载同步接口&lt;/h2>
-&lt;p>这个示例演示了如何在同步接口的基础上，通过增加重载方法实现消费端的异步调用，具体代码参见地址&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-async/dubbo-samples-async-generated-future">dubbo-samples-async-generated-future&lt;/a>&lt;/p>
+&lt;p>这个示例演示了如何在同步接口的基础上，通过增加重载方法实现消费端的异步调用，具体代码参见地址&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-async/dubbo-samples-async-generated-future">dubbo-samples-async-generated-future&lt;/a>&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>定义接口&lt;/p>
@@ -4725,7 +4725,7 @@ random的定义在配置文件&lt;code>META-INF/dubbo/internal/com.alibaba.dubbo
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="示例3使用asynccontext">示例3：使用AsyncContext&lt;/h2>
-&lt;p>本示例演示了如何在同步接口的基础上，通过AsyncContext实现Provider端异步执行，示例代码参见&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-async/dubbo-samples-async-provider">dubbo-samples-async-provider&lt;/a>。&lt;/p>
+&lt;p>本示例演示了如何在同步接口的基础上，通过AsyncContext实现Provider端异步执行，示例代码参见&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-async/dubbo-samples-async-provider">dubbo-samples-async-provider&lt;/a>。&lt;/p>
 &lt;blockquote>
 &lt;p>之前已经提到过，已经是CompletableFuture签名的接口，要实现Provider端异步没必要再用AsyncContext。&lt;/p>
 &lt;/blockquote>
@@ -7644,7 +7644,7 @@ DubboComponentScanRegistrar-85]-[main]-[INFO] 0 annotated @Service Components { 
 &lt;li>打印返回结果 &lt;em>hi, dubbo&lt;/em>。&lt;/li>
 &lt;/ol>
 &lt;h3 id="运行">运行&lt;/h3>
-&lt;p>完整的示例在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-api">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-api&lt;/a> 上提供。在完整的示例中，由于配置了 &lt;em>exec-maven-plugin&lt;/em>，可以很方便的在命令行下通过 maven 的方式执行。当然，您也可以在 IDE 里直接执行，但是需要注意的是，由于使用了组播的方式来发现服务，运行时需要指定 &lt;em>-Djava.net.preferIPv4Stack=true&lt;/em>。&lt;/p>
+&lt;p>完整的示例在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-api">https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-api&lt;/a> 上提供。在完整的示例中，由于配置了 &lt;em>exec-maven-plugin&lt;/em>，可以很方便的在命令行下通过 maven 的方式执行。当然，您也可以在 IDE 里直接执行，但是需要注意的是，由于使用了组播的方式来发现服务，运行时需要指定 &lt;em>-Djava.net.preferIPv4Stack=true&lt;/em>。&lt;/p>
 &lt;h4 id="构建示例">构建示例&lt;/h4>
 &lt;p>通过以下的命令来同步示例代码并完成构建：&lt;/p>
 &lt;ol>
@@ -7999,7 +7999,7 @@ DubboComponentScanRegistrar-85]-[main]-[INFO] 0 annotated @Service Components { 
 &lt;/ol>
 &lt;p>另外，需要注意的是，application、module、consumer、protocol、monitor、registry（从 7 到 12）需要提供的是对应的 spring bean 的名字，而这些 bean 的组装要么通过传统的 XML 配置方式完成，要么通过现代的 Java Config 来完成。在本文中，将会展示 Java Config 的使用方式。&lt;/p>
 &lt;h2 id="示例实战">示例实战&lt;/h2>
-&lt;p>了解了 &lt;code>@EnableDubbo&lt;/code>， &lt;code>@Service&lt;/code>，&lt;code>@Reference&lt;/code> 的作用，下面以一个实际的例子来展示如何使用 annotation 来开发 Dubbo 应用。以下的代码可以在 &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-annotation">https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-annotation&lt;/a> 中找到。&lt;/p>
+&lt;p>了解了 &lt;code>@EnableDubbo&lt;/code>， &lt;code>@Service&lt;/code>，&lt;code>@Reference&lt;/code> 的作用，下面以一个实际的例子来展示如何使用 annotation 来开发 Dubbo 应用。以下的代码可以在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-annotation">https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-annotation&lt;/a> 中找到。&lt;/p>
 &lt;h3 id="1-接口定义">1. 接口定义&lt;/h3>
 &lt;p>定义一个简单的 &lt;code>GreetingService&lt;/code> 接口，里面只有一个简单的方法 &lt;code>sayHello&lt;/code> 向调用者问好。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">GreetingService&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -9486,17 +9486,17 @@ Spring 配置：&lt;/p>
 &lt;h3 id="链接之间增加空格">链接之间增加空格&lt;/h3>
 &lt;p>用法：&lt;/p>
 &lt;blockquote>
-&lt;p>请 &lt;a href="https://www.cnkirito.moe/chinese-copywriting-guidelines/#">提交一个 issue&lt;/a> 并分配给相关同事。&lt;/p>
+&lt;p>请 &lt;a href="https://github.com/mzlogin/chinese-copywriting-guidelines">提交一个 issue&lt;/a> 并分配给相关同事。&lt;/p>
 &lt;/blockquote>
 &lt;blockquote>
-&lt;p>访问我们网站的最新动态，请 &lt;a href="https://www.cnkirito.moe/chinese-copywriting-guidelines/#">点击这里&lt;/a> 进行订阅！&lt;/p>
+&lt;p>访问我们网站的最新动态，请 &lt;a href="https://github.com/mzlogin/chinese-copywriting-guidelines">点击这里&lt;/a> 进行订阅！&lt;/p>
 &lt;/blockquote>
 &lt;p>对比用法：&lt;/p>
 &lt;blockquote>
-&lt;p>请&lt;a href="https://www.cnkirito.moe/chinese-copywriting-guidelines/#">提交一个 issue&lt;/a> 并分配给相关同事。&lt;/p>
+&lt;p>请&lt;a href="https://github.com/mzlogin/chinese-copywriting-guidelines">提交一个 issue&lt;/a> 并分配给相关同事。&lt;/p>
 &lt;/blockquote>
 &lt;blockquote>
-&lt;p>访问我们网站的最新动态，请&lt;a href="https://www.cnkirito.moe/chinese-copywriting-guidelines/#">点击这里&lt;/a>进行订阅！&lt;/p>
+&lt;p>访问我们网站的最新动态，请&lt;a href="https://github.com/mzlogin/chinese-copywriting-guidelines">点击这里&lt;/a>进行订阅！&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="简体中文使用直角引号">简体中文使用直角引号&lt;/h3>
 &lt;p>用法：&lt;/p>

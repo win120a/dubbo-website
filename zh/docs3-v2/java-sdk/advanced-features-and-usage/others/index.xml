@@ -120,25 +120,27 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:protocol&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;dubbo&amp;#34;&lt;/span> port=&lt;span style="color:#2aa198">&amp;#34;20890&amp;#34;&lt;/span> host=&lt;span style="color:#2aa198">&amp;#34;www.example.com&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="socket-使用不同的端口号">socket 使用不同的端口号&lt;/h3>
-&lt;p>见 &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-docker">dubbo 通过环境变量设置 host&lt;/a>&lt;/p>
+&lt;p>见 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-docker">dubbo 通过环境变量设置 host&lt;/a>&lt;/p>
 &lt;p>有些部署场景需要动态指定服务注册的地址，如 docker bridge 网络模式下要指定注册宿主机 ip 以实现外网通信。dubbo 提供了两对启动阶段的系统属性，用于设置对外通信的ip、port地址。&lt;/p>
 &lt;ul>
-&lt;li>DUBBO_IP_TO_REGISTRY &amp;mdash; 注册到注册中心的ip地址&lt;/li>
-&lt;li>DUBBO_PORT_TO_REGISTRY &amp;mdash; 注册到注册中心的port端口&lt;/li>
-&lt;li>DUBBO_IP_TO_BIND &amp;mdash; 监听ip地址&lt;/li>
-&lt;li>DUBBO_PORT_TO_BIND &amp;mdash; 监听port端口&lt;/li>
+&lt;li>&lt;strong>DUBBO_IP_TO_REGISTRY&lt;/strong>：注册到注册中心的 ip 地址&lt;/li>
+&lt;li>&lt;strong>DUBBO_PORT_TO_REGISTRY&lt;/strong>：注册到注册中心的 port 端口&lt;/li>
+&lt;li>&lt;strong>DUBBO_IP_TO_BIND&lt;/strong>：监听 ip 地址&lt;/li>
+&lt;li>&lt;strong>DUBBO_PORT_TO_BIND&lt;/strong>：监听 port 端口&lt;/li>
 &lt;/ul>
 &lt;p>以上四个配置项均为可选项，如不配置 dubbo 会自动获取 ip 与端口，请根据具体的部署场景灵活选择配置。
 dubbo 支持多协议，如果一个应用同时暴露多个不同协议服务，且需要为每个服务单独指定 ip 或 port，请分别在以上属性前加协议前缀。 如：&lt;/p>
 &lt;ul>
-&lt;li>HESSIAN_DUBBO_PORT_TO_BIND hessian协议绑定的port&lt;/li>
-&lt;li>DUBBO_DUBBO_PORT_TO_BIND dubbo协议绑定的port&lt;/li>
-&lt;li>HESSIAN_DUBBO_IP_TO_REGISTRY hessian协议注册的ip&lt;/li>
-&lt;li>DUBBO_DUBBO_PORT_TO_BIND dubbo协议注册的ip&lt;/li>
+&lt;li>&lt;strong>HESSIAN_DUBBO_PORT_TO_BIND&lt;/strong>：hessian 协议绑定的 port&lt;/li>
+&lt;li>&lt;strong>DUBBO_DUBBO_PORT_TO_BIND&lt;/strong>：dubbo 协议绑定的 port&lt;/li>
+&lt;li>&lt;strong>HESSIAN_DUBBO_IP_TO_REGISTRY&lt;/strong>：hessian 协议注册的 ip&lt;/li>
+&lt;li>&lt;strong>DUBBO_DUBBO_IP_TO_REGISTRY&lt;/strong>：dubbo 协议注册的 ip&lt;/li>
 &lt;/ul>
-&lt;p>PORT_TO_REGISTRY 或 IP_TO_REGISTRY 不会用作默认 PORT_TO_BIND 或 IP_TO_BIND，但是反过来是成立的
-如设置 PORT_TO_REGISTRY=20881 IP_TO_REGISTRY=30.5.97.6，则 PORT_TO_BIND IP_TO_BIND 不受影响
-如果设置 PORT_TO_BIND=20881 IP_TO_BIND=30.5.97.6，则默认 PORT_TO_REGISTRY=20881 IP_TO_REGISTRY=30.5.97.6&lt;/p>
+&lt;p>PORT_TO_REGISTRY 或 IP_TO_REGISTRY 不会用作默认 PORT_TO_BIND 或 IP_TO_BIND，但是反过来是成立的。如：&lt;/p>
+&lt;ul>
+&lt;li>设置 &lt;code>PORT_TO_REGISTRY=20881&lt;/code> 和 &lt;code>IP_TO_REGISTRY=30.5.97.6&lt;/code>，则 &lt;code>PORT_TO_BIND&lt;/code> 和 &lt;code>IP_TO_BIND&lt;/code> 不受影响&lt;/li>
+&lt;li>设置 &lt;code>PORT_TO_BIND=20881&lt;/code> 和 &lt;code>IP_TO_BIND=30.5.97.6&lt;/code>，则默认 &lt;code>PORT_TO_REGISTRY=20881&lt;/code> 且 &lt;code>IP_TO_REGISTRY=30.5.97.6&lt;/code>&lt;/li>
+&lt;/ul>
 &lt;h3 id="总结">总结&lt;/h3>
 &lt;ol>
 &lt;li>可以通过&lt;code>dubbo.protocol&lt;/code>或&lt;code>dubbo.provider&lt;/code>的&lt;code>host&lt;/code>属性对&lt;code>host&lt;/code>进行配置,支持IP地址和域名.但此时注册到注册中心的IP地址和监听IP地址是同一个值&lt;/li>
@@ -147,7 +149,7 @@ dubbo 支持多协议，如果一个应用同时暴露多个不同协议服务�
 &lt;h3 id="参考">参考&lt;/h3>
 &lt;ol>
 &lt;li>&lt;a href="https://github.com/apache/dubbo/issues/2043">Proposal: support hostname or domain in service discovery.&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-docker">dubbo通过环境变量设置host&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-docker">dubbo通过环境变量设置host&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>Docs3-V2: 日志框架适配及运行时管理</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/others/logger-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/others/logger-management/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>日志框架适配，自 &lt;code>2.2.1&lt;/code> 开始，dubbo 开始内置 log4j、slf4j、jcl、jdk 这些日志框架的适配。&lt;/p>

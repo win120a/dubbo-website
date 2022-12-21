@@ -3,7 +3,7 @@
 &lt;p>Dubbo 还提供了包括&lt;a href="../../reference-manual/config/xml">XML&lt;/a>、&lt;a href="../../reference-manual/config/api">API&lt;/a>等多种启动与接入方式，更多开发方式和配置细节可参见&lt;a href="../../reference-manual/config/">配置手册&lt;/a>。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="下载示例代码">下载示例代码&lt;/h2>
-&lt;p>完整示例代码在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-spring-boot">dubbo-samples&lt;/a> 中。&lt;/p>
+&lt;p>完整示例代码在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-spring-boot">dubbo-samples&lt;/a> 中。&lt;/p>
 &lt;ol>
 &lt;li>下载源码&lt;/li>
 &lt;/ol>
@@ -11,7 +11,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
 &lt;li>进入示例目录&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> dubbo-samples/dubbo-samples-spring-boot
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> dubbo-samples/1-basic/dubbo-samples-spring-boot
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls &lt;span style="color:#586e75"># 查看目录结构&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="快速运行示例">快速运行示例&lt;/h2>
 &lt;ol>
@@ -129,8 +129,8 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中，&lt;code>@EnableDubbo&lt;/code> 必须配置。&lt;/p></description></item><item><title>Docs3-V2: IDL 定义跨语言服务</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/quick-start/idl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/quick-start/idl/</guid><description>
 &lt;p>使用 IDL 定义服务具有更好的跨语言友好性，对于 Dubbo3 新用户而言，我们推荐使用这种方式。
-然而 Triple 协议并不是和 IDL 强绑定的，也可以使用 Java Interface + Pojo 的方式定义服务并启用 Triple 协议，具体可参见&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/pojo">示例&lt;/a>。&lt;/p>
-&lt;p>更多 Triple 和 IDL 使用方式，请参考&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple">官方示例&lt;/a>&lt;/p>
+然而 Triple 协议并不是和 IDL 强绑定的，也可以使用 Java Interface + Pojo 的方式定义服务并启用 Triple 协议，具体可参见&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/protocol/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/pojo">示例&lt;/a>。&lt;/p>
+&lt;p>更多 Triple 和 IDL 使用方式，请参考&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/protocol/dubbo-samples-triple">官方示例&lt;/a>&lt;/p>
 &lt;h3 id="前置条件">前置条件&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://jdk.java.net/">JDK&lt;/a> 版本 &amp;gt;= 8&lt;/li>

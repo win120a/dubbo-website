@@ -506,7 +506,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/group-merger/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>通过分组对结果进行聚合并返回聚合后的结果，比如菜单服务，用group区分同一接口的多种实现，现在消费方需从每种group中调用一次并返回结果，对结果进行合并之后返回，这样就可以实现聚合菜单项。&lt;/p>
-&lt;p>相关代码可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-merge">dubbo 项目中的示例&lt;/a>&lt;/p>
+&lt;p>相关代码可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-merge">dubbo 项目中的示例&lt;/a>&lt;/p>
 &lt;h2 id="配置">配置&lt;/h2>
 &lt;p>搜索所有分组&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.MenuService&amp;#34;&lt;/span> group=&lt;span style="color:#2aa198">&amp;#34;*&amp;#34;&lt;/span> merger=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
@@ -692,7 +692,7 @@ Dubbo 默认支持 hibernate-validator 版本 &amp;lt;=6.x，若使用 hibernate
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">提示&lt;/h4>
-&lt;p>自 &lt;code>2.1.0&lt;/code> 版本开始支持, 如何使用可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-validation">dubbo 项目中的示例代码&lt;/a>&lt;/p>
+&lt;p>自 &lt;code>2.1.0&lt;/code> 版本开始支持, 如何使用可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-validation">dubbo 项目中的示例代码&lt;/a>&lt;/p>
 &lt;p>验证方式可扩展，扩展方式参见开发者手册中的&lt;a href="../../references/spis/validation">验证扩展&lt;/a>&lt;/p>
 &lt;/div></description></item><item><title>Docs: 结果缓存</title><link>https://dubbo.apache.org/zh/docs/advanced/result-cache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/advanced/result-cache/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
@@ -716,7 +716,7 @@ Dubbo 默认支持 hibernate-validator 版本 &amp;lt;=6.x，若使用 hibernate
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">提示&lt;/h4>
 &lt;p>&lt;code>2.1.0&lt;/code> 以上版本支持。&lt;/p>
-&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-cache">示例代码&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-cache">示例代码&lt;/a>&lt;/p>
 &lt;/div></description></item><item><title>Docs: 使用泛化调用</title><link>https://dubbo.apache.org/zh/docs/advanced/generic-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/advanced/generic-reference/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-reference/">最新版本&lt;/a>。&lt;/p>
@@ -796,7 +796,7 @@ Dubbo 默认支持 hibernate-validator 版本 &amp;lt;=6.x，若使用 hibernate
 &lt;/div>
 &lt;p>当前 Dubbo 的服务定义和具体的编程语言绑定，没有提供一种语言中立的服务描述格式，比如 Java 就是定义 Interface 接口，到了其他语言又得重新以另外的格式定义一遍。
 2.7.5 版本通过支持 Protobuf IDL 实现了语言中立的服务定义。&lt;/p>
-&lt;p>日后，不论我们使用什么语言版本来开发 Dubbo 服务，都可以直接使用 IDL 定义如下服务，具体请&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-protobuf">参见示例&lt;/a>&lt;/p>
+&lt;p>日后，不论我们使用什么语言版本来开发 Dubbo 服务，都可以直接使用 IDL 定义如下服务，具体请&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/serialization/dubbo-samples-protobuf">参见示例&lt;/a>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>syntax = &lt;span style="color:#2aa198">&amp;#34;proto3&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>option java_multiple_files = &lt;span style="color:#cb4b16">true&lt;/span>;
@@ -822,11 +822,11 @@ Dubbo 默认支持 hibernate-validator 版本 &amp;lt;=6.x，若使用 hibernate
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: GoogleProtobuf 对象泛化调用</title><link>https://dubbo.apache.org/zh/docs/advanced/pb-generic-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/advanced/pb-generic-reference/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-reference/#protobuf%E5%AF%B9%E8%B1%A1%E6%B3%9B%E5%8C%96%E8%B0%83%E7%94%A8">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-reference/#protobuf-%E5%AF%B9%E8%B1%A1%E6%B3%9B%E5%8C%96%E8%B0%83%E7%94%A8">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>泛化接口调用方式主要用于客户端没有 API 接口及模型类元的情况，参考 &lt;a href="../generic-reference">泛化调用&lt;/a>。
 一般泛化调用只能用于生成的服务参数为POJO的情况，而 GoogleProtobuf 的对象是基于 Builder 生成的非正常POJO，可以通过 protobuf-json 泛化调用。&lt;/p>
-&lt;p>GoogleProtobuf 序列化相关的Demo可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-protobuf">protobuf-demo&lt;/a>&lt;/p>
+&lt;p>GoogleProtobuf 序列化相关的Demo可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/serialization/dubbo-samples-protobuf">protobuf-demo&lt;/a>&lt;/p>
 &lt;h2 id="通过spring对google-protobuf对象泛化调用">通过Spring对Google Protobuf对象泛化调用&lt;/h2>
 &lt;p>在 Spring 中配置声明 generic = &amp;ldquo;protobuf-json&amp;rdquo;&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;barService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.foo.BarService&amp;#34;&lt;/span> generic=&lt;span style="color:#2aa198">&amp;#34;protobuf-json&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
@@ -1184,7 +1184,7 @@ Dubbo 从 &lt;code>2.2.0&lt;/code> 每个服务默认都会在本地暴露，无
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/callback-parameter/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
-&lt;p>参数回调方式与调用本地 callback 或 listener 相同，只需要在 Spring 的配置文件中声明哪个参数是 callback 类型即可。Dubbo 将基于长连接生成反向代理，这样就可以从服务器端调用客户端逻辑。可以参考 &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-callback">dubbo 项目中的示例代码&lt;/a>。&lt;/p>
+&lt;p>参数回调方式与调用本地 callback 或 listener 相同，只需要在 Spring 的配置文件中声明哪个参数是 callback 类型即可。Dubbo 将基于长连接生成反向代理，这样就可以从服务器端调用客户端逻辑。可以参考 &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/2-advanced/dubbo-samples-callback">dubbo 项目中的示例代码&lt;/a>。&lt;/p>
 &lt;h4 id="服务接口示例">服务接口示例&lt;/h4>
 &lt;h6 id="callbackservicejava">CallbackService.java&lt;/h6>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">package&lt;/span> com.callback&lt;span style="color:#719e07">;&lt;/span>
@@ -1623,7 +1623,7 @@ Dubbo 从 &lt;code>2.2.0&lt;/code> 每个服务默认都会在本地暴露，无
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>为尽可能保证应用启动的灵活性，TLS Cert 的指定还能通过 -D 参数或环境变量等方式来在启动阶段根据部署环境动态指定，具体请参见 Dubbo 配置读取规则与 TLS 示例&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">提示&lt;/h4>
-&lt;p>参考 Dubbo &lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/configuration/configuration-load-process/">配置读取规则&lt;/a>，TLS &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-ssl">示例&lt;/a>&lt;/p>
+&lt;p>参考 Dubbo &lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/configuration/configuration-load-process/">配置读取规则&lt;/a>，TLS &lt;a href="https://github.com/apache/dubbo-samples/tree/master/4-governance/dubbo-samples-ssl">示例&lt;/a>&lt;/p>
 &lt;p>如果要使用的是 gRPC 协议，在开启 TLS 时会使用到协议协商机制，因此必须使用支持 ALPN 机制的 Provider，推荐使用的是 netty-tcnative，具体可参见 gRPC Java 社区的&lt;a href="https://github.com/grpc/grpc-java/blob/master/SECURITY.md">总结&lt;/a>&lt;/p>
 &lt;/div>
 &lt;p>在服务调用的安全性上，Dubbo 在后续的版本中会持续投入，其中服务发现/调用的鉴权机制预计在接下来的版本中就会和大家见面。&lt;/p></description></item><item><title>Docs: 令牌验证</title><link>https://dubbo.apache.org/zh/docs/advanced/token-authorization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/advanced/token-authorization/</guid><description>
@@ -2409,25 +2409,27 @@ Dubbo 从 &lt;code>2.2.0&lt;/code> 每个服务默认都会在本地暴露，无
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:protocol&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;dubbo&amp;#34;&lt;/span> port=&lt;span style="color:#2aa198">&amp;#34;20890&amp;#34;&lt;/span> host=&lt;span style="color:#2aa198">&amp;#34;www.example.com&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="在使用-docker-时有时需要设置端口映射此时启动-server-时绑定的-socket-和向注册中心注册的-socket-使用不同的端口号此时又该如何设置">在使用 docker 时，有时需要设置端口映射，此时，启动 server 时绑定的 socket 和向注册中心注册的 socket 使用不同的端口号，此时又该如何设置？&lt;/h4>
-&lt;p>见 &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-docker">dubbo 通过环境变量设置 host&lt;/a>&lt;/p>
+&lt;p>见 &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/2-advanced/dubbo-samples-docker">dubbo 通过环境变量设置 host&lt;/a>&lt;/p>
 &lt;p>有些部署场景需要动态指定服务注册的地址，如 docker bridge 网络模式下要指定注册宿主机 ip 以实现外网通信。dubbo 提供了两对启动阶段的系统属性，用于设置对外通信的ip、port地址。&lt;/p>
 &lt;ul>
-&lt;li>DUBBO_IP_TO_REGISTRY &amp;mdash; 注册到注册中心的ip地址&lt;/li>
-&lt;li>DUBBO_PORT_TO_REGISTRY &amp;mdash; 注册到注册中心的port端口&lt;/li>
-&lt;li>DUBBO_IP_TO_BIND &amp;mdash; 监听ip地址&lt;/li>
-&lt;li>DUBBO_PORT_TO_BIND &amp;mdash; 监听port端口&lt;/li>
+&lt;li>&lt;strong>DUBBO_IP_TO_REGISTRY&lt;/strong>：注册到注册中心的 ip 地址&lt;/li>
+&lt;li>&lt;strong>DUBBO_PORT_TO_REGISTRY&lt;/strong>：注册到注册中心的 port 端口&lt;/li>
+&lt;li>&lt;strong>DUBBO_IP_TO_BIND&lt;/strong>：监听 ip 地址&lt;/li>
+&lt;li>&lt;strong>DUBBO_PORT_TO_BIND&lt;/strong>：监听 port 端口&lt;/li>
 &lt;/ul>
 &lt;p>以上四个配置项均为可选项，如不配置 dubbo 会自动获取 ip 与端口，请根据具体的部署场景灵活选择配置。
 dubbo 支持多协议，如果一个应用同时暴露多个不同协议服务，且需要为每个服务单独指定 ip 或 port，请分别在以上属性前加协议前缀。 如：&lt;/p>
 &lt;ul>
-&lt;li>HESSIAN_DUBBO_PORT_TO_BIND hessian协议绑定的port&lt;/li>
-&lt;li>DUBBO_DUBBO_PORT_TO_BIND dubbo协议绑定的port&lt;/li>
-&lt;li>HESSIAN_DUBBO_IP_TO_REGISTRY hessian协议注册的ip&lt;/li>
-&lt;li>DUBBO_DUBBO_PORT_TO_BIND dubbo协议注册的ip&lt;/li>
+&lt;li>&lt;strong>HESSIAN_DUBBO_PORT_TO_BIND&lt;/strong>：hessian 协议绑定的 port&lt;/li>
+&lt;li>&lt;strong>DUBBO_DUBBO_PORT_TO_BIND&lt;/strong>：dubbo 协议绑定的 port&lt;/li>
+&lt;li>&lt;strong>HESSIAN_DUBBO_IP_TO_REGISTRY&lt;/strong>：hessian 协议注册的 ip&lt;/li>
+&lt;li>&lt;strong>DUBBO_DUBBO_IP_TO_REGISTRY&lt;/strong>：dubbo 协议注册的 ip&lt;/li>
 &lt;/ul>
-&lt;p>PORT_TO_REGISTRY 或 IP_TO_REGISTRY 不会用作默认 PORT_TO_BIND 或 IP_TO_BIND，但是反过来是成立的
-如设置 PORT_TO_REGISTRY=20881 IP_TO_REGISTRY=30.5.97.6，则 PORT_TO_BIND IP_TO_BIND 不受影响
-如果设置 PORT_TO_BIND=20881 IP_TO_BIND=30.5.97.6，则默认 PORT_TO_REGISTRY=20881 IP_TO_REGISTRY=30.5.97.6&lt;/p>
+&lt;p>PORT_TO_REGISTRY 或 IP_TO_REGISTRY 不会用作默认 PORT_TO_BIND 或 IP_TO_BIND，但是反过来是成立的。如：&lt;/p>
+&lt;ul>
+&lt;li>设置 &lt;code>PORT_TO_REGISTRY=20881&lt;/code> 和 &lt;code>IP_TO_REGISTRY=30.5.97.6&lt;/code>，则 &lt;code>PORT_TO_BIND&lt;/code> 和 &lt;code>IP_TO_BIND&lt;/code> 不受影响&lt;/li>
+&lt;li>设置 &lt;code>PORT_TO_BIND=20881&lt;/code> 和 &lt;code>IP_TO_BIND=30.5.97.6&lt;/code>，则默认 &lt;code>PORT_TO_REGISTRY=20881&lt;/code> 且 &lt;code>IP_TO_REGISTRY=30.5.97.6&lt;/code>&lt;/li>
+&lt;/ul>
 &lt;h2 id="总结">总结&lt;/h2>
 &lt;ol>
 &lt;li>可以通过&lt;code>dubbo.protocol&lt;/code>或&lt;code>dubbo.provider&lt;/code>的&lt;code>host&lt;/code>属性对&lt;code>host&lt;/code>进行配置,支持IP地址和域名.但此时注册到注册中心的IP地址和监听IP地址是同一个值&lt;/li>
@@ -2436,7 +2438,7 @@ dubbo 支持多协议，如果一个应用同时暴露多个不同协议服务�
 &lt;h2 id="参考">参考&lt;/h2>
 &lt;ol>
 &lt;li>&lt;a href="https://github.com/apache/dubbo/issues/2043">Proposal: support hostname or domain in service discovery.&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-docker">dubbo通过环境变量设置host&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/2-advanced/dubbo-samples-docker">dubbo通过环境变量设置host&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>Docs: 注册信息简化</title><link>https://dubbo.apache.org/zh/docs/advanced/simplify-registry-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/advanced/simplify-registry-data/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/performance/simplify-registry-data/">最新版本&lt;/a>。&lt;/p>
