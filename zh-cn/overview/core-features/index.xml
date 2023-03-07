@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Dubbo 核心特性</title><link>https://cn.dubbo.apache.org/zh-cn/overview/core-features/</link><description>Recent content in Dubbo 核心特性 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://cn.dubbo.apache.org/zh-cn/overview/core-features/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: Dubbo 微服务开发</title><link>https://cn.dubbo.apache.org/zh-cn/overview/core-features/service-definition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://cn.dubbo.apache.org/zh-cn/overview/core-features/service-definition/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Dubbo 核心特性</title><link>https://cn.dubbo.apache.org/zh-cn/overview/core-features/</link><description>Recent content in Dubbo 核心特性 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://cn.dubbo.apache.org/zh-cn/overview/core-features/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: 微服务开发</title><link>https://cn.dubbo.apache.org/zh-cn/overview/core-features/service-definition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://cn.dubbo.apache.org/zh-cn/overview/core-features/service-definition/</guid><description>
 &lt;p>Dubbo 解决企业微服务从开发、部署到治理运维的一系列挑战，Dubbo 为开发者提供从项目创建、开发测试，到部署、可视化监测、流量治理，再到生态集成的全套服务。&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>开发层面&lt;/strong>，Dubbo 提供了 Java、Go、Rust、Node.js 等语言实现并定义了一套微服务开发范式，配套脚手架可用于快速创建微服务项目骨架&lt;/li>
@@ -102,7 +102,7 @@
 &lt;p>从注册中心视角来看，它负责以应用名 (dubbo.application.name) 对整个集群的实例地址进行聚合，每个对外提供服务的实例将自身的应用名、实例ip:port 地址信息 (通常还包含少量的实例元数据，如机器所在区域、环境等) 注册到注册中心。&lt;/p>
 &lt;blockquote>
 &lt;p>Dubbo2 版本注册中心以服务粒度聚合实例地址，比应用粒度更细，也就意味着传输的数据量更大，因此在大规模集群下也遇到一些性能问题。
-针对 Dubbo2 与 Dubbo3 跨版本数据模型不统一的问题，Dubbo3 给出了&lt;a href="https://cn.dubbo.apache.org/zh-cn/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/migration-service-discovery/">平滑迁移方案&lt;/a>，可做到模型变更对用户无感。&lt;/p>
+针对 Dubbo2 与 Dubbo3 跨版本数据模型不统一的问题，Dubbo3 给出了&lt;a href="https://cn.dubbo.apache.org/zh-cn/overview/mannual/java-sdk/upgrades-and-compatibility/service-discovery/migration-service-discovery/">平滑迁移方案&lt;/a>，可做到模型变更对用户无感。&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;img src="https://cn.dubbo.apache.org/imgs/v3/feature/service-discovery/registry-data.png" alt="service-discovery">&lt;/p>
 &lt;br/>
@@ -345,7 +345,7 @@
 &lt;h3 id="条件路由规则">条件路由规则&lt;/h3>
 &lt;p>条件路由与标签路由的工作模式非常相似，也是首先对请求中的参数进行匹配，符合匹配条件的请求将被转发到包含特定实例地址列表的子集。相比于标签路由，条件路由的匹配方式更灵活：&lt;/p>
 &lt;ul>
-&lt;li>在标签路由中，一旦给某一台或几台机器实例打了标签，则这部分实例就会被立马从通用流量集合中移除，不通标签之间不会再有交集。有点类似下图，地址集合在输入阶段就已经划分明确。&lt;/li>
+&lt;li>在标签路由中，一旦给某一台或几台机器实例打了标签，则这部分实例就会被立马从通用流量集合中移除，不同标签之间不会再有交集。有点类似下图，地址集合在输入阶段就已经划分明确。&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="https://cn.dubbo.apache.org/imgs/v3/feature/traffic/tag-condition-compare1.png" alt="tag-condition-compare">&lt;/p>
 &lt;ul>
@@ -640,7 +640,7 @@
 &lt;h2 id="logging">Logging&lt;/h2>
 &lt;p>访问日志可以帮助分析系统的流量情况，在有些场景下，开启访问日志对于排查问题也非常有帮助。&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="../../../docs3-v2/java-sdk/advanced-features-and-usage/service/accesslog/">开启 Access Log&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../mannual/java-sdk/advanced-features-and-usage/service/accesslog/">开启 Access Log&lt;/a>&lt;/li>
 &lt;li>&lt;a href="../../tasks/traffic-management/accesslog/">你还在运行态开启 Access Log&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Overview: 认证鉴权</title><link>https://cn.dubbo.apache.org/zh-cn/overview/core-features/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://cn.dubbo.apache.org/zh-cn/overview/core-features/security/</guid><description>
 &lt;p>Dubbo 提供了构建安全微服务通信体系 (零信任体系) 的完善机制，这包括：&lt;/p>
