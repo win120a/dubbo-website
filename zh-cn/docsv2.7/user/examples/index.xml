@@ -36,6 +36,7 @@
 &lt;p>&lt;code>dubbo.reference.check=false&lt;/code>，强制改变所有 reference 的 check 值，就算配置中有声明，也会被覆盖。&lt;/p>
 &lt;p>&lt;code>dubbo.consumer.check=false&lt;/code>，是设置 check 的缺省值，如果配置中有显式的声明，如：&lt;code>&amp;lt;dubbo:reference check=&amp;quot;true&amp;quot;/&amp;gt;&lt;/code>，不会受影响。&lt;/p>
 &lt;p>&lt;code>dubbo.registry.check=false&lt;/code>，前面两个都是指订阅成功，但提供者列表是否为空是否报错，如果注册订阅失败时，也允许启动，需使用此选项，将在后台定时重试。&lt;/p></description></item><item><title>Docsv2.7: 集群容错</title><link>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/fault-tolerent-strategy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/fault-tolerent-strategy/</guid><description>
+&lt;h2 id="背景">背景&lt;/h2>
 &lt;p>在集群调用失败时，Dubbo 提供了多种容错方案，缺省为 failover 重试。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/cluster.jpg" alt="cluster">&lt;/p>
 &lt;p>各节点关系：&lt;/p>
@@ -85,7 +86,7 @@ broadcast.fail.percent 只是控制的当失败后是否继续调用其他节点
 &lt;h4 class="alert-heading">提示&lt;/h4>
 &lt;code>2.1.0&lt;/code> 开始支持
 &lt;/div>
-&lt;h2 id="集群模式配置">集群模式配置&lt;/h2>
+&lt;h3 id="集群模式配置">集群模式配置&lt;/h3>
 &lt;p>按照以下示例在服务提供方和消费方配置集群模式&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:service&lt;/span> cluster=&lt;span style="color:#2aa198">&amp;#34;failsafe&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>或&lt;/p>
@@ -1428,6 +1429,7 @@ Dubbo 从 &lt;code>2.2.0&lt;/code> 每个服务默认都会在本地暴露，无
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 参数回调</title><link>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/callback-parameter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/callback-parameter/</guid><description>
 &lt;h2 id="背景">背景&lt;/h2>
 &lt;p>参数回调方式与调用本地 callback 或 listener 相同，只需要在 Spring 的配置文件中声明哪个参数是 callback 类型即可。Dubbo 将基于长连接生成反向代理，这样就可以从服务器端调用客户端逻辑。可以参考 &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/2-advanced/dubbo-samples-callback">dubbo 项目中的示例代码&lt;/a>。&lt;/p>
+&lt;h2 id="示例">示例&lt;/h2>
 &lt;h3 id="服务接口示例">服务接口示例&lt;/h3>
 &lt;p>CallbackService.java&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">package&lt;/span> com.callback&lt;span style="color:#719e07">;&lt;/span>
@@ -1732,6 +1734,8 @@ Dubbo 从 &lt;code>2.2.0&lt;/code> 每个服务默认都会在本地暴露，无
 &lt;/li>
 &lt;/ol>
 &lt;/div></description></item><item><title>Docsv2.7: 并发控制</title><link>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/concurrency-control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/concurrency-control/</guid><description>
+&lt;h2 id="背景">背景&lt;/h2>
+&lt;p>多种并发控制功能，帮助用户管理其应用程序和服务。&lt;/p>
 &lt;h2 id="示例">示例&lt;/h2>
 &lt;h3 id="样例-1">样例 1&lt;/h3>
 &lt;p>限制 &lt;code>com.foo.BarService&lt;/code> 的每个方法，服务器端并发执行（或占用线程池线程数）不能超过 10 个：&lt;/p>
@@ -1763,6 +1767,7 @@ Dubbo 从 &lt;code>2.2.0&lt;/code> 每个服务默认都会在本地暴露，无
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:service&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.foo.BarService&amp;#34;&lt;/span> loadbalance=&lt;span style="color:#2aa198">&amp;#34;leastactive&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 连接控制</title><link>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/config-connections/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/config-connections/</guid><description>
 &lt;h2 id="背景">背景&lt;/h2>
+&lt;p>连接控制功能可以使用户能够控制和管理进出服务器连接数，限制连接数并设置超时，以确保 Dubbo 系统的稳定性和性能，还允许用户根据 IP 地址、端口和协议配置不同级别的访问控制，保护系统免受恶意流量的影响，并降低服务中断的风险，此外提供了一种监视当前流量和连接状态的方法&lt;/p>
 &lt;h2 id="示例">示例&lt;/h2>
 &lt;h3 id="服务端连接控制">服务端连接控制&lt;/h3>
 &lt;p>限制服务器端接受的连接不能超过 10 个 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>：&lt;/p>
@@ -2062,6 +2067,7 @@ Dubbo 从 &lt;code>2.2.0&lt;/code> 每个服务默认都会在本地暴露，无
 &lt;p>自定义路由参考&lt;a href="https://dubbo.apache.org/zh-cn/overview/mannual/java-sdk/reference-manual/spi/description/router/">路由扩展&lt;/a>&lt;/p>
 &lt;/div></description></item><item><title>Docsv2.7: 旧路由规则</title><link>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/routing-rule-deprecated/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/routing-rule-deprecated/</guid><description>
 &lt;h2 id="背景">背景&lt;/h2>
+&lt;p>根据服务方法名称、参数和返回值来定义路由规则。&lt;/p>
 &lt;h2 id="示例">示例&lt;/h2>
 &lt;p>路由规则 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> 决定一次 dubbo 服务调用的目标服务器，分为条件路由规则和脚本路由规则，并且支持可扩展 &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>。&lt;/p>
 &lt;h2 id="写入路由规则">写入路由规则&lt;/h2>
@@ -2235,7 +2241,7 @@ Dubbo 从 &lt;code>2.2.0&lt;/code> 每个服务默认都会在本地暴露，无
 &lt;p>覆盖规则是 Dubbo 设计的在无需重启应用的情况下，动态调整 RPC 调用行为的一种能力。2.7.0 版本开始，支持从&lt;strong>服务&lt;/strong>和&lt;strong>应用&lt;/strong>两个粒度来调整动态配置。&lt;/p>
 &lt;h2 id="示例">示例&lt;/h2>
 &lt;p>请在服务治理控制台查看或修改覆盖规则。&lt;/p>
-&lt;p>应用粒度&lt;/p>
+&lt;h3 id="应用粒度">应用粒度&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 将应用demo（key:demo）在20880端口上提供（side:provider）的所有服务（scope:application）的权重修改为1000（weight:1000）。&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">configVersion&lt;/span>: v2.7
@@ -2248,7 +2254,7 @@ Dubbo 从 &lt;code>2.2.0&lt;/code> 每个服务默认都会在本地暴露，无
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">parameters&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">weight&lt;/span>: &lt;span style="color:#2aa198">1000&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>服务粒度&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="服务粒度">服务粒度&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 所有消费（side:consumer）DemoService服务（key:org.apache.dubbo.samples.governance.api.DemoService）的应用实例（addresses:[0.0.0.0]），超时时间修改为6000ms&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">configVersion&lt;/span>: v2.7
@@ -2504,6 +2510,7 @@ Dubbo 从 &lt;code>2.2.0&lt;/code> 每个服务默认都会在本地暴露，无
 使用 tomcat 等容器部署的场景，建议通过扩展 ContextListener 等自行调用以下代码实现优雅停机
 &lt;/div></description></item><item><title>Docsv2.7: 主机绑定</title><link>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/hostname-binding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh-cn/docsv2.7/user/examples/hostname-binding/</guid><description>
 &lt;h2 id="背景">背景&lt;/h2>
+&lt;p>服务提供者绑定到机器上特定网络接口或 IP 地址的过程，决定了服务提供商将使用哪个网络接口或 IP 地址来侦听来自消费者的传入请求。&lt;/p>
 &lt;h2 id="示例">示例&lt;/h2>
 &lt;h3 id="查找顺序">查找顺序&lt;/h3>
 &lt;p>缺省主机 IP 查找顺序：&lt;/p>
