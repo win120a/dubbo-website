@@ -409,8 +409,8 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>protocol&lt;span style="color:#719e07">.&lt;/span>setThreads&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">200&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">...&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">//&lt;/span> configuration center
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ConfigCenterConfig configCenter &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ConfigCenterConfig&lt;span style="color:#719e07">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// configuration center
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>ConfigCenterConfig configCenter &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ConfigCenterConfig&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>configCenter&lt;span style="color:#719e07">.&lt;/span>setAddress&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;zookeeper://192.168.10.2:2181&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">...&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
